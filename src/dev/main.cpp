@@ -7,5 +7,6 @@ int main(){
  
 	cout << "mlpack version: " << mlpack::util::GetVersion() << "\n";
 	return 0;
-	
+
 }
+	
