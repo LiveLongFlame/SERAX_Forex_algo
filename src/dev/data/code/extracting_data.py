@@ -65,9 +65,13 @@ def fetch_and_save(contract_name, contract):
         time.sleep(0.5)
     return 0;
 
-# Defining test pair
+# -----------------------------------------------------------------------------------------------------------------------------------------
 # todo: gain 1 year worth of information and verify this is correct 
-# loop through the different pairs and contain the information and added them
+# todo: loop through the different pairs and contain the information and added them
+#todo: add time in order to test how long getting data from 1 currency pair will take
+# -----------------------------------------------------------------------------------------------------------------------------------------
+
+# Defining test pair
 base = pairs[0][0]
 quote = pairs[0][1]
 contract_name = f"{base}_{quote}"
