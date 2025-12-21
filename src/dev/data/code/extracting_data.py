@@ -78,7 +78,6 @@ def fetch_and_save(contract_name, contract):
         # Change the current start time till the end and go again in while loop to get next set of information 
         current_start = current_end
 
-# -----------------------------------------------------------------------------------------------------------------------------------------
 
 # Defining test pair
 base = pairs[0][0]
