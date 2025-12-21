@@ -67,8 +67,19 @@ def fetch_and_save(contract_name, contract):
 
 # -----------------------------------------------------------------------------------------------------------------------------------------
 # todo: gain 1 year worth of information and verify this is correct 
+# todo: Add this to code in order to time how long code will take 
+# import time
+# start_time = time.time()
+#
+# # Your code here
+# for i in range(1000000):
+#     pass
+#
+# end_time = time.time()
+# print("Elapsed time:", end_time - start_time, "seconds")
+
 # todo: loop through the different pairs and contain the information and added them
-#todo: add time in order to test how long getting data from 1 currency pair will take
+
 # -----------------------------------------------------------------------------------------------------------------------------------------
 
 # Defining test pair
