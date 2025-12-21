@@ -5,6 +5,20 @@ from ib_insync import *
 import pandas as pd
 import os
 import time
+'''
+Note: With current testing in order to gather 1 currency pair data over a time period of 1 year in 1 minute inverals will come to.. 
+- 400,000+ lines of entries 
+- 25+ min
+
+Therefore, for 2 years of information over 7 cuurency pairs will equal to 
+- 4,800,00 lines of entries 
+- 5+ hours approx
+'''
+
+
+# !!!!! FOR TESTING ONLY !!!!!!!
+start_time = time.time()
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 # Connects to ib gateway software and information
 ib = IB()
@@ -26,7 +40,8 @@ pairs = [
 
 # Set parameters that we want to extract information
 end_date = datetime.now()
-start_date = end_date - timedelta(days=5*365)
+# Start date is 2 years
+start_date = end_date - timedelta(days=2*365)
 delta = timedelta(days=2)
 bar_size = '1 min'
 
@@ -62,23 +77,6 @@ def fetch_and_save(contract_name, contract):
             time.sleep(1)
         # Change the current start time till the end and go again in while loop to get next set of information 
         current_start = current_end
-        time.sleep(0.5)
-    return 0;
-
-# -----------------------------------------------------------------------------------------------------------------------------------------
-# todo: gain 1 year worth of information and verify this is correct 
-# todo: Add this to code in order to time how long code will take 
-# import time
-# start_time = time.time()
-#
-# # Your code here
-# for i in range(1000000):
-#     pass
-#
-# end_time = time.time()
-# print("Elapsed time:", end_time - start_time, "seconds")
-
-# todo: loop through the different pairs and contain the information and added them
 
 # -----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -90,3 +88,7 @@ contract = Forex(f"{base}{quote}")
 print("Fetching data for " + contract_name + " ...")
 fetch_and_save(contract_name, contract)
 
+# !!!!! FOR TESTING ONLY !!!!!!!
+end_time = time.time()
+print("Elapsed time:", (end_time - start_time) // 60, "minutes")
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
