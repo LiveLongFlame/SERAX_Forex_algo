@@ -8,4 +8,26 @@ SERAX (Saurman's Eye Risk Analysis FX) is a project to create a Trading Machine 
 # 📚 Documentation (Further understanding)
 In order to get a better understanding of the maths and idea of the project and the different versions. This will be all under the *"docs"*
 
+# Setup (Linux)
+*Note: Commands are using debain. Follow same processes with different distros just replace with ditro installer* 
+Here i will go through the basic setup you will need in order to setup the program running. First you will need to install a few important packages in order to run the program. 
+
+After installing mlpack you cna go ahead and install some important python packages. 
+'''bash
+sudo apt install pandas ib_insync tzdata datetime
+'''
+
+## **MLPACK** 
+Follow the link to see how to install and setup MLpack: 
+'''bash
+https://www.youtube.com/watch?v=wcEFce7IaS8
+'''
+
+## **IBKR** 
+You will need to install and setup your own IBKR trading account and install IBKR Gateway.
+*Note: You can also always use TWS as well however you will need to change main.cpp to connect via the port. IBKR provides documentation explaining this*
+
+
+
+
 
