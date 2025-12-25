@@ -8,6 +8,8 @@ int main(){
 	// csv information that gets broken up into are seperated with 
 	// date, open, high,low,close,volume,average, barCount
 	// exmaple: 2024-12-19 17:15:00-5:00, 1.036425, 1.036445, 1.0364, 1.036405, -1.0, -1.0, -1
+
+	//todo: mlpack uses aramdillo matrix in order to view information
 	
 	/* 	todo: ROC 
 	 *	- where, ROC = (Price_initial - (Price_initial - time) / (Price_initial -time)) 
