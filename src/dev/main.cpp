@@ -1,15 +1,40 @@
 /* End goal: test program over paper trailing in which you can test the performance over 2 years worth of data modelling
  * testing: testing will be done over span of a few weeks in order to dial in the ML training to its absolute best*/
+#include <armadillo>
 #include <mlpack.hpp>
 #include <mlpack/core/util/version.hpp>
 
 using namespace std;
+// enum in order to do three classification
+enum Action{
+	SELL = 0,
+	HOLD = 1,
+	BUY = 2
+};
 int main(){
 	// csv information that gets broken up into are seperated with 
 	// date, open, high,low,close,volume,average, barCount
 	// exmaple: 2024-12-19 17:15:00-5:00, 1.036425, 1.036445, 1.0364, 1.036405, -1.0, -1.0, -1
 
 	//todo: mlpack uses aramdillo matrix in order to view information
+	
+	// loading data into amradillo
+	amra::mat raw;
+
+	// load csv file
+	data::Load("data.csv",raw, true);
+
+	// transpose so cols = samples 
+	arma::mat X = raw.t();
+
+	x.n_rows = 7; // features 
+	x.n_cols = 7; // time steps  
+	
+	
+
+	
+
+	//todo: create classfier for ML
 	
 	/* 	todo: ROC 
 	 *	- where, ROC = (Price_initial - (Price_initial - time) / (Price_initial -time)) 
