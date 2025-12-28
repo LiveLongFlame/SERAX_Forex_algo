@@ -20,8 +20,9 @@ int main(){
 	// loading data into amradillo
 	arma::mat raw;
 
-	// load csv file
-	mlpack::data::Load("data/code/combined.csv",raw, true);
+	// load csv file and igonre the first col in the csv file 
+	// we igonre the first col due to it being date and not int 
+	mlpack::data::Load("data/code/combined.csv",raw, true,false, arma::uvec{0});
 
 	// printing out rows and cols that are present in the current csv table 
 	// todo: need to get rid of the date col since date is not a int val and mlpack only accpets integers
