@@ -3,6 +3,7 @@
 #include <armadillo>
 #include <mlpack.hpp>
 #include <mlpack/core/util/version.hpp>
+#include <armadillo>
 
 using namespace std;
 // enum in order to do three classification
@@ -19,16 +20,21 @@ int main(){
 	//todo: mlpack uses aramdillo matrix in order to view information
 	
 	// loading data into amradillo
-	amra::mat raw;
+	arma::mat raw;
 
 	// load csv file
-	data::Load("data.csv",raw, true);
+	mlpack::data::Load("data/code/combined.csv",raw, true);
 
 	// transpose so cols = samples 
-	arma::mat X = raw.t();
+	// arma::mat X = raw.t();
 
-	x.n_rows = 7; // features 
-	x.n_cols = 7; // time steps  
+	// x.n_rows = 7; // features 
+	// x.n_cols = 7; // time steps  
+	
+	// loading information from the csv file and printing out file size 
+	
+	cout << "Rows: " << raw.n_rows << '\n';
+	cout << "Cols: " << raw.n_cols << '\n';
 	
 	
 
