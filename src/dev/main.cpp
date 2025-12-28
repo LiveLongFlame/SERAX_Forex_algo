@@ -17,29 +17,20 @@ int main(){
 	// date, open, high,low,close,volume,average, barCount
 	// exmaple: 2024-12-19 17:15:00-5:00, 1.036425, 1.036445, 1.0364, 1.036405, -1.0, -1.0, -1
 
-	//todo: mlpack uses aramdillo matrix in order to view information
-	
 	// loading data into amradillo
 	arma::mat raw;
 
 	// load csv file
 	mlpack::data::Load("data/code/combined.csv",raw, true);
 
-	// transpose so cols = samples 
-	// arma::mat X = raw.t();
-
-	// x.n_rows = 7; // features 
-	// x.n_cols = 7; // time steps  
-	
-	// loading information from the csv file and printing out file size 
-	
+	// printing out rows and cols that are present in the current csv table 
+	// todo: need to get rid of the date col since date is not a int val and mlpack only accpets integers
+	// where the rows are each 1min interval 
+	// and each cols is repersented as each different value
 	cout << "Rows: " << raw.n_rows << '\n';
 	cout << "Cols: " << raw.n_cols << '\n';
 	
 	
-
-	
-
 	//todo: create classfier for ML
 	
 	/* 	todo: ROC 
