@@ -6,6 +6,41 @@
 #include <armadillo>
 
 using namespace std;
+// function calulates the Rate-of-change(ROC) and returns its value
+float roc(){
+	/* 	todo: ROC 
+	 *	- where, ROC = (Price_initial - (Price_initial - time) / (Price_initial -time)) 
+	 *	- Example: 
+	 *		ROC = (0.60 -1) \ (1))  = -40
+	 *	- Should be function that returns  price change over time 
+	 */
+	return 0.0;
+}
+
+// function calualtes the Volaitilty (standard devation of returns) 
+float sdor(){
+	/* 	todo: Voaltility (Standard deviation of returns = sdor ) 
+	 *  - Once we have ROC we need to compute for the mean 
+	 *  - where the mean = sum_of_all_ROC/number_of_entries 
+	 *  - than calcualte the standard devation 
+	 *  - where, sdor = root(sum_squared_deviations / number_of_entries -1)
+	 *  - where, sum_squared_devations = (every_entry_in_set - mean)^2 
+	 *		- Example: 
+	 *			- ROC = 0.05, 0.10, 0.07, 0.12, 0.08
+	 *			- mean = 0.084
+	 *			- (0.05 - 0.084)^2 = val1
+	 *			- (0.10 - 0.084)^2 = val2
+	 *			- (0.07 - 0.084)^2 = val3
+	 *			- (0.12 - 0.084)^2 = val4
+	 *			- (0.08 - 0.084)^2 = val5
+	 *			- sum_squared_devations = total_of_vals
+	 *	- Higher risk = higher sdor
+	 *	- lower risk = lower sdor
+	 *	- then sdor * 100 in order to get percentage value
+	 *  	*/
+
+	return 0.0;
+}
 // enum in order to do three classification
 enum Action{
 	SELL = 0,
@@ -34,43 +69,14 @@ int main(){
 	
 	//todo: create classfier for ML
 	
-	/* 	todo: ROC 
-	 *	- where, ROC = (Price_initial - (Price_initial - time) / (Price_initial -time)) 
-	 *	- Example: 
-	 *		ROC = (0.60 -1) \ (1))  = -40
-	 *	- Should be function that returns  price change over time 
-	 */
-
-	/* 	todo: Voaltility (Standard deviation of returns = sdor ) 
-	 *  - Once we have ROC we need to compute for the mean 
-	 *  - where the mean = sum_of_all_ROC/number_of_entries 
-	 *  - than calcualte the standard devation 
-	 *  - where, sdor = root(sum_squared_deviations / number_of_entries -1)
-	 *  - where, sum_squared_devations = (every_entry_in_set - mean)^2 
-	 *		- Example: 
-	 *			- ROC = 0.05, 0.10, 0.07, 0.12, 0.08
-	 *			- mean = 0.084
-	 *			- (0.05 - 0.084)^2 = val1
-	 *			- (0.10 - 0.084)^2 = val2
-	 *			- (0.07 - 0.084)^2 = val3
-	 *			- (0.12 - 0.084)^2 = val4
-	 *			- (0.08 - 0.084)^2 = val5
-	 *			- sum_squared_devations = total_of_vals
-	 *	- Higher risk = higher sdor
-	 *	- lower risk = lower sdor
-	 *	- then sdor * 100 in order to get percentage value
-	 *  	*/
 
 	/* 	todo: probability  
 	 *  - prob = 1 / (1 + e^-(roc_weight * ROC - sdor_weight * sdor))
 	 *  - returns thershold where the ML will determine to BUY SELL or HOLD stock
 	 *  	*/
 
-	
-	// printing version of mlpack and returing it as a string
-	cout << "mlpack version: " << mlpack::util::GetVersion() << "\n";
 
 	return 0;
 
 }
-	
+
