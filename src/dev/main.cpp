@@ -4,8 +4,8 @@
 #include <mlpack.hpp>
 #include <mlpack/core/util/version.hpp>
 #include <armadillo>
+#include <iomanip>
 
-using namespace std;
 // function calulates the Rate-of-change(ROC) and returns its value
 double roc(){
 	/* 	todo: ROC 
@@ -58,8 +58,7 @@ int main(){
 	// load csv file  
 	mlpack::data::Load("data/code/combined.csv",raw, true);
 
-	// getting rid of first row of date since it is not needed anymore
-	raw.shed_col(0);
+	// todo: getting rid of first row of date since it is not needed anymore
 
 	// printing out rows and cols that are present in the current csv table 
 	// where the rows are each 1min interval 
@@ -67,8 +66,14 @@ int main(){
 	// cout << "Rows: " << raw.n_rows << '\n';
 	// cout << "Cols: " << raw.n_cols << '\n';
 	
+	std::cout.precision(17);
 	// printing out row of information
-	cout << raw.col(0);
+	// std::cout << raw.col(0);
+	
+	// for printing out more pericse values from the first row 
+	for (size_t i =1; i < raw.n_rows; i++){
+		std::cout << raw(i,0) << "\n";
+	}
 	
 	//todo: create classfier for ML
 	
