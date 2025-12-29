@@ -7,39 +7,29 @@
 #include <iomanip>
 
 // function calulates the Rate-of-change(ROC) and returns its value
-double roc(){
+arma::vec roc(const aram::vec& cPrice){
 	/* 	todo: ROC 
 	 *	- where, ROC = (Price_initial - (Price_initial - time) / (Price_initial -time)) 
 	 *	- Example: 
 	 *		ROC = (0.60 -1) \ (1))  = -40
 	 *	- Should be function that returns  price change over time 
 	 */
+
+	// basic code for implementing roc
+	/* arma::vec roc(closePrices.n_elem - 1);
+    for (size_t i = 1; i < closePrices.n_elem; ++i)
+    {
+        roc(i-1) = (closePrices(i) - closePrices(i-1)) / closePrices(i-1);
+    }
+    return roc; */
+
 	return 0.0;
 }
 
 // function calualtes the Volaitilty (standard devation of returns) 
-double sdor(){
-	/* 	todo: Voaltility (Standard deviation of returns = sdor ) 
-	 *  - Once we have ROC we need to compute for the mean 
-	 *  - where the mean = sum_of_all_ROC/number_of_entries 
-	 *  - than calcualte the standard devation 
-	 *  - where, sdor = root(sum_squared_deviations / number_of_entries -1)
-	 *  - where, sum_squared_devations = (every_entry_in_set - mean)^2 
-	 *		- Example: 
-	 *			- ROC = 0.05, 0.10, 0.07, 0.12, 0.08
-	 *			- mean = 0.084
-	 *			- (0.05 - 0.084)^2 = val1
-	 *			- (0.10 - 0.084)^2 = val2
-	 *			- (0.07 - 0.084)^2 = val3
-	 *			- (0.12 - 0.084)^2 = val4
-	 *			- (0.08 - 0.084)^2 = val5
-	 *			- sum_squared_devations = total_of_vals
-	 *	- Higher risk = higher sdor
-	 *	- lower risk = lower sdor
-	 *	- then sdor * 100 in order to get percentage value
-	 *  	*/
-
-	return 0.0;
+double sdor(const arma::vec& roc){
+	// uses armadillo built in lib for standard devation
+	return arma::stddev(roc);
 }
 // enum in order to do three classification
 enum Action{
