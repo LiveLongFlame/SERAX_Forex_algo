@@ -7,7 +7,7 @@
 
 using namespace std;
 // function calulates the Rate-of-change(ROC) and returns its value
-float roc(){
+double roc(){
 	/* 	todo: ROC 
 	 *	- where, ROC = (Price_initial - (Price_initial - time) / (Price_initial -time)) 
 	 *	- Example: 
@@ -18,7 +18,7 @@ float roc(){
 }
 
 // function calualtes the Volaitilty (standard devation of returns) 
-float sdor(){
+double sdor(){
 	/* 	todo: Voaltility (Standard deviation of returns = sdor ) 
 	 *  - Once we have ROC we need to compute for the mean 
 	 *  - where the mean = sum_of_all_ROC/number_of_entries 
@@ -55,24 +55,27 @@ int main(){
 	// loading data into amradillo
 	arma::mat raw;
 
-	// load csv file and igonre the first col in the csv file 
-	// we igonre the first col due to it being date and not int 
-	mlpack::data::Load("data/code/combined.csv",raw, true,false, arma::uvec{0});
+	// load csv file  
+	mlpack::data::Load("data/code/combined.csv",raw, true);
+
+	// getting rid of first row of date since it is not needed anymore
+	raw.shed_col(0);
 
 	// printing out rows and cols that are present in the current csv table 
-	// todo: need to get rid of the date col since date is not a int val and mlpack only accpets integers
 	// where the rows are each 1min interval 
 	// and each cols is repersented as each different value
-	cout << "Rows: " << raw.n_rows << '\n';
-	cout << "Cols: " << raw.n_cols << '\n';
+	// cout << "Rows: " << raw.n_rows << '\n';
+	// cout << "Cols: " << raw.n_cols << '\n';
 	
+	// printing out row of information
+	cout << raw.col(0);
 	
 	//todo: create classfier for ML
 	
 
 	/* 	todo: probability  
 	 *  - prob = 1 / (1 + e^-(roc_weight * ROC - sdor_weight * sdor))
-	 *  - returns thershold where the ML will determine to BUY SELL or HOLD stock
+;	 *  - returns thershold where the ML will determine to BUY SELL or HOLD stock
 	 *  	*/
 
 
