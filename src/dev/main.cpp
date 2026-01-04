@@ -4,10 +4,9 @@
 #include <mlpack.hpp>
 #include <mlpack/core/util/version.hpp>
 #include <armadillo>
-#include <iomanip>
-
+#include <cmath> 
 // function calulates the Rate-of-change(ROC) and returns its value
-arma::vec roc(const aram::vec& cPrice){
+arma::vec roc(const arma::vec& cPrice){
 	/* 	todo: ROC 
 	 *	- where, ROC = (Price_initial - (Price_initial - time) / (Price_initial -time)) 
 	 *	- Example: 
@@ -23,13 +22,20 @@ arma::vec roc(const aram::vec& cPrice){
     }
     return roc; */
 
-	return 0.0;
+	// amra better implementaiton 
+	return arma::diff(cPrice) / cPrice.head(cPrice.n_elem - 1 );
 }
 
 // function calualtes the Volaitilty (standard devation of returns) 
 double sdor(const arma::vec& roc){
 	// uses armadillo built in lib for standard devation
 	return arma::stddev(roc);
+}
+
+// function that finds the probabilty allowing the ML to decide a function
+double actionProbabilty(double roc, double sdor, double roc_weight, double sdor_weight, double bias = 0.0){
+	// logistic regression with 2 features 
+	return 0.0;
 }
 // enum in order to do three classification
 enum Action{
