@@ -29,6 +29,15 @@ enum Action{
 	HOLD = 1,
 	BUY = 2
 };
+
+// decides the different thersholds where the ML whill decide 
+// NOTE: There values are subject to chagne over time 
+Action decideAction(double prob, double buyThreshold = 0.6, double sellThreshold = 0.4){
+	if(prob >= buyThreshold) return BUY;
+	if(prob <= sellThreshold) return SELL;
+	return HOLD;
+
+}
 int main(){
 	// csv information that gets broken up into are seperated with 
 	// date, open, high,low,close,volume,average, barCount
@@ -57,13 +66,34 @@ int main(){
 		std::cout << raw(i,0) << "\n";
 	}
 	
-	//todo: create classfier for ML
+	// extracting the closing prices
+	arma::vec closePrices = raw.col(3);
+
+	// idea of what ML evalutation could be 
+	/* size_t window = 30; // 30-minute window
+	double roc_w = 1.2;
+	double sdor_w = 0.8;
+	double bias = 0.0;
+
+	for (size_t i = window; i < closePrices.n_elem; ++i) {
+		arma::vec windowPrices = closePrices.subvec(i - window, i);
+
+		arma::vec r = roc(windowPrices);
+		double vol = sdor(r);
+		double lastRoc = r.tail(1)(0);
+
+		double prob = actionProbability(lastRoc, vol, roc_w, sdor_w, bias);
+		Action action = decideAction(prob);
+
+		if (action == BUY)
+			std::cout << "BUY @ index " << i << " prob=" << prob << "\n";
+		else if (action == SELL)
+			std::cout << "SELL @ index " << i << " prob=" << prob << "\n";
+	} */
+
+
 	
 
-	/* 	todo: probability  
-	 *  - prob = 1 / (1 + e^-(roc_weight * ROC - sdor_weight * sdor))
-;	 *  - returns thershold where the ML will determine to BUY SELL or HOLD stock
-	 *  	*/
 
 
 	return 0;
