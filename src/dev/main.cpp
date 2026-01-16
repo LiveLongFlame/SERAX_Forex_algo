@@ -7,21 +7,6 @@
 #include <cmath> 
 // function calulates the Rate-of-change(ROC) and returns its value
 arma::vec roc(const arma::vec& cPrice){
-	/* 	todo: ROC 
-	 *	- where, ROC = (Price_initial - (Price_initial - time) / (Price_initial -time)) 
-	 *	- Example: 
-	 *		ROC = (0.60 -1) \ (1))  = -40
-	 *	- Should be function that returns  price change over time 
-	 */
-
-	// basic code for implementing roc
-	/* arma::vec roc(closePrices.n_elem - 1);
-    for (size_t i = 1; i < closePrices.n_elem; ++i)
-    {
-        roc(i-1) = (closePrices(i) - closePrices(i-1)) / closePrices(i-1);
-    }
-    return roc; */
-
 	// amra better implementaiton 
 	return arma::diff(cPrice) / cPrice.head(cPrice.n_elem - 1 );
 }
@@ -35,7 +20,8 @@ double sdor(const arma::vec& roc){
 // function that finds the probabilty allowing the ML to decide a function
 double actionProbabilty(double roc, double sdor, double roc_weight, double sdor_weight, double bias = 0.0){
 	// logistic regression with 2 features 
-	return 0.0;
+	double z = roc_weight * roc - sdor_weight * sdor + bias;
+	return 1.0 / (1.0+ std::exp(-z));
 }
 // enum in order to do three classification
 enum Action{
