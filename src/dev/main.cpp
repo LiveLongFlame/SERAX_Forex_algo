@@ -51,23 +51,23 @@ int main(){
 
 	// todo: getting rid of first row of date since it is not needed anymore
 
-	// printing out rows and cols that are present in the current csv table 
-	// where the rows are each 1min interval 
-	// and each cols is repersented as each different value
-	// cout << "Rows: " << raw.n_rows << '\n';
-	// cout << "Cols: " << raw.n_cols << '\n';
 	
 	std::cout.precision(17);
 	// printing out row of information
 	// std::cout << raw.col(0);
 	
 	// for printing out more pericse values from the first row 
-	for (size_t i =1; i < raw.n_rows; i++){
-		std::cout << raw(i,0) << "\n";
+	// i must be 1 else the ML will take in the date as input
+	// note: the date could be useful later as more a historic data training however for now it is not important
+	for (size_t i =0; i < raw.n_rows; i++){
+		std::cout << raw(i,0) << ", ";
 	}
 	
-	// extracting the closing prices
-	arma::vec closePrices = raw.col(3);
+	//todo: extracting the closing prices
+	std::cout << "\n";
+	std::cout << raw.col(0)[4];
+	
+
 
 	// idea of what ML evalutation could be 
 	/* size_t window = 30; // 30-minute window
