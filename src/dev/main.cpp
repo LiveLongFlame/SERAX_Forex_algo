@@ -50,25 +50,17 @@ int main(){
 	// load csv file  
 	mlpack::data::Load("data/code/combined.csv",raw, true);
 
-	// todo: getting rid of first row of date since it is not needed anymore
-
-	
 	std::cout.precision(17);
-	// printing out row of information
-	// std::cout << raw.col(0);
 	
 	// for printing out more pericse values from the first row 
 	// i must be 1 else the ML will take in the date as input
 	// note: the date could be useful later as more a historic data training however for now it is not important
-	for (size_t i =0; i < raw.n_rows; i++){
-		std::cout << raw(i,0) << ", ";
-	}
 	
 	//todo: extracting the closing prices
-	std::cout << "\n";
-	std::cout << raw.col(0)[4];
 	
-
+	// Creating new pricing object
+	PRICE P(raw.col(0)[0], raw.col(0)[1], raw.col(0)[2], raw.col(0)[3], raw.col(0)[4], raw.col(0)[5], raw.col(0)[6], raw.col(0)[7]);
+	P.printPrice();
 
 	// idea of what ML evalutation could be 
 	/* size_t window = 30; // 30-minute window
@@ -94,10 +86,6 @@ int main(){
 
 
 	
-	// Creating new pricing object
-	PRICE P;
-	std::cout << "\n\nthese are the values that can be set: " << P.getClose();
-
 
 
 	return 0;

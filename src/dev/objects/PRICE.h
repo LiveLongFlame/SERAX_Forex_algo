@@ -18,6 +18,8 @@ class PRICE{
 		double getVol() const;
 		double getAvg() const;
 
+		void printPrice() const;
+
 
 };
 
