@@ -5,6 +5,7 @@
 #include <mlpack/core/util/version.hpp>
 #include <armadillo>
 #include <cmath> 
+#include "objects/PRICE.h"
 // function calulates the Rate-of-change(ROC) and returns its value
 arma::vec roc(const arma::vec& cPrice){
 	// amra better implementaiton 
@@ -93,6 +94,9 @@ int main(){
 
 
 	
+	// Creating new pricing object
+	PRICE P;
+	std::cout << "\n\nthese are the values that can be set: " << P.getClose();
 
 
 
