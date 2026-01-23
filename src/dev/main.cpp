@@ -5,7 +5,9 @@
 #include <mlpack/core/util/version.hpp>
 #include <armadillo>
 #include <cmath> 
+#include <vector>
 #include "objects/PRICE.h"
+
 // function calulates the Rate-of-change(ROC) and returns its value
 arma::vec roc(const arma::vec& cPrice){
 	// amra better implementaiton 
@@ -40,52 +42,61 @@ Action decideAction(double prob, double buyThreshold = 0.6, double sellThreshold
 
 }
 int main(){
-	// csv information that gets broken up into are seperated with 
-	// date, open, high,low,close,volume,average, barCount
-	// exmaple: 2024-12-19 17:15:00-5:00, 1.036425, 1.036445, 1.0364, 1.036405, -1.0, -1.0, -1
+	//CSV Structure: date, open, high,low,close,volume,average, barCount
 
-	// loading data into amradillo
 	arma::mat raw;
-
-	// load csv file  
 	mlpack::data::Load("data/code/combined.csv",raw, true);
 
-	std::cout.precision(17);
+	std::cout.precision(15);
 	
-	// for printing out more pericse values from the first row 
-	// i must be 1 else the ML will take in the date as input
-	// note: the date could be useful later as more a historic data training however for now it is not important
-	
-	//todo: extracting the closing prices
-	
-	// Creating new pricing object
-	PRICE P(raw.col(0)[0], raw.col(0)[1], raw.col(0)[2], raw.col(0)[3], raw.col(0)[4], raw.col(0)[5], raw.col(0)[6], raw.col(0)[7]);
-	P.printPrice();
 
-	// idea of what ML evalutation could be 
-	/* size_t window = 30; // 30-minute window
-	double roc_w = 1.2;
-	double sdor_w = 0.8;
-	double bias = 0.0;
+	std::cout << raw.n_rows << " rows and " << raw.n_cols << " columns loaded.\n";
 
-	for (size_t i = window; i < closePrices.n_elem; ++i) {
+	size_t window = 30; // 30-minute window
+	arma::vec closePrices = raw.col(4);
+
+	std::vector<double> featuresROC;
+	std::vector<double> featureVOL;
+	std::vector<size_t> labels;
+
+	for (size_t i = window; i+1 < closePrices.n_elem; i++) {
 		arma::vec windowPrices = closePrices.subvec(i - window, i);
 
 		arma::vec r = roc(windowPrices);
 		double vol = sdor(r);
 		double lastRoc = r.tail(1)(0);
 
-		double prob = actionProbability(lastRoc, vol, roc_w, sdor_w, bias);
-		Action action = decideAction(prob);
+		featuresROC.push_back(lastRoc);
+		featureVOL.push_back(vol);
 
-		if (action == BUY)
-			std::cout << "BUY @ index " << i << " prob=" << prob << "\n";
-		else if (action == SELL)
-			std::cout << "SELL @ index " << i << " prob=" << prob << "\n";
-	} */
-
+		// we label 1 if the price has gone up next tick else 0
+		double futureReturn = (closePrices(i+1) - closePrices(i)) / closePrices(i);
+		labels.push_back(futureReturn > 0 ? 1 : 0);
+	}
 
 	
+	size_t N = labels.size();
+	arma::mat X(2, N);
+	arma::Row<size_t> y(N);
+
+	for (size_t i = 0; i < N; ++i) {
+		X(0, i) = featuresROC[i];
+		X(1, i) = featureVOL[i];
+		y(i) = labels[i];
+	}
+
+	std::cout << "Training Model...\n";
+	// using mlpack logistic regression to train the model
+	mlpack::regression::LogisticRegression<> model(X, y);
+
+	std::cout << "Model trained.\n";
+	model.Parameters().print();
+
+	//todo: Save model to file for later use
+
+
+
+
 
 
 	return 0;
