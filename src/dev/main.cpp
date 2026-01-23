@@ -93,6 +93,7 @@ int main(){
 	model.Parameters().print();
 
 	//todo: Save model to file for later use
+	//todo: remove date from raw data 
 
 
 
