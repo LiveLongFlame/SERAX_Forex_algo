@@ -80,6 +80,7 @@ def fetch_and_save(contract_name, contract):
 
 
 # Defining test pair
+# Note: This will only extract one currency pair for testing... Need to loop through all pairs when running for all data extraction
 base = pairs[0][0]
 quote = pairs[0][1]
 contract_name = f"{base}_{quote}"

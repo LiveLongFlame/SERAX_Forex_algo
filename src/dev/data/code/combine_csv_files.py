@@ -54,3 +54,11 @@ combined_df.to_csv(OUTPUT_FILE, index=False)
 print(f"\nCombined {len(df_list)} files into {OUTPUT_FILE}")
 print(f"Total rows: {len(combined_df)}")
 
+# removing and adding important fileds from csv needed
+
+df = pd.read_csv("data.csv")
+
+# keep only the columns you care about
+ohlc = df[["open", "high", "low", "close"]]
+
+ohlc.to_csv("ohlc.csv", index=False)

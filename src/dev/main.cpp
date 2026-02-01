@@ -1,5 +1,6 @@
 /* End goal: test program over paper trailing in which you can test the performance over 2 years worth of data modelling
  * testing: testing will be done over span of a few weeks in order to dial in the ML training to its absolute best*/
+// todo; need to fix program since now looking at new ohlc.csv file.....
 #include <armadillo>
 #include <mlpack.hpp>
 #include <mlpack/core/util/version.hpp>
@@ -45,7 +46,7 @@ int main(){
 	//CSV Structure: date, open, high,low,close,volume,average, barCount
 
 	arma::mat raw;
-	mlpack::data::Load("data/code/combined.csv",raw, true);
+	mlpack::data::Load("data/code/ohlc.csv",raw, true);
 
 	std::cout.precision(15);
 	
@@ -53,7 +54,9 @@ int main(){
 	std::cout << raw.n_rows << " rows and " << raw.n_cols << " columns loaded.\n";
 
 	size_t window = 30; // 30-minute window
-	arma::vec closePrices = raw.col(4);
+	// swap rows and columns to make processing easier
+	raw = raw.t();
+	arma::vec closePrices = raw.col(3);
 
 	std::vector<double> featuresROC;
 	std::vector<double> featureVOL;
