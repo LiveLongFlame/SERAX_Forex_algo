@@ -12,10 +12,9 @@ In order to get a better understanding of the maths and idea of the project and 
 *Note: Commands are using debain. Follow same processes with different distros just replace with ditro installer* 
 Here i will go through the basic setup you will need in order to setup the program running. First you will need to install a few important packages in order to run the program. 
 
-After installing mlpack you cna go ahead and install some important python packages. 
-
-`sudo apt install pandas ib_insync tzdata datetime`
-
+## **Starter Script**
+To get started you can run the starter script which will install all the required packages and setup the environment for you.
+`setup.sh`
 
 ## **MLPACK** 
 Follow the link to see how to install and setup MLpack: 
@@ -25,7 +24,6 @@ Follow the link to see how to install and setup MLpack:
 ## **IBKR** 
 You will need to install and setup your own IBKR trading account and install IBKR Gateway.
 *Note: You can also always use TWS as well however you will need to change main.cpp to connect via the port. IBKR provides documentation explaining this*
-
 
 
 

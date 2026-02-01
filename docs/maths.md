@@ -5,7 +5,7 @@ For version 1 we want to create a simple Algorithm where we get the Rate of Chan
 We will calculate the change of which the currencies fluxurates over a period of time. Given $n$ is time, $$\text{|ROC|} = \frac{Price_t - Price_{t-n}}{Price_{t-n}} \times 100,\text{where } n \text{ is time.}$$
 #### Example
 ***
-If the AUD/USD = 0.60/1.00, and yesterday was 1/1, then in $n = 1$ day $$\begin{aligned}\text{|ROC|} = \frac{0.60 - 1}{1} \times 100 = 40\end{aligned}$$ meaning there was a 40% price change
+If the AUD/USD = 0.60/1.00, and yesterday was 1/1, then in $n = 1$ day $$\text{|ROC|} = \frac{0.60 - 1}{1} \times 100 = 40$$ meaning there was a 40% price change
 ***
 
 ### Volatility (Standard Deviation of returns) [Risk]
