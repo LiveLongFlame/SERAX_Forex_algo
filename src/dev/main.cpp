@@ -96,12 +96,10 @@ int main(){
 	model.Parameters().print();
 
 	//todo: Save model to file for later use
-	//todo: remove date from raw data 
-
-
-
-
-
+	mlpack::data::Save("trading_model.xml", "model", model, true);
+	std::cout << "Model saved to trading_model.xml\n";
+	
+	
 
 	return 0;
 

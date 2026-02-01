@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cereal>
+	<model>
+		<cereal_class_version>0</cereal_class_version>
+		<parameters>
+			<n_rows>1</n_rows>
+			<n_cols>3</n_cols>
+			<vec_state>2</vec_state>
+			<elem>-0.095563265480466592</elem>
+			<elem>-7.8560640247969573</elem>
+			<elem>88.937180632572151</elem>
+		</parameters>
+		<lambda>0</lambda>
+	</model>
+</cereal>
+
