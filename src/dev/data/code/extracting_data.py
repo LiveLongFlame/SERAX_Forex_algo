@@ -46,7 +46,7 @@ delta = timedelta(days=2)
 bar_size = '1 min'
 
 # Save the data into the data folder
-save_folder = os.path.join(BASE_DIR, 'data')
+save_folder = os.path.join(BASE_DIR, 'gathered_data')
 os.makedirs(save_folder, exist_ok=True)
 
 #Function goes ahead and itrates through the different data and retrives information from api. From here it will go ahead and save the information into a csv file and then move on the next time chunk. 

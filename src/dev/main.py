@@ -5,6 +5,14 @@ import pybind11
 from ib_insync import *
 import pandas as pd 
 
+# todo: calcualte sdor with live paper trail data 
+def sdor():
+    return 0
+
+# todo: calcualte roc with live paper trail data 
+def roc():
+    return 0
+
 def menu():
     print("Menu:")
     print("1. Train ML model")
@@ -17,6 +25,9 @@ def menu():
         #todo: add code to train ML model here
     elif choice == 2:
         print("Using ML model to make predictions...")
+        initial = float(input("Enter initial value $ "))
+        #FOR TESTING PURPOSES ONLY
+        print("Initial value: $", initial)
         #todo: add code to use ML model to make predictions here
     elif choice == 3:
         print("Exiting application...")

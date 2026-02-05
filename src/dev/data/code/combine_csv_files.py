@@ -6,7 +6,7 @@ import re
 import sys
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR = os.path.join(BASE_DIR, "data")
+DATA_DIR = os.path.join(BASE_DIR, "gathered_data")
 OUTPUT_FILE = os.path.join(BASE_DIR, "combined.csv")
 
 # Helper to sort by chunk number
