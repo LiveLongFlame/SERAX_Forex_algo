@@ -5,7 +5,13 @@ import pybind11
 from ib_insync import *
 import pandas as pd 
 import numpy as np
+#todo: import ML model here
 
+#todo: create function that gets live data from the last hour and feeds it into sdor and roc 
+#todo: after calcualting sdor and roc, feed those values into the ML model to make predictions
+#todo: each trade should be based on the predicted values from the ML model and the current market conditions 
+#todo: print out users current balance, open positions, and any other relevant information to the console for each live trade
+#todo: users should be alowwed to hit ctrl+c to exit the application at any time and the program should print out a summary of the users trading performance for the session before exiting
 def sdor(roc_vals: np.ndarray):
     return np.std(roc_vals, ddof=0) 
 
@@ -21,6 +27,7 @@ def menu():
     print("\n")
     if choice == 1:
         print("Training ML model...")
+        print("Note: If you want to train ML with to add your own data.csv then please add it to the gather_data folder and then run the script train.sh: \n\n")
         #todo: add code to train ML model here
     elif choice == 2:
         initial = float(input("Enter initial value $ "))
@@ -43,7 +50,6 @@ def main():
     print("IB connection established...")
 
     #todo: get live paper trail data 
-    #todo: calcuate roc and sdor
     #todo: add ml model 
     print("\n\n Hello and welcome to SEARX (Saurman's Eye Risk Analysis FX) \n\n")
     menu()
