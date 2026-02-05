@@ -27,7 +27,12 @@ def menu():
     print("\n")
     if choice == 1:
         print("Training ML model...")
-        print("Note: If you want to train ML with to add your own data.csv then please add it to the gather_data folder and then run the script train.sh: \n\n")
+        #todo: add functionality to either train model with existing data or with new data from the last hour
+        print ("+" + "-" * 78 + "+")
+        print("| Note: If you want to train ML with your own data.csv, add it to gather_data |")
+        print("| and then run the script train.sh                                            |")
+        print ("+" + "-" * 78 + "+")
+
         #todo: add code to train ML model here
     elif choice == 2:
         initial = float(input("Enter initial value $ "))
