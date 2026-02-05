@@ -6,10 +6,12 @@ import re
 import sys
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR = os.path.join(BASE_DIR, "gathered_data")
-OUTPUT_FILE = os.path.join(BASE_DIR, "combined.csv")
+LOCATION_DIR = os.path.abspath(os.path.join(BASE_DIR, ".."))
+DATA_DIR = os.path.join(LOCATION_DIR, "gathered_data")
+OUTPUT_FILE = os.path.join(LOCATION_DIR, "combined.csv")
 
 # Helper to sort by chunk number
+
 def extract_chunk_num(filename):
     match = re.search(r"chunk(\d+)", filename)
     return int(match.group(1)) if match else -1
