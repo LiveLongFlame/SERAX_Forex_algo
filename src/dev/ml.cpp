@@ -95,7 +95,6 @@ int main(){
 	std::cout << "Model trained.\n";
 	model.Parameters().print();
 
-	//todo: Save model to file for later use
 	mlpack::data::Save("trading_model.xml", "model", model, true);
 	std::cout << "Model saved to trading_model.xml\n";
 	
