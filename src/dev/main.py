@@ -4,14 +4,13 @@ import os
 import pybind11
 from ib_insync import *
 import pandas as pd 
+import numpy as np
 
-# todo: calcualte sdor with live paper trail data 
-def sdor():
-    return 0
+def sdor(roc_vals: np.ndarray):
+    return np.std(roc_vals, ddof=0) 
 
-# todo: calcualte roc with live paper trail data 
-def roc():
-    return 0
+def roc(close_prices: np.ndarray):
+    return np.diff(close_prices) / close_prices[:-1]
 
 def menu():
     print("Menu:")
@@ -24,10 +23,10 @@ def menu():
         print("Training ML model...")
         #todo: add code to train ML model here
     elif choice == 2:
-        print("Using ML model to make predictions...")
         initial = float(input("Enter initial value $ "))
         #FOR TESTING PURPOSES ONLY
         print("Initial value: $", initial)
+        #------------------------------------
         #todo: add code to use ML model to make predictions here
     elif choice == 3:
         print("Exiting application...")
