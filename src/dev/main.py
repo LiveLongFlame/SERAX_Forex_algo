@@ -51,6 +51,7 @@ def main():
     print("Starting application...")
     print("Initializing IB connection...")
     # ib = IB()
+    #change port denpending on your IB Gateway or TWS settings
     # ib.connect('127.0.0', 4002, clientId=1)
     print("IB connection established...")
 
