@@ -5,14 +5,18 @@ import pybind11
 from ib_insync import *
 import pandas as pd 
 import numpy as np
-#todo: import ML model here
+import ml
 
+MODEL_PATH= "model/trading_model.xml"
+CSV_DATA = "data/ohlc.csv"
+
+ml.train_model(CSV_DATA, MODEL_PATH)
 #todo: print out users current balance, open positions, and any other relevant information to the console for each live trade
 #todo: users should be alowwed to hit ctrl+c to exit the application at any time and the program should print out a summary of the users trading performance for the session before exiting
 
 pairs = ['EURUSD', 'USDJPY' , 'GDPUSD', 'USDCHF', 'USDCAD', 'AUDUSD', 'NZDUSD']
 
-def ml_model(ccy_pair ib, model):
+def ml_model(ccy_pair, ib, model):
     contract = Forex(ccy_pair)
     ib.qualifyContracts(contract)
     bars = ib.reqHistoricalData(
