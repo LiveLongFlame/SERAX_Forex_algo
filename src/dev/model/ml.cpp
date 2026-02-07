@@ -8,9 +8,11 @@
 #include <cmath> 
 #include <vector>
 #include "objects/PRICE.h"
-#include <pybind11/pybind11.h>
 
+//------------------ comment out when running Makefile in order to test model
+#include <pybind11/pybind11.h>
 namespace py = pybind11;
+//---------------------------------------------------------------------------
 
 // function calulates the Rate-of-change(ROC) and returns its value
 arma::vec roc(const arma::vec& cPrice){
@@ -49,7 +51,9 @@ int main(){
 	//CSV Structure: date, open, high,low,close,volume,average, barCount
 
 	arma::mat raw;
-	mlpack::data::Load("data/code/ohlc.csv",raw, true);
+	mlpack::data::Load("../data/ohlc.csv", raw, true);
+
+
 
 	std::cout.precision(15);
 	

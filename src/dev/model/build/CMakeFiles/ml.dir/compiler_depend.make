@@ -3,35 +3,6 @@
 
 CMakeFiles/ml.dir/ml.cpp.o: /home/atlas/code/Projects/SERAX_Forex_algo/src/dev/model/ml.cpp \
   /home/atlas/code/Projects/SERAX_Forex_algo/src/dev/model/objects/PRICE.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/attr.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/buffer_info.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/cast.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/conduit/pybind11_platform_abi_id.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/conduit/wrap_include_python_h.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/class.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/common.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/cpp_conduit.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/descr.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/dynamic_raw_ptr_cast_if_possible.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/exception_translation.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/function_record_pyobject.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/init.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/internals.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/native_enum_data.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/pybind11_namespace_macros.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/struct_smart_holder.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/type_caster_base.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/typeid.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/using_smart_holder.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/value_and_holder.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/gil.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/gil_safe_call_once.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/gil_simple.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/options.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/pybind11.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/pytypes.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/trampoline_self_life_support.h \
-  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/typing.h \
   /usr/include/alloca.h \
   /usr/include/armadillo \
   /usr/include/armadillo_bits/BaseCube_bones.hpp \
@@ -655,12 +626,8 @@ CMakeFiles/ml.dir/ml.cpp.o: /home/atlas/code/Projects/SERAX_Forex_algo/src/dev/m
   /usr/include/armadillo_bits/xtrans_mat_meat.hpp \
   /usr/include/armadillo_bits/xvec_htrans_bones.hpp \
   /usr/include/armadillo_bits/xvec_htrans_meat.hpp \
-  /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
-  /usr/include/asm-generic/int-ll64.h \
-  /usr/include/asm-generic/posix_types.h \
-  /usr/include/asm-generic/types.h \
   /usr/include/assert.h \
   /usr/include/c++/13/algorithm \
   /usr/include/c++/13/any \
@@ -694,8 +661,6 @@ CMakeFiles/ml.dir/ml.cpp.o: /home/atlas/code/Projects/SERAX_Forex_algo/src/dev/m
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
   /usr/include/c++/13/bits/exception_ptr.h \
-  /usr/include/c++/13/bits/forward_list.h \
-  /usr/include/c++/13/bits/forward_list.tcc \
   /usr/include/c++/13/bits/fstream.tcc \
   /usr/include/c++/13/bits/functexcept.h \
   /usr/include/c++/13/bits/functional_hash.h \
@@ -811,7 +776,6 @@ CMakeFiles/ml.dir/ml.cpp.o: /home/atlas/code/Projects/SERAX_Forex_algo/src/dev/m
   /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
-  /usr/include/c++/13/forward_list \
   /usr/include/c++/13/fstream \
   /usr/include/c++/13/functional \
   /usr/include/c++/13/initializer_list \
@@ -830,7 +794,6 @@ CMakeFiles/ml.dir/ml.cpp.o: /home/atlas/code/Projects/SERAX_Forex_algo/src/dev/m
   /usr/include/c++/13/mutex \
   /usr/include/c++/13/new \
   /usr/include/c++/13/numeric \
-  /usr/include/c++/13/optional \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/execution_defs.h \
   /usr/include/c++/13/pstl/glue_algorithm_defs.h \
@@ -870,7 +833,6 @@ CMakeFiles/ml.dir/ml.cpp.o: /home/atlas/code/Projects/SERAX_Forex_algo/src/dev/m
   /usr/include/c++/13/unordered_set \
   /usr/include/c++/13/utility \
   /usr/include/c++/13/vector \
-  /usr/include/c++/13/version \
   /usr/include/cereal/access.hpp \
   /usr/include/cereal/archives/binary.hpp \
   /usr/include/cereal/archives/json.hpp \
@@ -1171,10 +1133,6 @@ CMakeFiles/ml.dir/ml.cpp.o: /home/atlas/code/Projects/SERAX_Forex_algo/src/dev/m
   /usr/include/linux/close_range.h \
   /usr/include/linux/errno.h \
   /usr/include/linux/limits.h \
-  /usr/include/linux/posix_types.h \
-  /usr/include/linux/stat.h \
-  /usr/include/linux/stddef.h \
-  /usr/include/linux/types.h \
   /usr/include/locale.h \
   /usr/include/math.h \
   /usr/include/mlpack.hpp \
@@ -2080,117 +2038,6 @@ CMakeFiles/ml.dir/ml.cpp.o: /home/atlas/code/Projects/SERAX_Forex_algo/src/dev/m
   /usr/include/mlpack/namespace_compat.hpp \
   /usr/include/mlpack/prereqs.hpp \
   /usr/include/pthread.h \
-  /usr/include/python3.12/Python.h \
-  /usr/include/python3.12/abstract.h \
-  /usr/include/python3.12/bltinmodule.h \
-  /usr/include/python3.12/boolobject.h \
-  /usr/include/python3.12/bytearrayobject.h \
-  /usr/include/python3.12/bytesobject.h \
-  /usr/include/python3.12/ceval.h \
-  /usr/include/python3.12/codecs.h \
-  /usr/include/python3.12/compile.h \
-  /usr/include/python3.12/complexobject.h \
-  /usr/include/python3.12/cpython/abstract.h \
-  /usr/include/python3.12/cpython/bytearrayobject.h \
-  /usr/include/python3.12/cpython/bytesobject.h \
-  /usr/include/python3.12/cpython/cellobject.h \
-  /usr/include/python3.12/cpython/ceval.h \
-  /usr/include/python3.12/cpython/classobject.h \
-  /usr/include/python3.12/cpython/code.h \
-  /usr/include/python3.12/cpython/compile.h \
-  /usr/include/python3.12/cpython/complexobject.h \
-  /usr/include/python3.12/cpython/context.h \
-  /usr/include/python3.12/cpython/descrobject.h \
-  /usr/include/python3.12/cpython/dictobject.h \
-  /usr/include/python3.12/cpython/fileobject.h \
-  /usr/include/python3.12/cpython/fileutils.h \
-  /usr/include/python3.12/cpython/floatobject.h \
-  /usr/include/python3.12/cpython/frameobject.h \
-  /usr/include/python3.12/cpython/funcobject.h \
-  /usr/include/python3.12/cpython/genobject.h \
-  /usr/include/python3.12/cpython/import.h \
-  /usr/include/python3.12/cpython/initconfig.h \
-  /usr/include/python3.12/cpython/listobject.h \
-  /usr/include/python3.12/cpython/longintrepr.h \
-  /usr/include/python3.12/cpython/longobject.h \
-  /usr/include/python3.12/cpython/memoryobject.h \
-  /usr/include/python3.12/cpython/methodobject.h \
-  /usr/include/python3.12/cpython/modsupport.h \
-  /usr/include/python3.12/cpython/object.h \
-  /usr/include/python3.12/cpython/objimpl.h \
-  /usr/include/python3.12/cpython/odictobject.h \
-  /usr/include/python3.12/cpython/picklebufobject.h \
-  /usr/include/python3.12/cpython/pyctype.h \
-  /usr/include/python3.12/cpython/pydebug.h \
-  /usr/include/python3.12/cpython/pyerrors.h \
-  /usr/include/python3.12/cpython/pyfpe.h \
-  /usr/include/python3.12/cpython/pyframe.h \
-  /usr/include/python3.12/cpython/pylifecycle.h \
-  /usr/include/python3.12/cpython/pymem.h \
-  /usr/include/python3.12/cpython/pystate.h \
-  /usr/include/python3.12/cpython/pythonrun.h \
-  /usr/include/python3.12/cpython/pythread.h \
-  /usr/include/python3.12/cpython/pytime.h \
-  /usr/include/python3.12/cpython/setobject.h \
-  /usr/include/python3.12/cpython/sysmodule.h \
-  /usr/include/python3.12/cpython/traceback.h \
-  /usr/include/python3.12/cpython/tupleobject.h \
-  /usr/include/python3.12/cpython/unicodeobject.h \
-  /usr/include/python3.12/cpython/warnings.h \
-  /usr/include/python3.12/cpython/weakrefobject.h \
-  /usr/include/python3.12/descrobject.h \
-  /usr/include/python3.12/dictobject.h \
-  /usr/include/python3.12/enumobject.h \
-  /usr/include/python3.12/exports.h \
-  /usr/include/python3.12/fileobject.h \
-  /usr/include/python3.12/fileutils.h \
-  /usr/include/python3.12/floatobject.h \
-  /usr/include/python3.12/frameobject.h \
-  /usr/include/python3.12/genericaliasobject.h \
-  /usr/include/python3.12/import.h \
-  /usr/include/python3.12/intrcheck.h \
-  /usr/include/python3.12/iterobject.h \
-  /usr/include/python3.12/listobject.h \
-  /usr/include/python3.12/longobject.h \
-  /usr/include/python3.12/memoryobject.h \
-  /usr/include/python3.12/methodobject.h \
-  /usr/include/python3.12/modsupport.h \
-  /usr/include/python3.12/moduleobject.h \
-  /usr/include/python3.12/object.h \
-  /usr/include/python3.12/objimpl.h \
-  /usr/include/python3.12/osmodule.h \
-  /usr/include/python3.12/patchlevel.h \
-  /usr/include/python3.12/pybuffer.h \
-  /usr/include/python3.12/pycapsule.h \
-  /usr/include/python3.12/pyconfig.h \
-  /usr/include/python3.12/pyerrors.h \
-  /usr/include/python3.12/pyframe.h \
-  /usr/include/python3.12/pyhash.h \
-  /usr/include/python3.12/pylifecycle.h \
-  /usr/include/python3.12/pymacconfig.h \
-  /usr/include/python3.12/pymacro.h \
-  /usr/include/python3.12/pymath.h \
-  /usr/include/python3.12/pymem.h \
-  /usr/include/python3.12/pyport.h \
-  /usr/include/python3.12/pystate.h \
-  /usr/include/python3.12/pystats.h \
-  /usr/include/python3.12/pystrcmp.h \
-  /usr/include/python3.12/pystrtod.h \
-  /usr/include/python3.12/pythonrun.h \
-  /usr/include/python3.12/pythread.h \
-  /usr/include/python3.12/pytypedefs.h \
-  /usr/include/python3.12/rangeobject.h \
-  /usr/include/python3.12/setobject.h \
-  /usr/include/python3.12/sliceobject.h \
-  /usr/include/python3.12/structseq.h \
-  /usr/include/python3.12/sysmodule.h \
-  /usr/include/python3.12/traceback.h \
-  /usr/include/python3.12/tracemalloc.h \
-  /usr/include/python3.12/tupleobject.h \
-  /usr/include/python3.12/typeslots.h \
-  /usr/include/python3.12/unicodeobject.h \
-  /usr/include/python3.12/warnings.h \
-  /usr/include/python3.12/weakrefobject.h \
   /usr/include/rapidjson/allocators.h \
   /usr/include/rapidjson/document.h \
   /usr/include/rapidjson/encodedstream.h \
@@ -2229,11 +2076,7 @@ CMakeFiles/ml.dir/ml.cpp.o: /home/atlas/code/Projects/SERAX_Forex_algo/src/dev/m
   /usr/include/unistd.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
-  /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
   /usr/include/x86_64-linux-gnu/asm/errno.h \
-  /usr/include/x86_64-linux-gnu/asm/posix_types.h \
-  /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
-  /usr/include/x86_64-linux-gnu/asm/types.h \
   /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
   /usr/include/x86_64-linux-gnu/bits/byteswap.h \
   /usr/include/x86_64-linux-gnu/bits/confname.h \
@@ -2268,9 +2111,6 @@ CMakeFiles/ml.dir/ml.cpp.o: /home/atlas/code/Projects/SERAX_Forex_algo/src/dev/m
   /usr/include/x86_64-linux-gnu/bits/sched.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/setjmp.h \
-  /usr/include/x86_64-linux-gnu/bits/stat.h \
-  /usr/include/x86_64-linux-gnu/bits/statx-generic.h \
-  /usr/include/x86_64-linux-gnu/bits/statx.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
@@ -2278,7 +2118,6 @@ CMakeFiles/ml.dir/ml.cpp.o: /home/atlas/code/Projects/SERAX_Forex_algo/src/dev/m
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
-  /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/x86_64-linux-gnu/bits/time.h \
   /usr/include/x86_64-linux-gnu/bits/time64.h \
@@ -2303,8 +2142,6 @@ CMakeFiles/ml.dir/ml.cpp.o: /home/atlas/code/Projects/SERAX_Forex_algo/src/dev/m
   /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
@@ -2340,12 +2177,9 @@ CMakeFiles/ml.dir/ml.cpp.o: /home/atlas/code/Projects/SERAX_Forex_algo/src/dev/m
   /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
-  /usr/include/x86_64-linux-gnu/python3.12/pyconfig.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
-  /usr/include/x86_64-linux-gnu/sys/stat.h \
-  /usr/include/x86_64-linux-gnu/sys/time.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
@@ -2549,8 +2383,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/x86_64-linux-gnu/sys/types.h:
 
-/usr/include/x86_64-linux-gnu/sys/stat.h:
-
 /usr/include/x86_64-linux-gnu/sys/single_threaded.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
@@ -2567,19 +2399,19 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:
 
+/usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h:
+
 /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h:
 
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_statx.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
 
@@ -2599,9 +2431,9 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
-/usr/include/x86_64-linux-gnu/bits/stdint-least.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
-/usr/include/x86_64-linux-gnu/bits/statx-generic.h:
+/usr/include/x86_64-linux-gnu/bits/stdint-least.h:
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
@@ -2628,8 +2460,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/x86_64-linux-gnu/bits/byteswap.h:
 
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
-
-/usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
 
 /usr/include/wchar.h:
 
@@ -2667,125 +2497,17 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/rapidjson/allocators.h:
 
-/usr/include/python3.12/weakrefobject.h:
-
-/usr/include/python3.12/warnings.h:
-
-/usr/include/python3.12/unicodeobject.h:
-
-/usr/include/python3.12/typeslots.h:
-
-/usr/include/python3.12/tracemalloc.h:
-
-/usr/include/python3.12/sysmodule.h:
-
-/usr/include/python3.12/structseq.h:
-
-/usr/include/python3.12/rangeobject.h:
-
-/usr/include/python3.12/pytypedefs.h:
-
-/usr/include/python3.12/pystats.h:
-
-/usr/include/python3.12/pystate.h:
-
-/usr/include/python3.12/pymacro.h:
-
-/usr/include/python3.12/pyhash.h:
-
-/usr/include/python3.12/pyframe.h:
-
-/usr/include/python3.12/pyerrors.h:
-
-/usr/include/python3.12/pycapsule.h:
-
-/usr/include/python3.12/pybuffer.h:
-
-/usr/include/python3.12/osmodule.h:
-
-/usr/include/python3.12/objimpl.h:
-
-/usr/include/python3.12/methodobject.h:
-
-/usr/include/python3.12/memoryobject.h:
-
-/usr/include/python3.12/iterobject.h:
-
-/usr/include/python3.12/intrcheck.h:
-
-/usr/include/python3.12/genericaliasobject.h:
-
-/usr/include/python3.12/fileutils.h:
-
-/usr/include/python3.12/fileobject.h:
-
-/usr/include/python3.12/enumobject.h:
-
-/usr/include/python3.12/cpython/warnings.h:
-
-/usr/include/python3.12/cpython/setobject.h:
-
-/usr/include/python3.12/cpython/pystate.h:
-
-/usr/include/python3.12/cpython/pymem.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h:
-
-/usr/include/python3.12/cpython/picklebufobject.h:
-
-/usr/include/python3.12/cpython/odictobject.h:
-
-/usr/include/python3.12/cpython/objimpl.h:
-
-/usr/include/python3.12/cpython/object.h:
-
-/usr/include/python3.12/cpython/methodobject.h:
-
-/usr/include/python3.12/cpython/longobject.h:
-
-/usr/include/python3.12/cpython/listobject.h:
-
-/usr/include/python3.12/cpython/import.h:
-
-/usr/include/python3.12/cpython/frameobject.h:
-
-/usr/include/python3.12/cpython/fileutils.h:
-
-/usr/include/python3.12/cpython/fileobject.h:
-
-/usr/include/python3.12/cpython/descrobject.h:
-
-/usr/include/python3.12/cpython/context.h:
-
-/usr/include/python3.12/cpython/code.h:
-
-/usr/include/python3.12/cpython/classobject.h:
-
-/usr/include/python3.12/cpython/ceval.h:
-
-/usr/include/python3.12/complexobject.h:
-
-/usr/include/python3.12/compile.h:
-
-/usr/include/python3.12/boolobject.h:
-
-/usr/include/python3.12/Python.h:
-
 /usr/include/mlpack/namespace_compat.hpp:
 
 /usr/include/mlpack/methods/svdplusplus/svdplusplus_function_impl.hpp:
 
 /usr/include/mlpack/methods/svdplusplus/svdplusplus.hpp:
 
-/usr/include/python3.12/cpython/funcobject.h:
-
 /usr/include/mlpack/methods/svdplusplus.hpp:
 
 /usr/include/mlpack/methods/sparse_coding/sparse_coding.hpp:
 
 /usr/include/mlpack/methods/sparse_coding/random_initializer.hpp:
-
-/usr/include/python3.12/pystrtod.h:
 
 /usr/include/mlpack/methods/sparse_autoencoder/sparse_autoencoder_function_impl.hpp:
 
@@ -2835,8 +2557,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/mlpack/methods/regularized_svd/regularized_svd_function.hpp:
 
-/usr/include/x86_64-linux-gnu/python3.12/pyconfig.h:
-
 /usr/include/mlpack/methods/regularized_svd.hpp:
 
 /usr/include/mlpack/methods/rann/ra_typedef.hpp:
@@ -2881,6 +2601,8 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/mlpack/methods/pca/decomposition_policies/decomposition_policies.hpp:
 
+/usr/include/mlpack/methods/pca.hpp:
+
 /usr/include/mlpack/methods/nystroem_method/nystroem_method_impl.hpp:
 
 /usr/include/mlpack/methods/nystroem_method/nystroem_method.hpp:
@@ -2902,8 +2624,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/mlpack/methods/perceptron/perceptron.hpp:
 
 /usr/include/mlpack/methods/neighbor_search/sort_policies/furthest_neighbor_sort.hpp:
-
-/usr/include/python3.12/cpython/pyerrors.h:
 
 /usr/include/mlpack/methods/neighbor_search/neighbor_search_rules_impl.hpp:
 
@@ -3065,8 +2785,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
 
-/usr/include/python3.12/codecs.h:
-
 /usr/include/mlpack/methods/decision_tree/multiple_random_dimension_select.hpp:
 
 /usr/include/mlpack/methods/decision_tree/information_gain.hpp:
@@ -3081,8 +2799,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/mlpack/methods/decision_tree/best_binary_numeric_split.hpp:
 
-/usr/include/python3.12/pythonrun.h:
-
 /usr/include/mlpack/methods/decision_tree/all_categorical_split_impl.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
@@ -3090,8 +2806,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/mlpack/methods/dbscan/random_point_selection.hpp:
 
 /usr/include/mlpack/methods/dbscan/dbscan.hpp:
-
-/usr/include/python3.12/cpython/pydebug.h:
 
 /usr/include/mlpack/methods/cf/normalization/z_score_normalization.hpp:
 
@@ -3105,8 +2819,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/mlpack/methods/cf/decomposition_policies/svd_incomplete_method.hpp:
 
-/usr/include/python3.12/tupleobject.h:
-
 /usr/include/mlpack/methods/cf/decomposition_policies/regularized_svd_method.hpp:
 
 /usr/include/mlpack/methods/cf/decomposition_policies/randomized_svd_method.hpp:
@@ -3118,8 +2830,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/mlpack/methods/cf/decomposition_policies/decomposition_policies.hpp:
 
 /usr/include/mlpack/methods/cf/decomposition_policies/block_krylov_svd_method.hpp:
-
-/usr/include/python3.12/abstract.h:
 
 /usr/include/mlpack/methods/cf/decomposition_policies/batch_svd_method.hpp:
 
@@ -3195,8 +2905,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/mlpack/methods/ann/loss_functions/log_cosh_loss.hpp:
 
-/usr/include/python3.12/cpython/compile.h:
-
 /usr/include/mlpack/methods/ann/loss_functions/kl_divergence_impl.hpp:
 
 /usr/include/mlpack/methods/ann/loss_functions/kl_divergence.hpp:
@@ -3221,6 +2929,8 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/mlpack/methods/ann/loss_functions/earth_mover_distance.hpp:
 
+/usr/include/mlpack/methods/ann/loss_functions/dice_loss_impl.hpp:
+
 /usr/include/mlpack/methods/ann/loss_functions/binary_cross_entropy_loss.hpp:
 
 /usr/include/mlpack/methods/ann/layer/softmin.hpp:
@@ -3237,15 +2947,11 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/mlpack/methods/ann/layer/recurrent_layer_impl.hpp:
 
-/usr/include/python3.12/dictobject.h:
-
 /usr/include/mlpack/methods/ann/layer/recurrent_layer.hpp:
 
 /usr/include/mlpack/methods/ann/layer/radial_basis_function_impl.hpp:
 
 /usr/include/mlpack/methods/ann/layer/radial_basis_function.hpp:
-
-/usr/include/python3.12/pymacconfig.h:
 
 /usr/include/mlpack/methods/ann/layer/padding_impl.hpp:
 
@@ -3254,8 +2960,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/mlpack/methods/ann/layer/multihead_attention.hpp:
 
 /usr/include/mlpack/methods/ann/layer/multi_layer_impl.hpp:
-
-/usr/include/python3.12/cpython/traceback.h:
 
 /usr/include/mlpack/methods/ann/layer/multi_layer.hpp:
 
@@ -3285,8 +2989,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/mlpack/methods/ann/layer/ftswish_impl.hpp:
 
-/usr/include/python3.12/cpython/pyframe.h:
-
 /usr/include/mlpack/methods/ann/layer/flexible_relu_impl.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
@@ -3306,8 +3008,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/mlpack/methods/ann/layer/concat_impl.hpp:
 
 /usr/include/mlpack/methods/ann/layer/concat.hpp:
-
-/usr/include/python3.12/cpython/unicodeobject.h:
 
 /usr/include/mlpack/methods/ann/layer/c_relu_impl.hpp:
 
@@ -3427,8 +3127,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/mlpack/methods/amf/init_rules/average_init.hpp:
 
-/usr/include/python3.12/cpython/genobject.h:
-
 /usr/include/mlpack/methods/sparse_coding/nothing_initializer.hpp:
 
 /usr/include/mlpack/methods/random_forest/bootstrap.hpp:
@@ -3451,9 +3149,9 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/mlpack/core/util/to_lower.hpp:
 
-/usr/include/python3.12/pythread.h:
-
 /usr/include/mlpack/core/util/size_checks.hpp:
+
+/usr/include/mlpack/core/util/sfinae_utility.hpp:
 
 /usr/include/mlpack/core/util/program_doc.hpp:
 
@@ -3502,8 +3200,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/mlpack/methods/cf/decomposition_policies/svd_complete_method.hpp:
 
 /usr/include/mlpack/core/tree/space_split/mean_space_split_impl.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/struct_stat.h:
 
 /usr/include/mlpack/core/tree/space_split/mean_space_split.hpp:
 
@@ -3677,8 +3373,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/mlpack/core/tree/binary_space_tree/binary_space_tree_impl.hpp:
 
-/usr/include/python3.12/bltinmodule.h:
-
 /usr/include/mlpack/core/tree/binary_space_tree/binary_space_tree.hpp:
 
 /usr/include/mlpack/core/metrics/non_maximal_suppression_impl.hpp:
@@ -3765,6 +3459,10 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/mlpack/core/dists/regression_distribution_impl.hpp:
 
+/usr/include/mlpack/methods/ann/layer/celu_impl.hpp:
+
+/usr/include/mlpack/core/dists/laplace_distribution_impl.hpp:
+
 /usr/include/mlpack/core/dists/laplace_distribution.hpp:
 
 /usr/include/mlpack/methods/fastmks/fastmks_impl.hpp:
@@ -3841,6 +3539,10 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/mlpack/core/data/normalize_labels.hpp:
 
+/usr/include/mlpack/methods/ann/activation_functions/spline_function.hpp:
+
+/usr/include/mlpack/core/data/map_policies/missing_policy.hpp:
+
 /usr/include/mlpack/core/data/map_policies/map_policies.hpp:
 
 /usr/include/mlpack/core/data/map_policies/increment_policy.hpp:
@@ -3853,15 +3555,11 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/mlpack/core/data/load_model_impl.hpp:
 
-/usr/include/python3.12/cpython/abstract.h:
-
 /usr/include/mlpack/methods/dbscan.hpp:
 
 /usr/include/mlpack/methods/ann/loss_functions/negative_log_likelihood_impl.hpp:
 
 /usr/include/mlpack/core/data/load_arff_impl.hpp:
-
-/usr/include/x86_64-linux-gnu/sys/time.h:
 
 /usr/include/mlpack/prereqs.hpp:
 
@@ -3872,8 +3570,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/mlpack/core/data/imputation_methods/median_imputation.hpp:
 
 /usr/include/mlpack/core/data/imputation_methods/listwise_deletion.hpp:
-
-/usr/include/python3.12/listobject.h:
 
 /usr/include/mlpack/core/data/imputation_methods/imputation_methods.hpp:
 
@@ -3888,8 +3584,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/mlpack/methods/ann/layer/linear3d.hpp:
 
 /usr/include/mlpack/core/data/dataset_mapper_impl.hpp:
-
-/usr/include/python3.12/cpython/modsupport.h:
 
 /usr/include/mlpack/core/data/dataset_mapper.hpp:
 
@@ -3919,6 +3613,8 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/mlpack/core/cv/metrics/recall_impl.hpp:
 
+/usr/include/mlpack/core/cv/metrics/recall.hpp:
+
 /usr/include/mlpack/core/cv/metrics/r2_score_impl.hpp:
 
 /usr/include/mlpack/core/cv/metrics/precision_impl.hpp:
@@ -3942,6 +3638,8 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/mlpack/core/cv/metrics/f1.hpp:
 
 /usr/include/mlpack/core/cv/metrics/accuracy_impl.hpp:
+
+/usr/include/mlpack/core/cv/metrics/accuracy.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
@@ -3975,18 +3673,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/locale.h:
 
-/usr/include/linux/types.h:
-
-/usr/include/linux/stddef.h:
-
-/usr/include/linux/stat.h:
-
-/usr/include/mlpack/methods/ann/activation_functions/spline_function.hpp:
-
-/usr/include/mlpack/core/data/map_policies/missing_policy.hpp:
-
-/usr/include/linux/posix_types.h:
-
 /usr/include/linux/errno.h:
 
 /usr/include/limits.h:
@@ -4002,8 +3688,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/mlpack/methods/ann/init_rules/nguyen_widrow_init.hpp:
 
 /usr/include/features.h:
-
-/usr/include/python3.12/cpython/memoryobject.h:
 
 /usr/include/errno.h:
 
@@ -4033,71 +3717,63 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/ensmallen_bits/svrg/svrg_update.hpp:
 
-/usr/include/mlpack/methods/sparse_autoencoder/sparse_autoencoder_impl.hpp:
+/usr/include/armadillo_bits/spglue_minus_meat.hpp:
 
-/usr/include/mlpack/core/kernels/linear_kernel.hpp:
+/usr/include/armadillo_bits/op_log_det_meat.hpp:
 
-/usr/include/ensmallen_bits/svrg/svrg_impl.hpp:
+/usr/include/armadillo_bits/op_rank_bones.hpp:
 
-/usr/include/ensmallen_bits/svrg/svrg.hpp:
+/usr/include/armadillo_bits/spglue_minus_bones.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/wchar.h:
+/usr/include/armadillo_bits/spglue_min_meat.hpp:
 
-/usr/include/mlpack/core/tree/rectangle_tree.hpp:
+/usr/include/mlpack/methods/ann/layer/elu.hpp:
 
-/usr/include/mlpack/core/cereal/array_wrapper.hpp:
+/usr/include/armadillo_bits/spglue_merge_meat.hpp:
 
-/usr/include/ensmallen_bits/spalera_sgd/spalera_sgd_impl.hpp:
+/usr/include/armadillo_bits/glue_mixed_bones.hpp:
 
-/usr/include/ensmallen_bits/spalera_sgd/spalera_sgd.hpp:
+/usr/include/mlpack/methods/perceptron/initialization_methods/initialization_methods.hpp:
 
-/usr/include/ensmallen_bits/smorms3/smorms3_impl.hpp:
+/usr/include/mlpack/methods/pca/pca.hpp:
 
-/usr/include/ensmallen_bits/sgdr/snapshot_sgdr_impl.hpp:
+/usr/include/mlpack/core/tree/binary_space_tree/rp_tree_mean_split.hpp:
 
-/usr/include/ensmallen_bits/sgdr/sgdr.hpp:
+/usr/include/armadillo_bits/glue_join_meat.hpp:
 
-/usr/include/ensmallen_bits/sgd/update_policies/vanilla_update.hpp:
+/usr/include/armadillo_bits/spop_mean_meat.hpp:
 
-/usr/include/ensmallen_bits/sgd/update_policies/momentum_update.hpp:
+/usr/include/armadillo_bits/spglue_max_meat.hpp:
 
-/usr/include/ensmallen_bits/sgd/update_policies/gradient_clipping.hpp:
+/usr/include/armadillo_bits/op_powmat_bones.hpp:
 
-/usr/include/python3.12/import.h:
+/usr/include/mlpack/core/math/shuffle_data.hpp:
 
-/usr/include/mlpack/methods/preprocess/scaling_model.hpp:
+/usr/include/armadillo_bits/spglue_max_bones.hpp:
 
-/usr/include/mlpack/methods/amf/update_rules/nmf_mult_dist.hpp:
+/usr/include/armadillo_bits/spglue_kron_bones.hpp:
 
-/usr/include/ensmallen_bits/sgd/sgd_impl.hpp:
+/usr/include/armadillo_bits/spdiagview_meat.hpp:
 
-/usr/include/ensmallen_bits/sgd/sgd.hpp:
+/usr/include/armadillo_bits/span.hpp:
 
-/usr/include/mlpack/core/tree/hollow_ball_bound.hpp:
+/usr/include/armadillo_bits/sp_auxlib_meat.hpp:
 
-/usr/include/ensmallen_bits/sdp/sdp_impl.hpp:
+/usr/include/mlpack/methods/ann/dists/normal_distribution_impl.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
+/usr/include/mlpack/core/tree/cover_tree/single_tree_traverser.hpp:
 
-/usr/include/ensmallen_bits/sdp/sdp.hpp:
+/usr/include/armadillo_bits/running_stat_vec_meat.hpp:
 
-/usr/include/mlpack/methods/regularized_svd/regularized_svd.hpp:
+/usr/include/mlpack/methods/amf/init_rules/random_acol_init.hpp:
 
-/usr/include/ensmallen_bits/sdp/primal_dual_impl.hpp:
+/usr/include/armadillo_bits/restrictors.hpp:
 
-/usr/include/mlpack/methods/cf/interpolation_policies/average_interpolation.hpp:
+/usr/include/armadillo_bits/fn_range.hpp:
 
-/usr/include/ensmallen_bits/sdp/primal_dual.hpp:
+/usr/include/mlpack/methods/ann/layer/linear.hpp:
 
-/usr/include/ensmallen_bits/sdp/lrsdp_impl.hpp:
-
-/usr/include/ensmallen_bits/sdp/lrsdp_function_impl.hpp:
-
-/usr/include/ensmallen_bits/sdp/lrsdp_function.hpp:
-
-/usr/include/mlpack/core/cv/cv_base.hpp:
-
-/usr/include/ensmallen_bits/sdp/lin_alg.hpp:
+/usr/include/armadillo_bits/promote_type.hpp:
 
 /usr/include/armadillo_bits/operator_minus.hpp:
 
@@ -4110,8 +3786,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/mlpack/methods/ann/layer/add_merge_impl.hpp:
 
 /usr/include/armadillo_bits/fn_quantile.hpp:
-
-/usr/include/x86_64-linux-gnu/asm/posix_types.h:
 
 /usr/include/rapidjson/error/error.h:
 
@@ -4131,13 +3805,15 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/op_unique_meat.hpp:
 
-/usr/include/armadillo_bits/fn_wishrnd.hpp:
-
 /usr/include/mlpack/methods/gmm/no_constraint.hpp:
 
 /usr/include/armadillo_bits/def_superlu.hpp:
 
 /usr/include/armadillo_bits/fn_randg.hpp:
+
+/usr/include/armadillo_bits/fn_wishrnd.hpp:
+
+/usr/include/armadillo_bits/spglue_kron_meat.hpp:
 
 /usr/include/mlpack/core/hpt/cv_function.hpp:
 
@@ -4145,7 +3821,11 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/subview_field_bones.hpp:
 
-/usr/include/python3.12/cpython/bytesobject.h:
+/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
+
+/usr/include/armadillo_bits/op_inv_spd_bones.hpp:
+
+/usr/include/armadillo_bits/op_sp_plus_meat.hpp:
 
 /usr/include/mlpack/core/dists/dists.hpp:
 
@@ -4185,6 +3865,10 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/GlueCube_meat.hpp:
 
+/usr/include/mlpack/core/cv/metrics/mse.hpp:
+
+/usr/include/armadillo_bits/op_range_bones.hpp:
+
 /usr/include/armadillo_bits/op_princomp_bones.hpp:
 
 /usr/include/armadillo_bits/op_var_bones.hpp:
@@ -4196,10 +3880,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/armadillo_bits/op_powmat_meat.hpp:
 
 /usr/include/c++/13/bits/invoke.h:
-
-/usr/include/armadillo_bits/op_powmat_bones.hpp:
-
-/usr/include/armadillo_bits/spglue_max_meat.hpp:
 
 /usr/include/armadillo_bits/op_unique_bones.hpp:
 
@@ -4215,17 +3895,9 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/fn_unique.hpp:
 
-/usr/include/python3.12/cpython/weakrefobject.h:
-
 /usr/include/c++/13/ratio:
 
-/usr/include/python3.12/longobject.h:
-
 /usr/include/armadillo_bits/op_normalise_bones.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
-
-/usr/include/c++/13/forward_list:
 
 /usr/include/mlpack/methods/naive_bayes/naive_bayes_classifier_impl.hpp:
 
@@ -4249,17 +3921,7 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/ensmallen_bits/grid_search/grid_search_impl.hpp:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
-
-/usr/include/armadillo_bits/op_inv_spd_bones.hpp:
-
 /usr/include/armadillo_bits/op_inv_gen_meat.hpp:
-
-/usr/include/armadillo_bits/op_log_det_meat.hpp:
-
-/usr/include/armadillo_bits/op_rank_bones.hpp:
-
-/usr/include/armadillo_bits/spglue_minus_meat.hpp:
 
 /usr/include/mlpack/methods/amf/amf_impl.hpp:
 
@@ -4268,6 +3930,12 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/armadillo_bits/op_index_min_meat.hpp:
 
 /usr/include/armadillo_bits/op_princomp_meat.hpp:
+
+/usr/include/mlpack/methods/sparse_autoencoder/sparse_autoencoder_impl.hpp:
+
+/usr/include/mlpack/core/kernels/linear_kernel.hpp:
+
+/usr/include/ensmallen_bits/svrg/svrg_impl.hpp:
 
 /usr/include/mlpack/methods/ann/layer/padding.hpp:
 
@@ -4285,6 +3953,20 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/typedef_elem.hpp:
 
+/usr/include/armadillo_bits/operator_schur.hpp:
+
+/usr/include/armadillo_bits/op_norm_bones.hpp:
+
+/usr/include/armadillo_bits/spop_norm_meat.hpp:
+
+/usr/include/armadillo_bits/fn_speye.hpp:
+
+/usr/include/cereal/access.hpp:
+
+/usr/include/mlpack/methods/cf/interpolation_policies/average_interpolation.hpp:
+
+/usr/include/ensmallen_bits/sdp/primal_dual.hpp:
+
 /usr/include/armadillo_bits/op_hist_meat.hpp:
 
 /usr/include/armadillo_bits/op_mean_bones.hpp:
@@ -4301,6 +3983,12 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/op_flip_meat.hpp:
 
+/usr/include/mlpack/methods/ann/layer/hard_tanh.hpp:
+
+/usr/include/armadillo_bits/fn_princomp.hpp:
+
+/usr/include/ensmallen_bits/cmaes/active_cmaes_impl.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/time.h:
 
 /usr/include/armadillo_bits/op_dot_bones.hpp:
@@ -4313,15 +4001,13 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/op_stddev_bones.hpp:
 
+/usr/include/ensmallen_bits/sgdr/sgdr.hpp:
+
 /usr/include/mlpack/methods/reinforcement_learning/td3.hpp:
 
 /usr/include/armadillo_bits/op_cx_scalar_meat.hpp:
 
 /usr/include/armadillo_bits/op_cumprod_meat.hpp:
-
-/usr/include/ensmallen_bits/spsa/spsa.hpp:
-
-/usr/include/ensmallen_bits/bigbatch_sgd/backtracking_line_search.hpp:
 
 /usr/include/armadillo_bits/op_norm2est_bones.hpp:
 
@@ -4347,6 +4033,10 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/op_col_as_mat_meat.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/usr/include/armadillo_bits/op_max_meat.hpp:
+
 /usr/include/armadillo_bits/op_any_meat.hpp:
 
 /usr/include/mlpack/methods/kmeans/random_partition.hpp:
@@ -4357,8 +4047,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/ensmallen_bits/moead/weight_init_policies/uniform_init.hpp:
 
-/usr/include/python3.12/cpython/pytime.h:
-
 /usr/include/ensmallen_bits/problems/rosenbrock_wood_function_impl.hpp:
 
 /usr/include/ensmallen_bits/fw/frank_wolfe.hpp:
@@ -4367,7 +4055,9 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/op_all_bones.hpp:
 
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/trampoline_self_life_support.h:
+/usr/include/armadillo_bits/gmm_full_meat.hpp:
+
+/usr/include/c++/13/bits/uses_allocator_args.h:
 
 /usr/include/ensmallen_bits/problems/three_hump_camel_function.hpp:
 
@@ -4387,15 +4077,15 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/def_blas.hpp:
 
-/usr/include/mlpack/methods/ann/loss_functions/dice_loss_impl.hpp:
-
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/attr.h:
-
 /usr/include/armadillo_bits/newarp_SymEigsShiftSolver_bones.hpp:
 
 /usr/include/mlpack/core/kernels/hyperbolic_tangent_kernel.hpp:
 
 /usr/include/armadillo_bits/fn_join.hpp:
+
+/usr/include/armadillo_bits/newarp_SparseGenRealShiftSolve_meat.hpp:
+
+/usr/include/ensmallen_bits/sdp/lrsdp_impl.hpp:
 
 /usr/include/armadillo_bits/op_wishrnd_bones.hpp:
 
@@ -4429,6 +4119,26 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/newarp_DenseGenMatProd_meat.hpp:
 
+/usr/include/armadillo_bits/mul_syrk.hpp:
+
+/usr/include/mlpack/methods/ann/loss_functions/margin_ranking_loss_impl.hpp:
+
+/usr/include/mlpack/methods/ann/augmented/tasks/sort_impl.hpp:
+
+/usr/include/mlpack/core/tree/binary_space_tree/vantage_point_split.hpp:
+
+/usr/include/ensmallen_bits/eve/eve.hpp:
+
+/usr/include/armadillo_bits/spglue_join_bones.hpp:
+
+/usr/include/c++/13/bits/fstream.tcc:
+
+/usr/include/mlpack/methods/local_coordinate_coding/lcc.hpp:
+
+/usr/include/mlpack/methods/ann/layer/softmax.hpp:
+
+/usr/include/armadillo_bits/mul_gemv.hpp:
+
 /usr/include/armadillo_bits/op_shuffle_bones.hpp:
 
 /usr/include/mlpack/methods/ann/init_rules/oivs_init.hpp:
@@ -4456,14 +4166,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/armadillo_bits/fn_repmat.hpp:
 
 /usr/include/armadillo_bits/op_mean_meat.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
-
-/usr/include/mlpack/methods/sparse_autoencoder/sparse_autoencoder.hpp:
-
-/usr/include/ensmallen_bits/smorms3/smorms3.hpp:
-
-/usr/include/armadillo_bits/mtOp_bones.hpp:
 
 /usr/include/armadillo_bits/arma_version.hpp:
 
@@ -4497,9 +4199,19 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/def_arpack.hpp:
 
-/usr/include/armadillo_bits/gmm_full_meat.hpp:
+/usr/include/c++/13/sstream:
 
-/usr/include/c++/13/bits/uses_allocator_args.h:
+/usr/include/armadillo_bits/op_misc_bones.hpp:
+
+/usr/include/c++/13/exception:
+
+/usr/include/mlpack/core/data/string_encoding_policies/tf_idf_encoding_policy.hpp:
+
+/usr/include/ensmallen_bits/problems/cross_in_tray_function.hpp:
+
+/usr/include/armadillo_bits/glue_trapz_meat.hpp:
+
+/usr/include/armadillo_bits/SpOp_bones.hpp:
 
 /usr/include/armadillo_bits/glue_trapz_bones.hpp:
 
@@ -4510,6 +4222,8 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/rapidjson/internal/swap.h:
 
 /usr/include/ensmallen_bits/problems/eggholder_function.hpp:
+
+/usr/include/armadillo_bits/glue_times_bones.hpp:
 
 /usr/include/mlpack/methods/ann/augmented/tasks/tasks.hpp:
 
@@ -4527,8 +4241,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/c++/13/bits/stl_algo.h:
 
-/usr/include/python3.12/cpython/cellobject.h:
-
 /usr/include/mlpack/methods/ann/rnn.hpp:
 
 /usr/include/armadillo_bits/glue_solve_bones.hpp:
@@ -4538,12 +4250,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/armadillo_bits/SpSubview_col_list_meat.hpp:
 
 /usr/include/armadillo_bits/mtGlue_meat.hpp:
-
-/usr/include/mlpack/methods/ann/activation_functions/elish_function.hpp:
-
-/usr/include/ensmallen_bits/sgd/update_policies/nesterov_momentum_update.hpp:
-
-/usr/include/armadillo_bits/glue_powext_meat.hpp:
 
 /usr/include/mlpack/methods/rann/ra_search.hpp:
 
@@ -4566,22 +4272,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/cereal/types/utility.hpp:
 
 /usr/include/armadillo_bits/Col_bones.hpp:
-
-/usr/include/armadillo_bits/glue_mixed_bones.hpp:
-
-/usr/include/x86_64-linux-gnu/asm/types.h:
-
-/usr/include/python3.12/cpython/initconfig.h:
-
-/usr/include/mlpack/methods/perceptron/initialization_methods/initialization_methods.hpp:
-
-/usr/include/mlpack/methods/pca/pca.hpp:
-
-/usr/include/mlpack/core/tree/binary_space_tree/rp_tree_mean_split.hpp:
-
-/usr/include/armadillo_bits/glue_join_meat.hpp:
-
-/usr/include/armadillo_bits/spop_mean_meat.hpp:
 
 /usr/include/armadillo_bits/sp_auxlib_bones.hpp:
 
@@ -4617,8 +4307,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/glue_histc_meat.hpp:
 
-/usr/include/python3.12/floatobject.h:
-
 /usr/include/mlpack/methods/ann/loss_functions/log_cosh_loss_impl.hpp:
 
 /usr/include/mlpack/core/math/range_impl.hpp:
@@ -4633,51 +4321,9 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/glue_hist_bones.hpp:
 
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/init.h:
-
 /usr/include/ensmallen_bits/problems/mc_cormick_function_impl.hpp:
 
 /usr/include/armadillo_bits/glue_cross_bones.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
-
-/usr/include/armadillo_bits/glue_cor_meat.hpp:
-
-/usr/include/armadillo_bits/glue_cor_bones.hpp:
-
-/usr/include/armadillo_bits/glue_conv_meat.hpp:
-
-/usr/include/mlpack/methods/cf/neighbor_search_policies/cosine_search.hpp:
-
-/usr/include/ensmallen_bits/nsga2/nsga2_impl.hpp:
-
-/usr/include/mlpack/core/tree/ballbound_impl.hpp:
-
-/usr/include/c++/13/bits/std_function.h:
-
-/usr/include/ensmallen_bits/aug_lagrangian/aug_lagrangian_function_impl.hpp:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/opt_random.h:
-
-/usr/include/armadillo_bits/fn_randn.hpp:
-
-/usr/include/armadillo_bits/glue_affmul_meat.hpp:
-
-/usr/include/mlpack/methods/reinforcement_learning/noise/noise.hpp:
-
-/usr/include/c++/13/cstdio:
-
-/usr/include/armadillo_bits/glue_times_bones.hpp:
-
-/usr/include/armadillo_bits/fn_trunc_log.hpp:
-
-/usr/include/armadillo_bits/gmm_misc_bones.hpp:
-
-/usr/include/armadillo_bits/fn_vecnorm.hpp:
-
-/usr/include/armadillo_bits/fn_median.hpp:
-
-/usr/include/armadillo_bits/op_shuffle_meat.hpp:
 
 /usr/include/armadillo_bits/op_expmat_bones.hpp:
 
@@ -4685,75 +4331,63 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/Cube_meat.hpp:
 
-/usr/include/python3.12/cpython/sysmodule.h:
-
 /usr/include/c++/13/bits/stl_stack.h:
 
 /usr/include/c++/13/initializer_list:
 
-/usr/include/armadillo_bits/spglue_kron_bones.hpp:
+/usr/include/armadillo_bits/fn_trunc_log.hpp:
 
-/usr/include/armadillo_bits/fn_trimat.hpp:
+/usr/include/mlpack/methods/neighbor_search/unmap.hpp:
 
-/usr/include/python3.12/cpython/bytearrayobject.h:
+/usr/include/armadillo_bits/fft_engine_kissfft.hpp:
 
-/usr/include/armadillo_bits/op_chi2rnd_meat.hpp:
+/usr/include/armadillo_bits/def_fftw3.hpp:
 
-/usr/include/ensmallen_bits/svrg/barzilai_borwein_decay.hpp:
+/usr/include/mlpack/methods/amf.hpp:
 
-/usr/include/armadillo_bits/fn_trimat_ind.hpp:
+/usr/include/armadillo_bits/constants_old.hpp:
 
-/usr/include/armadillo_bits/newarp_cx_attrib.hpp:
+/usr/include/mlpack/core/tree/rectangle_tree/x_tree_split_impl.hpp:
 
-/usr/include/c++/13/bits/this_thread_sleep.h:
+/usr/include/armadillo_bits/fn_sprandn.hpp:
 
-/usr/include/mlpack/methods/ann/layer/c_relu.hpp:
+/usr/include/armadillo_bits/fft_engine_fftw3.hpp:
 
-/usr/include/armadillo_bits/op_vecnorm_meat.hpp:
+/usr/include/mlpack/methods/reinforcement_learning/replay/sumtree.hpp:
 
-/usr/include/python3.12/cpython/pyfpe.h:
+/usr/include/armadillo_bits/fn_diagmat.hpp:
 
-/usr/include/ensmallen_bits/adam/adamax_update.hpp:
+/usr/include/armadillo_bits/eop_core_bones.hpp:
 
-/usr/include/mlpack/core/math/shuffle_data.hpp:
+/usr/include/mlpack/methods/ann/layer/grouped_convolution.hpp:
 
-/usr/include/armadillo_bits/spglue_max_bones.hpp:
+/usr/include/ensmallen_bits/problems/styblinski_tang_function_impl.hpp:
 
-/usr/include/armadillo_bits/op_find_unique_bones.hpp:
+/usr/include/armadillo_bits/gmm_full_bones.hpp:
 
-/usr/include/armadillo_bits/fn_sylvester.hpp:
+/usr/include/armadillo_bits/arma_config.hpp:
 
-/usr/include/mlpack/core/tree/cover_tree/cover_tree.hpp:
+/usr/include/c++/13/pstl/glue_numeric_defs.h:
 
-/usr/include/armadillo_bits/op_diff_bones.hpp:
+/usr/include/armadillo_bits/SizeMat_bones.hpp:
 
-/usr/include/armadillo_bits/op_sum_meat.hpp:
+/usr/include/armadillo_bits/newarp_SymEigsSolver_meat.hpp:
 
-/usr/include/python3.12/bytearrayobject.h:
+/usr/include/armadillo_bits/spop_repmat_bones.hpp:
 
-/usr/include/armadillo_bits/op_find_bones.hpp:
+/usr/include/armadillo_bits/op_cov_bones.hpp:
 
-/usr/include/mlpack/core/cv/metrics/average_strategy.hpp:
+/usr/include/armadillo_bits/SpSubview_col_list_bones.hpp:
 
-/usr/include/armadillo_bits/operator_relational.hpp:
+/usr/include/armadillo_bits/SpRow_meat.hpp:
 
-/usr/include/ensmallen_bits/cd/descent_policies/random_descent.hpp:
+/usr/include/mlpack/methods/reinforcement_learning/replay/random_replay.hpp:
 
-/usr/include/mlpack/core/tree/octree.hpp:
+/usr/include/ensmallen_bits/katyusha/katyusha_impl.hpp:
 
-/usr/include/armadillo_bits/newarp_GenEigsSolver_bones.hpp:
+/usr/include/mlpack/core/kernels/pspectrum_string_kernel.hpp:
 
-/usr/include/mlpack/core/cereal/pointer_vector_wrapper.hpp:
-
-/usr/include/armadillo_bits/fn_sum.hpp:
-
-/usr/include/mlpack/core/data/image_info.hpp:
-
-/usr/include/mlpack/core/cv/metrics/r2_score.hpp:
-
-/usr/include/c++/13/tr1/hypergeometric.tcc:
-
-/usr/include/c++/13/bits/locale_facets.h:
+/usr/include/armadillo_bits/eglue_core_meat.hpp:
 
 /usr/include/mlpack/core/tree/octree/dual_tree_traverser_impl.hpp:
 
@@ -4767,22 +4401,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/c++/13/bits/stl_set.h:
 
-/usr/include/armadillo_bits/def_fftw3.hpp:
-
-/usr/include/mlpack/methods/amf.hpp:
-
-/usr/include/armadillo_bits/constants_old.hpp:
-
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/cast.h:
-
-/usr/include/ensmallen_bits/problems/generalized_rosenbrock_function.hpp:
-
-/usr/include/c++/13/bits/allocated_ptr.h:
-
-/usr/include/mlpack/methods/neighbor_search/unmap.hpp:
-
-/usr/include/armadillo_bits/fft_engine_kissfft.hpp:
-
 /usr/include/mlpack/methods/nca.hpp:
 
 /usr/include/armadillo_bits/glue_hypot_bones.hpp:
@@ -4793,37 +4411,75 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/SizeMat_meat.hpp:
 
+/usr/include/armadillo_bits/def_atlas.hpp:
+
+/usr/include/armadillo_bits/glue_kron_meat.hpp:
+
+/usr/include/armadillo_bits/op_find_meat.hpp:
+
+/usr/include/cereal/details/static_object.hpp:
+
+/usr/include/mlpack/methods/kde/kde_rules.hpp:
+
+/usr/include/armadillo_bits/fn_polyval.hpp:
+
+/usr/include/mlpack/core/tree/cover_tree/single_tree_traverser_impl.hpp:
+
+/usr/include/mlpack/core/tree/binary_space_tree/rp_tree_max_split.hpp:
+
+/usr/include/armadillo_bits/Base_meat.hpp:
+
+/usr/include/armadillo_bits/eop_core_meat.hpp:
+
+/usr/include/mlpack/core/tree/space_split/midpoint_space_split_impl.hpp:
+
+/usr/include/mlpack/core/data/save_image_impl.hpp:
+
+/usr/include/armadillo_bits/op_vectorise_meat.hpp:
+
+/usr/include/armadillo_bits/fn_eigs_gen.hpp:
+
+/usr/include/mlpack/methods/regularized_svd/regularized_svd_function_impl.hpp:
+
+/usr/include/armadillo_bits/op_resize_meat.hpp:
+
+/usr/include/armadillo_bits/mtSpOp_meat.hpp:
+
+/usr/include/armadillo_bits/SpToDGlue_meat.hpp:
+
+/usr/include/c++/13/bits/stl_relops.h:
+
 /usr/include/armadillo_bits/Col_meat.hpp:
 
 /usr/include/armadillo_bits/glue_mixed_meat.hpp:
 
 /usr/include/armadillo_bits/eGlueCube_meat.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+/usr/include/armadillo_bits/op_trimat_meat.hpp:
 
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/native_enum_data.h:
+/usr/include/armadillo_bits/fn_powmat.hpp:
 
 /usr/include/armadillo_bits/op_vectorise_bones.hpp:
 
 /usr/include/armadillo_bits/constants.hpp:
-
-/usr/include/mlpack/methods/ann/ffn_impl.hpp:
-
-/usr/include/mlpack/core/tree/rectangle_tree/r_star_tree_split_impl.hpp:
-
-/usr/include/armadillo_bits/mtOp_meat.hpp:
-
-/usr/include/armadillo_bits/CubeToMatOp_bones.hpp:
-
-/usr/include/armadillo_bits/glue_cov_bones.hpp:
-
-/usr/include/armadillo_bits/fn_intersect.hpp:
 
 /usr/include/armadillo_bits/fn_sqrtmat.hpp:
 
 /usr/include/armadillo_bits/cond_rel_meat.hpp:
 
 /usr/include/armadillo_bits/fn_histc.hpp:
+
+/usr/include/ensmallen_bits/svrg/svrg.hpp:
+
+/usr/include/armadillo_bits/SpGlue_bones.hpp:
+
+/usr/include/armadillo_bits/spglue_times_bones.hpp:
+
+/usr/include/mlpack/methods/preprocess/scaling_model.hpp:
+
+/usr/include/mlpack/methods/amf/update_rules/nmf_mult_dist.hpp:
+
+/usr/include/ensmallen_bits/sgd/sgd_impl.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
@@ -4833,21 +4489,19 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/cond_rel_bones.hpp:
 
+/usr/include/mlpack/methods/cf/normalization/overall_mean_normalization.hpp:
+
+/usr/include/armadillo_bits/newarp_SymEigsSolver_bones.hpp:
+
 /usr/include/armadillo_bits/compiler_setup.hpp:
 
 /usr/include/armadillo_bits/fn_spones.hpp:
-
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/buffer_info.h:
 
 /usr/include/mlpack/methods/nmf.hpp:
 
 /usr/include/armadillo_bits/Op_meat.hpp:
 
 /usr/include/armadillo_bits/fn_sort_index.hpp:
-
-/usr/include/ensmallen_bits/wn_grad/wn_grad_update.hpp:
-
-/usr/include/armadillo_bits/glue_polyval_meat.hpp:
 
 /usr/include/mlpack/methods/bias_svd/bias_svd.hpp:
 
@@ -4875,17 +4529,15 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/ensmallen_bits/moead/decomposition_policies/pbi_decomposition.hpp:
 
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/class.h:
-
-/usr/include/armadillo_bits/eop_core_bones.hpp:
-
-/usr/include/mlpack/methods/ann/layer/grouped_convolution.hpp:
-
-/usr/include/ensmallen_bits/problems/styblinski_tang_function_impl.hpp:
-
 /usr/include/ensmallen_bits/function/add_gradient.hpp:
 
 /usr/include/armadillo_bits/arma_str.hpp:
+
+/usr/include/armadillo_bits/glue_affmul_meat.hpp:
+
+/usr/include/mlpack/methods/reinforcement_learning/noise/noise.hpp:
+
+/usr/include/c++/13/cstdio:
 
 /usr/include/armadillo_bits/arma_rng.hpp:
 
@@ -4893,33 +4545,35 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/fill.hpp:
 
+/usr/include/armadillo_bits/arma_rel_comparators.hpp:
+
+/usr/include/mlpack/core/data/load_image_impl.hpp:
+
+/usr/include/c++/13/ext/aligned_buffer.h:
+
+/usr/include/ensmallen_bits/cmaes/random_selection.hpp:
+
 /usr/include/armadillo_bits/unwrap_spmat.hpp:
 
-/usr/include/armadillo_bits/arma_config.hpp:
+/usr/include/mlpack/methods/sparse_autoencoder/maximal_inputs.hpp:
 
-/usr/include/armadillo_bits/gmm_full_bones.hpp:
+/usr/include/armadillo_bits/SpValProxy_meat.hpp:
 
 /usr/include/ensmallen_bits/moead/decomposition_policies/tchebycheff_decomposition.hpp:
 
 /usr/include/armadillo_bits/access.hpp:
 
-/usr/include/armadillo_bits/fn_cumsum.hpp:
+/usr/include/mlpack/methods/ann/layer/c_relu.hpp:
 
-/usr/include/armadillo_bits/glue_times_misc_bones.hpp:
+/usr/include/armadillo_bits/op_vecnorm_meat.hpp:
 
-/usr/include/mlpack/methods/ann/ffn.hpp:
+/usr/include/ensmallen_bits/adam/adamax_update.hpp:
 
-/usr/include/ensmallen_bits/problems/beale_function.hpp:
+/usr/include/armadillo_bits/fn_diagvec.hpp:
 
-/usr/include/mlpack/methods/decision_tree/mad_gain.hpp:
+/usr/include/mlpack/core/tree/spill_tree/typedef.hpp:
 
-/usr/include/armadillo_bits/SpToDOp_meat.hpp:
-
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/gil_simple.h:
-
-/usr/include/ensmallen_bits/sgdr/cyclical_decay.hpp:
-
-/usr/include/armadillo_bits/glue_max_meat.hpp:
+/usr/include/armadillo_bits/Mat_bones.hpp:
 
 /usr/include/mlpack/core/util/deprecated.hpp:
 
@@ -4939,71 +4593,57 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/c++/13/tr1/poly_hermite.tcc:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
-
-/usr/include/armadillo_bits/op_max_meat.hpp:
-
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/conduit/wrap_include_python_h.h:
-
 /usr/include/armadillo_bits/OpCube_bones.hpp:
 
 /usr/include/armadillo_bits/spglue_plus_bones.hpp:
 
 /usr/include/ensmallen_bits/problems/zdt/zdt2_function.hpp:
 
-/usr/include/armadillo_bits/SpToDGlue_meat.hpp:
+/usr/include/mlpack/core/tree/rectangle_tree/rectangle_tree.hpp:
 
-/usr/include/c++/13/bits/stl_relops.h:
+/usr/include/armadillo_bits/fn_chol.hpp:
 
-/usr/include/armadillo_bits/SpRow_meat.hpp:
+/usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h:
 
-/usr/include/armadillo_bits/fn_powmat.hpp:
+/usr/include/mlpack/methods/ann/layer/concatenate_impl.hpp:
 
-/usr/include/armadillo_bits/op_trimat_meat.hpp:
+/usr/include/armadillo_bits/fn_orth_null.hpp:
 
-/usr/include/armadillo_bits/spop_repmat_bones.hpp:
+/usr/include/armadillo_bits/Op_bones.hpp:
 
-/usr/include/armadillo_bits/op_cov_bones.hpp:
+/usr/include/armadillo_bits/SpGlue_meat.hpp:
 
-/usr/include/armadillo_bits/SpSubview_col_list_bones.hpp:
+/usr/include/armadillo_bits/spglue_plus_meat.hpp:
 
-/usr/include/armadillo_bits/SpOp_bones.hpp:
+/usr/include/c++/13/bits/shared_ptr_atomic.h:
 
-/usr/include/python3.12/traceback.h:
+/usr/include/armadillo_bits/op_expmat_meat.hpp:
 
-/usr/include/armadillo_bits/glue_trapz_meat.hpp:
+/usr/include/mlpack/core/cv/simple_cv.hpp:
 
-/usr/include/armadillo_bits/SpMat_iterators_meat.hpp:
+/usr/include/armadillo_bits/fn_shuffle.hpp:
 
-/usr/include/c++/13/bits/postypes.h:
+/usr/include/ensmallen_bits/sa/sa.hpp:
 
-/usr/include/armadillo_bits/glue_cross_meat.hpp:
+/usr/include/c++/13/bits/shared_ptr.h:
 
-/usr/include/mlpack/methods/ann/dists/dists.hpp:
+/usr/include/c++/13/bits/basic_ios.h:
 
-/usr/include/armadillo_bits/band_helper.hpp:
+/usr/include/ensmallen_bits/function/traits.hpp:
 
-/usr/include/armadillo_bits/fn_trig.hpp:
+/usr/include/armadillo_bits/Glue_bones.hpp:
 
-/usr/include/cereal/archives/portable_binary.hpp:
+/usr/include/mlpack/methods/svdplusplus/svdplusplus_impl.hpp:
 
-/usr/include/armadillo_bits/op_reshape_bones.hpp:
+/usr/include/mlpack/core/math/range.hpp:
 
-/usr/include/armadillo_bits/fn_solve.hpp:
+/usr/include/armadillo_bits/Gen_bones.hpp:
 
-/usr/include/armadillo_bits/glue_mvnrnd_bones.hpp:
+/usr/include/armadillo_bits/subview_each_meat.hpp:
 
-/usr/include/python3.12/ceval.h:
+/usr/include/armadillo_bits/operator_times.hpp:
 
-/usr/include/armadillo_bits/gmm_diag_meat.hpp:
-
-/usr/include/armadillo_bits/gmm_misc_meat.hpp:
-
-/usr/include/rapidjson/internal/dtoa.h:
-
-/usr/include/armadillo_bits/op_find_unique_meat.hpp:
-
-/usr/include/armadillo_bits/SpBase_bones.hpp:
+/usr/include/armadillo_bits/SpValProxy_bones.hpp:
 
 /usr/include/armadillo_bits/glue_times_misc_meat.hpp:
 
@@ -5017,21 +4657,11 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/spop_sum_meat.hpp:
 
-/usr/include/c++/13/pstl/glue_numeric_defs.h:
-
-/usr/include/armadillo_bits/SizeMat_bones.hpp:
-
 /usr/include/mlpack/methods/ann/loss_functions/sigmoid_cross_entropy_error.hpp:
 
 /usr/include/armadillo_bits/SizeCube_bones.hpp:
 
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/exception_translation.h:
-
 /usr/include/armadillo_bits/eOp_bones.hpp:
-
-/usr/include/armadillo_bits/glue_atan2_bones.hpp:
-
-/usr/include/armadillo_bits/arrayops_bones.hpp:
 
 /usr/include/armadillo_bits/Row_meat.hpp:
 
@@ -5039,87 +4669,127 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/cereal/details/helpers.hpp:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h:
-
-/usr/include/mlpack/methods/ann/layer/concatenate_impl.hpp:
-
-/usr/include/armadillo_bits/fn_orth_null.hpp:
-
-/usr/include/armadillo_bits/Op_bones.hpp:
-
-/usr/include/armadillo_bits/SpGlue_meat.hpp:
-
-/usr/include/mlpack/core/tree/rectangle_tree/rectangle_tree.hpp:
-
-/usr/include/armadillo_bits/fn_chol.hpp:
-
 /usr/include/armadillo_bits/SpOp_meat.hpp:
-
-/usr/include/python3.12/cpython/pylifecycle.h:
 
 /usr/include/mlpack/core/math/ccov.hpp:
 
 /usr/include/armadillo_bits/Base_bones.hpp:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h:
+/usr/include/armadillo_bits/gmm_diag_meat.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
+/usr/include/armadillo_bits/gmm_misc_meat.hpp:
 
-/usr/include/mlpack/methods/reinforcement_learning/worker/worker.hpp:
+/usr/include/ensmallen_bits/bigbatch_sgd/backtracking_line_search.hpp:
 
-/usr/include/mlpack/methods/lars/lars_impl.hpp:
+/usr/include/ensmallen_bits/spsa/spsa.hpp:
 
-/usr/include/ensmallen_bits/parallel_sgd/parallel_sgd_impl.hpp:
+/usr/include/rapidjson/internal/dtoa.h:
 
-/usr/include/armadillo_bits/auxlib_bones.hpp:
+/usr/include/armadillo_bits/op_find_unique_meat.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
+/usr/include/armadillo_bits/SpBase_bones.hpp:
 
-/usr/include/mlpack/methods/reinforcement_learning/environment/environment.hpp:
+/usr/include/mlpack/methods/kmeans/refined_start_impl.hpp:
 
-/usr/include/armadillo_bits/GlueCube_bones.hpp:
+/home/atlas/code/Projects/SERAX_Forex_algo/src/dev/model/objects/PRICE.h:
 
-/usr/include/mlpack/core/cv/metrics/recall.hpp:
+/usr/include/mlpack/methods/ann/convolution_rules/naive_convolution.hpp:
 
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/gil_safe_call_once.h:
+/usr/include/c++/13/bits/stl_map.h:
 
-/usr/include/mlpack/core/cv/metrics/mse.hpp:
+/usr/include/mlpack/methods/amf/update_rules/nmf_mult_div.hpp:
 
-/usr/include/armadillo_bits/op_range_bones.hpp:
+/usr/include/c++/13/locale:
 
-/usr/include/mlpack/core/util/sfinae_utility.hpp:
+/usr/include/armadillo_bits/op_cumsum_meat.hpp:
 
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/gil.h:
+/usr/include/mlpack/methods/ann/loss_functions/triplet_margin_loss_impl.hpp:
 
-/usr/include/rapidjson/internal/diyfp.h:
+/usr/include/mlpack/core/data/map_policies/datatype.hpp:
 
-/usr/include/mlpack/methods/reinforcement_learning/q_networks/dueling_dqn.hpp:
+/usr/include/ensmallen_bits/adam/optimisticadam_update.hpp:
 
-/usr/include/ensmallen.hpp:
+/usr/include/armadillo_bits/fn_resize.hpp:
 
-/usr/include/mlpack/methods/local_coordinate_coding/lcc.hpp:
+/usr/include/armadillo_bits/wall_clock_meat.hpp:
 
-/usr/include/mlpack/methods/ann/layer/softmax.hpp:
+/usr/include/x86_64-linux-gnu/sys/select.h:
 
-/usr/include/armadillo_bits/mul_gemv.hpp:
+/usr/include/mlpack/methods/ann/loss_functions/soft_margin_loss.hpp:
 
-/usr/include/python3.12/cpython/tupleobject.h:
+/usr/include/armadillo_bits/fn_cor.hpp:
 
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/struct_smart_holder.h:
+/usr/include/ensmallen_bits/spalera_sgd/spalera_sgd.hpp:
 
-/usr/include/mlpack/methods/range_search/range_search_impl.hpp:
+/usr/include/armadillo_bits/op_rank_meat.hpp:
 
-/usr/include/armadillo_bits/op_cond_meat.hpp:
+/usr/include/mlpack/methods/ann/convolution_rules/border_modes.hpp:
 
-/usr/include/armadillo_bits/op_chol_bones.hpp:
+/usr/include/ensmallen_bits/function/add_separable_gradient.hpp:
 
-/usr/include/armadillo_bits/fn_diff.hpp:
+/usr/include/mlpack/methods/reinforcement_learning/q_networks/q_networks.hpp:
+
+/usr/include/armadillo_bits/fn_conv.hpp:
+
+/usr/include/mlpack/methods/approx_kfn.hpp:
+
+/usr/include/ensmallen_bits/swats/swats_update.hpp:
+
+/usr/include/armadillo_bits/spglue_schur_meat.hpp:
+
+/usr/include/ensmallen_bits/qhadam/qhadam_update.hpp:
 
 /usr/include/armadillo_bits/glue_min_bones.hpp:
 
 /usr/include/armadillo_bits/SpSubview_meat.hpp:
 
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/function_record_pyobject.h:
+/usr/include/mlpack/core/tree/binary_space_tree/single_tree_traverser.hpp:
+
+/usr/include/armadillo_bits/fn_misc.hpp:
+
+/usr/include/mlpack/methods/ann/layer/lstm.hpp:
+
+/usr/include/mlpack/core/dists/gaussian_distribution_impl.hpp:
+
+/usr/include/c++/13/typeinfo:
+
+/usr/include/mlpack/methods/quic_svd/quic_svd.hpp:
+
+/usr/include/armadillo_bits/BaseCube_meat.hpp:
+
+/usr/include/mlpack/methods/ann/activation_functions/tanh_function.hpp:
+
+/usr/include/armadillo_bits/op_sqrtmat_bones.hpp:
+
+/usr/include/armadillo_bits/spop_trimat_bones.hpp:
+
+/usr/include/armadillo_bits/fn_strans.hpp:
+
+/usr/include/armadillo_bits/op_dot_meat.hpp:
+
+/usr/include/mlpack/core/data/scaler_methods/max_abs_scaler.hpp:
+
+/usr/include/armadillo_bits/Mat_meat.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
+
+/usr/include/c++/13/climits:
+
+/usr/include/armadillo_bits/spglue_join_meat.hpp:
+
+/usr/include/alloca.h:
+
+/usr/include/x86_64-linux-gnu/bits/timex.h:
+
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
+
+/usr/include/ensmallen_bits/problems/schaffer_function_n4_impl.hpp:
+
+/usr/include/ensmallen_bits/sgd/sgd.hpp:
+
+/usr/include/ensmallen_bits/wn_grad/wn_grad_update.hpp:
+
+/usr/include/armadillo_bits/glue_polyval_meat.hpp:
 
 /usr/include/armadillo_bits/SpMat_meat.hpp:
 
@@ -5147,299 +4817,11 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/newarp_DenseGenMatProd_bones.hpp:
 
-/usr/include/c++/13/sstream:
-
-/usr/include/armadillo_bits/op_misc_bones.hpp:
-
-/usr/include/c++/13/exception:
-
-/usr/include/mlpack/core/data/string_encoding_policies/tf_idf_encoding_policy.hpp:
-
-/usr/include/ensmallen_bits/problems/cross_in_tray_function.hpp:
-
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/type_caster_base.h:
-
-/usr/include/mlpack/core/math/log_add.hpp:
-
-/usr/include/ensmallen_bits/problems/softmax_regression_function_impl.hpp:
-
-/usr/include/armadillo_bits/fn_as_scalar.hpp:
-
-/usr/include/python3.12/cpython/dictobject.h:
-
-/usr/include/armadillo_bits/mul_herk.hpp:
-
-/usr/include/armadillo_bits/xtrans_mat_meat.hpp:
-
-/usr/include/mlpack/methods/ann/layer/parametric_relu_impl.hpp:
-
-/usr/include/armadillo_bits/fn_cumprod.hpp:
-
-/usr/include/armadillo_bits/eop_core_meat.hpp:
-
-/usr/include/mlpack/core/tree/space_split/midpoint_space_split_impl.hpp:
-
-/usr/include/mlpack/core/data/save_image_impl.hpp:
-
-/usr/include/armadillo_bits/op_vectorise_meat.hpp:
-
-/usr/include/armadillo_bits/fn_eigs_gen.hpp:
-
-/usr/include/mlpack/methods/regularized_svd/regularized_svd_function_impl.hpp:
-
-/usr/include/armadillo_bits/op_resize_meat.hpp:
-
-/usr/include/armadillo_bits/mtSpOp_meat.hpp:
-
-/usr/include/mlpack/methods/sparse_autoencoder/maximal_inputs.hpp:
-
-/usr/include/armadillo_bits/SpValProxy_meat.hpp:
-
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/conduit/pybind11_platform_abi_id.h:
-
-/usr/include/armadillo_bits/sym_helper.hpp:
-
-/usr/include/python3.12/modsupport.h:
-
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/internals.h:
-
-/usr/include/armadillo_bits/op_dot_meat.hpp:
-
-/usr/include/mlpack/core/data/scaler_methods/max_abs_scaler.hpp:
-
-/usr/include/armadillo_bits/Mat_meat.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
-
-/usr/include/c++/13/climits:
-
-/usr/include/armadillo_bits/spglue_join_meat.hpp:
-
-/usr/include/alloca.h:
-
-/usr/include/mlpack/core/cv/metrics/accuracy.hpp:
-
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/dynamic_raw_ptr_cast_if_possible.h:
-
-/usr/include/mlpack/methods/kmeans/refined_start_impl.hpp:
-
-/home/atlas/code/Projects/SERAX_Forex_algo/src/dev/model/objects/PRICE.h:
-
-/usr/include/mlpack/methods/ann/convolution_rules/naive_convolution.hpp:
-
-/usr/include/c++/13/bits/stl_map.h:
-
-/usr/include/mlpack/methods/amf/update_rules/nmf_mult_div.hpp:
-
-/usr/include/c++/13/locale:
-
-/usr/include/armadillo_bits/op_cumsum_meat.hpp:
-
-/usr/include/mlpack/methods/ann/loss_functions/triplet_margin_loss_impl.hpp:
-
-/usr/include/mlpack/core/data/map_policies/datatype.hpp:
-
-/usr/include/armadillo_bits/fn_resize.hpp:
-
-/usr/include/ensmallen_bits/adam/optimisticadam_update.hpp:
-
-/usr/include/armadillo_bits/wall_clock_meat.hpp:
-
-/usr/include/x86_64-linux-gnu/sys/select.h:
-
-/usr/include/mlpack/methods/ann/loss_functions/soft_margin_loss.hpp:
-
-/usr/include/armadillo_bits/fn_cor.hpp:
-
-/usr/include/mlpack/core/tree/cover_tree/single_tree_traverser_impl.hpp:
-
-/usr/include/mlpack/core/tree/binary_space_tree/rp_tree_max_split.hpp:
-
-/usr/include/armadillo_bits/Base_meat.hpp:
-
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/value_and_holder.h:
-
-/usr/include/armadillo_bits/newarp_SparseGenRealShiftSolve_meat.hpp:
-
-/usr/include/ensmallen_bits/ada_bound/ada_bound.hpp:
-
-/usr/include/armadillo_bits/def_lapack.hpp:
-
-/usr/include/mlpack/core/data/load_arff.hpp:
-
-/usr/include/armadillo_bits/op_chol_meat.hpp:
-
-/usr/include/ensmallen_bits/fw/line_search/line_search.hpp:
-
-/usr/include/mlpack/methods/ann/layer/celu.hpp:
-
-/usr/include/armadillo_bits/glue_conv_bones.hpp:
-
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/pytypes.h:
-
-/usr/include/armadillo_bits/def_atlas.hpp:
-
-/usr/include/armadillo_bits/glue_kron_meat.hpp:
-
-/usr/include/armadillo_bits/op_find_meat.hpp:
-
-/usr/include/cereal/details/static_object.hpp:
-
-/usr/include/armadillo_bits/op_expmat_meat.hpp:
-
-/usr/include/mlpack/core/cv/simple_cv.hpp:
-
-/usr/include/armadillo_bits/fn_shuffle.hpp:
-
-/usr/include/ensmallen_bits/sa/sa.hpp:
-
-/usr/include/c++/13/bits/shared_ptr.h:
-
-/usr/include/armadillo_bits/Glue_bones.hpp:
-
-/usr/include/mlpack/methods/svdplusplus/svdplusplus_impl.hpp:
-
-/usr/include/mlpack/core/math/range.hpp:
-
-/usr/include/armadillo_bits/Gen_bones.hpp:
-
-/usr/include/armadillo_bits/subview_each_meat.hpp:
-
-/usr/include/c++/13/bits/basic_ios.h:
-
-/usr/include/ensmallen_bits/function/traits.hpp:
-
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/common.h:
-
-/usr/include/armadillo_bits/arma_rel_comparators.hpp:
-
-/usr/include/mlpack/core/data/load_image_impl.hpp:
-
-/usr/include/c++/13/ext/aligned_buffer.h:
-
-/usr/include/ensmallen_bits/cmaes/random_selection.hpp:
-
-/usr/include/armadillo_bits/fn_svds.hpp:
-
-/usr/include/armadillo_bits/fn_inv.hpp:
-
-/usr/include/ensmallen_bits/sgd/decay_policies/no_decay.hpp:
-
-/usr/include/armadillo_bits/fn_trans.hpp:
-
-/usr/include/armadillo_bits/fn_accu.hpp:
-
-/usr/include/mlpack/methods/ann/layer/celu_impl.hpp:
-
-/usr/include/mlpack/core/dists/laplace_distribution_impl.hpp:
-
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/cpp_conduit.h:
-
-/usr/include/mlpack/core/data/save.hpp:
-
-/usr/include/armadillo_bits/op_cumprod_bones.hpp:
-
-/usr/include/armadillo_bits/mtGlueCube_bones.hpp:
-
-/usr/include/armadillo_bits/arma_rng_cxx03.hpp:
-
-/usr/include/armadillo_bits/op_relational_bones.hpp:
-
-/usr/include/ensmallen_bits/ada_sqrt/ada_sqrt_impl.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
-
-/usr/include/armadillo_bits/ProxyCube.hpp:
-
-/usr/include/mlpack/core/tree/rectangle_tree/r_star_tree_descent_heuristic.hpp:
-
-/usr/include/armadillo_bits/SpToDGlue_bones.hpp:
-
 /usr/include/armadillo_bits/compiler_setup_post.hpp:
-
-/usr/include/mlpack/methods/kde/kde_rules.hpp:
-
-/usr/include/armadillo_bits/fn_polyval.hpp:
-
-/usr/include/armadillo_bits/fn_strans.hpp:
-
-/usr/include/python3.12/cpython/pyctype.h:
-
-/usr/include/armadillo_bits/op_misc_meat.hpp:
-
-/usr/include/c++/13/bits/forward_list.tcc:
-
-/usr/include/armadillo_bits/fn_randperm.hpp:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
-
-/usr/include/armadillo_bits/fn_repelem.hpp:
-
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/descr.h:
-
-/usr/include/mlpack/core/tree/binary_space_tree.hpp:
-
-/usr/include/c++/13/tr1/riemann_zeta.tcc:
-
-/usr/include/ensmallen_bits/sarah/sarah_plus_update.hpp:
-
-/usr/include/armadillo_bits/Gen_meat.hpp:
-
-/usr/include/c++/13/bits/shared_ptr_atomic.h:
-
-/usr/include/armadillo_bits/spglue_plus_meat.hpp:
-
-/usr/include/mlpack/methods/cf/normalization/overall_mean_normalization.hpp:
-
-/usr/include/armadillo_bits/newarp_SymEigsSolver_bones.hpp:
-
-/usr/include/c++/13/bits/cpp_type_traits.h:
-
-/usr/include/armadillo_bits/fn_all.hpp:
-
-/usr/include/mlpack/core/tree/rectangle_tree/discrete_hilbert_value.hpp:
-
-/usr/include/armadillo_bits/spop_misc_meat.hpp:
-
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/pybind11.h:
-
-/usr/include/x86_64-linux-gnu/bits/timex.h:
-
-/usr/include/x86_64-linux-gnu/bits/endianness.h:
-
-/usr/include/ensmallen_bits/problems/schaffer_function_n4_impl.hpp:
-
-/usr/include/armadillo_bits/mul_syrk.hpp:
-
-/usr/include/mlpack/methods/reinforcement_learning/environment/continuous_mountain_car.hpp:
-
-/usr/include/armadillo_bits/arma_static_check.hpp:
-
-/usr/include/armadillo_bits/op_sum_bones.hpp:
-
-/usr/include/armadillo_bits/fn_reshape.hpp:
 
 /usr/include/armadillo_bits/SpCol_meat.hpp:
 
-/usr/include/mlpack/methods/ann/activation_functions/tanh_function.hpp:
-
-/usr/include/armadillo_bits/op_sqrtmat_bones.hpp:
-
-/usr/include/python3.12/pyconfig.h:
-
-/usr/include/mlpack/methods/quic_svd/quic_svd.hpp:
-
-/usr/include/armadillo_bits/BaseCube_meat.hpp:
-
-/usr/include/armadillo_bits/spop_trimat_bones.hpp:
-
 /usr/include/armadillo_bits/memory.hpp:
-
-/usr/include/mlpack/methods/reinforcement_learning/replay/sumtree.hpp:
-
-/usr/include/armadillo_bits/fn_diagmat.hpp:
-
-/usr/include/python3.12/exports.h:
 
 /usr/include/c++/13/bits/vector.tcc:
 
@@ -5447,57 +4829,11 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/fn_shift.hpp:
 
-/usr/include/armadillo_bits/SpValProxy_bones.hpp:
+/usr/include/armadillo_bits/op_chi2rnd_bones.hpp:
 
-/usr/include/armadillo_bits/operator_times.hpp:
+/usr/include/armadillo_bits/newarp_UpperHessenbergQR_meat.hpp:
 
-/usr/include/python3.12/cpython/pythonrun.h:
-
-/usr/include/armadillo_bits/SpGlue_bones.hpp:
-
-/usr/include/armadillo_bits/spglue_times_bones.hpp:
-
-/usr/include/mlpack/core/tree/binary_space_tree/single_tree_traverser.hpp:
-
-/usr/include/armadillo_bits/fn_misc.hpp:
-
-/usr/include/python3.12/object.h:
-
-/usr/include/mlpack/methods/ann/layer/lstm.hpp:
-
-/usr/include/mlpack/core/dists/gaussian_distribution_impl.hpp:
-
-/usr/include/c++/13/typeinfo:
-
-/usr/include/armadillo_bits/op_rank_meat.hpp:
-
-/usr/include/mlpack/methods/ann/convolution_rules/border_modes.hpp:
-
-/usr/include/ensmallen_bits/function/add_separable_gradient.hpp:
-
-/usr/include/mlpack/methods/reinforcement_learning/q_networks/q_networks.hpp:
-
-/usr/include/armadillo_bits/fn_conv.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/statx.h:
-
-/usr/include/mlpack/methods/approx_kfn.hpp:
-
-/usr/include/ensmallen_bits/swats/swats_update.hpp:
-
-/usr/include/armadillo_bits/spglue_schur_meat.hpp:
-
-/usr/include/ensmallen_bits/qhadam/qhadam_update.hpp:
-
-/usr/include/armadillo_bits/mp_misc.hpp:
-
-/usr/include/ensmallen_bits/sgdr/sgdr_impl.hpp:
-
-/usr/include/cereal/types/array.hpp:
-
-/usr/include/armadillo_bits/MapMat_meat.hpp:
-
-/usr/include/armadillo_bits/fn_regspace.hpp:
+/usr/include/armadillo_bits/eGlueCube_bones.hpp:
 
 /usr/include/armadillo_bits/fn_nonzeros.hpp:
 
@@ -5507,85 +4843,41 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/op_sp_plus_bones.hpp:
 
+/usr/include/ensmallen_bits/callbacks/timer_stop.hpp:
+
+/usr/include/c++/13/bits/memoryfwd.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h:
 
 /usr/include/rapidjson/reader.h:
 
 /usr/include/armadillo_bits/config.hpp:
 
-/usr/include/ensmallen_bits/spsa/spsa_impl.hpp:
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h:
 
-/usr/include/armadillo_bits/distr_param.hpp:
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
-/usr/include/mlpack/methods/reinforcement_learning/replay/random_replay.hpp:
+/usr/include/mlpack/methods/reinforcement_learning/worker/worker.hpp:
 
-/usr/include/ensmallen_bits/katyusha/katyusha_impl.hpp:
+/usr/include/mlpack/methods/lars/lars_impl.hpp:
 
-/usr/include/armadillo_bits/newarp_SymEigsSolver_meat.hpp:
+/usr/include/ensmallen_bits/parallel_sgd/parallel_sgd_impl.hpp:
 
-/usr/include/mlpack/core/tree/spill_tree/typedef.hpp:
+/usr/include/armadillo_bits/auxlib_bones.hpp:
 
-/usr/include/armadillo_bits/Mat_bones.hpp:
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
-/usr/include/armadillo_bits/fn_diagvec.hpp:
+/usr/include/mlpack/methods/reinforcement_learning/environment/environment.hpp:
 
-/usr/include/mlpack/core/hpt/deduce_hp_types.hpp:
+/usr/include/armadillo_bits/GlueCube_bones.hpp:
 
-/usr/include/c++/13/bits/alloc_traits.h:
+/usr/include/armadillo_bits/CubeToMatOp_bones.hpp:
 
-/usr/include/armadillo_bits/eOp_meat.hpp:
+/usr/include/mlpack/methods/ann/ffn_impl.hpp:
 
-/usr/include/mlpack/core/kernels/pspectrum_string_kernel.hpp:
+/usr/include/mlpack/core/tree/rectangle_tree/r_star_tree_split_impl.hpp:
 
-/usr/include/armadillo_bits/eglue_core_meat.hpp:
-
-/usr/include/armadillo_bits/fft_engine_fftw3.hpp:
-
-/usr/include/armadillo_bits/fn_index_max.hpp:
-
-/usr/include/c++/13/bits/atomic_base.h:
-
-/usr/include/ensmallen_bits/grid_search/grid_search.hpp:
-
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/options.h:
-
-/usr/include/mlpack/core/tree/rectangle_tree/x_tree_split_impl.hpp:
-
-/usr/include/armadillo_bits/fn_sprandn.hpp:
-
-/usr/include/mlpack/methods/reinforcement_learning/noise/ornstein_uhlenbeck.hpp:
-
-/usr/include/armadillo_bits/fn_any.hpp:
-
-/usr/include/armadillo_bits/CubeToMatOp_meat.hpp:
-
-/usr/include/ensmallen_bits/function/arma_traits.hpp:
-
-/usr/include/armadillo_bits/op_chi2rnd_bones.hpp:
-
-/usr/include/armadillo_bits/newarp_UpperHessenbergQR_meat.hpp:
-
-/usr/include/armadillo_bits/eGlueCube_bones.hpp:
-
-/usr/include/mlpack/core/data/load_categorical_csv.hpp:
-
-/usr/include/c++/13/cctype:
-
-/usr/include/armadillo_bits/SpProxy.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
-
-/usr/include/mlpack/methods/kmeans/kmeans_impl.hpp:
-
-/usr/include/mlpack/core/data/imputation_methods/mean_imputation.hpp:
-
-/usr/include/armadillo_bits/fn_chi2rnd.hpp:
-
-/usr/include/mlpack/methods/ann/layer/adaptive_max_pooling_impl.hpp:
-
-/usr/include/armadillo_bits/arma_forward.hpp:
-
-/usr/include/armadillo_bits/fn_log_det.hpp:
+/usr/include/armadillo_bits/mtOp_meat.hpp:
 
 /usr/include/mlpack/core/tree/address.hpp:
 
@@ -5605,23 +4897,157 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/fn_mean.hpp:
 
+/usr/include/armadillo_bits/fn_index_max.hpp:
+
+/usr/include/c++/13/bits/atomic_base.h:
+
+/usr/include/ensmallen_bits/grid_search/grid_search.hpp:
+
+/usr/include/mlpack/methods/regularized_svd/regularized_svd.hpp:
+
+/usr/include/ensmallen_bits/sdp/primal_dual_impl.hpp:
+
+/usr/include/mlpack/core/data/save.hpp:
+
+/usr/include/armadillo_bits/op_cumprod_bones.hpp:
+
+/usr/include/armadillo_bits/mtGlueCube_bones.hpp:
+
+/usr/include/armadillo_bits/arma_rng_cxx03.hpp:
+
+/usr/include/armadillo_bits/op_relational_bones.hpp:
+
+/usr/include/ensmallen_bits/ada_sqrt/ada_sqrt_impl.hpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
+
+/usr/include/armadillo_bits/fn_repelem.hpp:
+
+/usr/include/armadillo_bits/podarray_meat.hpp:
+
+/usr/include/armadillo_bits/fn_reverse.hpp:
+
+/usr/include/mlpack/core/tree/rectangle_tree/r_star_tree_descent_heuristic.hpp:
+
+/usr/include/armadillo_bits/SpToDGlue_bones.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+
+/usr/include/armadillo_bits/ProxyCube.hpp:
+
+/usr/include/mlpack/core/hpt/deduce_hp_types.hpp:
+
+/usr/include/armadillo_bits/eOp_meat.hpp:
+
+/usr/include/c++/13/bits/alloc_traits.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/opt_random.h:
+
+/usr/include/armadillo_bits/fn_randn.hpp:
+
+/usr/include/armadillo_bits/arrayops_bones.hpp:
+
+/usr/include/armadillo_bits/glue_atan2_bones.hpp:
+
+/usr/include/mlpack/methods/ann/layer/celu.hpp:
+
+/usr/include/armadillo_bits/glue_conv_bones.hpp:
+
+/usr/include/armadillo_bits/glue_cross_meat.hpp:
+
+/usr/include/mlpack/core/tree/hollow_ball_bound.hpp:
+
+/usr/include/ensmallen_bits/sdp/sdp_impl.hpp:
+
+/usr/include/mlpack/methods/ann/dists/dists.hpp:
+
+/usr/include/armadillo_bits/band_helper.hpp:
+
+/usr/include/armadillo_bits/op_sum_bones.hpp:
+
+/usr/include/armadillo_bits/fn_reshape.hpp:
+
+/usr/include/mlpack/methods/reinforcement_learning/environment/continuous_mountain_car.hpp:
+
+/usr/include/armadillo_bits/arma_static_check.hpp:
+
+/usr/include/ensmallen_bits/ada_bound/ada_bound.hpp:
+
+/usr/include/armadillo_bits/def_lapack.hpp:
+
+/usr/include/mlpack/core/data/load_arff.hpp:
+
+/usr/include/armadillo_bits/op_chol_meat.hpp:
+
+/usr/include/ensmallen_bits/fw/line_search/line_search.hpp:
+
+/usr/include/mlpack/methods/reinforcement_learning/noise/ornstein_uhlenbeck.hpp:
+
+/usr/include/armadillo_bits/fn_any.hpp:
+
+/usr/include/armadillo_bits/CubeToMatOp_meat.hpp:
+
+/usr/include/ensmallen_bits/function/arma_traits.hpp:
+
+/usr/include/armadillo_bits/op_misc_meat.hpp:
+
+/usr/include/armadillo_bits/fn_randperm.hpp:
+
+/usr/include/armadillo_bits/SpMat_iterators_meat.hpp:
+
+/usr/include/c++/13/bits/postypes.h:
+
+/usr/include/armadillo_bits/fn_as_scalar.hpp:
+
+/usr/include/armadillo_bits/mul_herk.hpp:
+
+/usr/include/armadillo_bits/xtrans_mat_meat.hpp:
+
+/usr/include/mlpack/methods/ann/layer/parametric_relu_impl.hpp:
+
+/usr/include/armadillo_bits/fn_cumprod.hpp:
+
+/usr/include/armadillo_bits/glue_cov_bones.hpp:
+
+/usr/include/armadillo_bits/fn_intersect.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
+
+/usr/include/mlpack/methods/kmeans/kmeans_impl.hpp:
+
+/usr/include/mlpack/core/data/imputation_methods/mean_imputation.hpp:
+
+/usr/include/armadillo_bits/fn_chi2rnd.hpp:
+
+/usr/include/mlpack/methods/ann/layer/adaptive_max_pooling_impl.hpp:
+
+/usr/include/armadillo_bits/arma_forward.hpp:
+
+/usr/include/armadillo_bits/fn_log_det.hpp:
+
+/usr/include/mlpack/core/data/load_categorical_csv.hpp:
+
+/usr/include/c++/13/cctype:
+
+/usr/include/armadillo_bits/SpProxy.hpp:
+
+/usr/include/mlpack/core/tree/rectangle_tree/discrete_hilbert_value.hpp:
+
+/usr/include/armadillo_bits/spop_misc_meat.hpp:
+
+/usr/include/armadillo_bits/mp_misc.hpp:
+
+/usr/include/armadillo_bits/fn_regspace.hpp:
+
 /usr/include/armadillo_bits/fn_conv_to.hpp:
 
-/usr/include/python3.12/descrobject.h:
-
-/usr/include/armadillo_bits/fn_range.hpp:
-
-/usr/include/mlpack/methods/amf/init_rules/random_acol_init.hpp:
-
-/usr/include/armadillo_bits/restrictors.hpp:
-
 /usr/include/armadillo_bits/fn_cov.hpp:
-
-/usr/include/asm-generic/posix_types.h:
 
 /usr/include/armadillo_bits/op_fft_meat.hpp:
 
 /home/atlas/code/Projects/SERAX_Forex_algo/src/dev/model/ml.cpp:
+
+/usr/include/armadillo_bits/op_chi2rnd_meat.hpp:
 
 /usr/include/mlpack/methods/cf/decomposition_policies/bias_svd_method.hpp:
 
@@ -5638,14 +5064,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/armadillo_bits/fn_index_min.hpp:
 
 /usr/include/armadillo_bits/subview_meat.hpp:
-
-/usr/include/mlpack/core/tree/tree.hpp:
-
-/usr/include/armadillo_bits/fn_toeplitz.hpp:
-
-/usr/include/c++/13/tr1/bessel_function.tcc:
-
-/usr/include/c++/13/bits/forward_list.h:
 
 /usr/include/mlpack/methods/ann/activation_functions/mish_function.hpp:
 
@@ -5667,19 +5085,45 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/ensmallen_bits/ada_delta/ada_delta_update.hpp:
 
-/usr/include/python3.12/setobject.h:
+/usr/include/armadillo_bits/fn_cumsum.hpp:
 
 /usr/include/mlpack/core/tree/hrectbound.hpp:
 
 /usr/include/armadillo_bits/fn_det.hpp:
 
+/usr/include/mlpack/methods/range_search/range_search_impl.hpp:
+
+/usr/include/armadillo_bits/op_cond_meat.hpp:
+
+/usr/include/armadillo_bits/op_chol_bones.hpp:
+
+/usr/include/armadillo_bits/fn_diff.hpp:
+
+/usr/include/mlpack/core/tree/binary_space_tree.hpp:
+
+/usr/include/c++/13/tr1/riemann_zeta.tcc:
+
 /usr/include/mlpack/methods/emst/union_find.hpp:
 
 /usr/include/armadillo_bits/fn_rank.hpp:
 
+/usr/include/mlpack/core/tree/octree.hpp:
+
+/usr/include/armadillo_bits/newarp_GenEigsSolver_bones.hpp:
+
+/usr/include/mlpack/core/cereal/pointer_vector_wrapper.hpp:
+
+/usr/include/armadillo_bits/fn_sum.hpp:
+
 /usr/include/mlpack/methods/kmeans/kmeans_plus_plus_initialization.hpp:
 
 /usr/include/armadillo_bits/fn_eig_gen.hpp:
+
+/usr/include/armadillo_bits/glue_mvnrnd_bones.hpp:
+
+/usr/include/armadillo_bits/op_reshape_bones.hpp:
+
+/usr/include/armadillo_bits/fn_solve.hpp:
 
 /usr/include/armadillo_bits/glue_times_meat.hpp:
 
@@ -5687,29 +5131,9 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/ensmallen_bits/problems/schwefel_function.hpp:
 
-/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
+/usr/include/armadillo_bits/newarp_cx_attrib.hpp:
 
-/usr/include/armadillo_bits/glue_hist_meat.hpp:
-
-/usr/include/mlpack/methods/sparse_coding/data_dependent_random_initializer.hpp:
-
-/usr/include/mlpack/methods/local_coordinate_coding/local_coordinate_coding.hpp:
-
-/usr/include/mlpack/core/math/multiply_slices_impl.hpp:
-
-/usr/include/armadillo_bits/eGlue_bones.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
-
-/usr/include/armadillo_bits/glue_max_bones.hpp:
-
-/usr/include/c++/13/bits/stl_bvector.h:
-
-/usr/include/c++/13/bits/parse_numbers.h:
-
-/usr/include/armadillo_bits/fn_sort.hpp:
-
-/usr/include/c++/13/bits/unique_lock.h:
+/usr/include/c++/13/bits/this_thread_sleep.h:
 
 /usr/include/armadillo_bits/fn_expmat.hpp:
 
@@ -5751,9 +5175,31 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/fn_inplace_trans.hpp:
 
+/usr/include/mlpack/core/tree/cover_tree/cover_tree.hpp:
+
+/usr/include/armadillo_bits/op_diff_bones.hpp:
+
+/usr/include/armadillo_bits/op_sum_meat.hpp:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h:
+
+/usr/include/armadillo_bits/spglue_min_bones.hpp:
+
+/usr/include/ensmallen_bits/problems/fw_test_function.hpp:
+
+/usr/include/armadillo_bits/op_find_bones.hpp:
+
+/usr/include/mlpack/core/cv/metrics/average_strategy.hpp:
+
+/usr/include/armadillo_bits/operator_relational.hpp:
+
+/usr/include/ensmallen_bits/cd/descent_policies/random_descent.hpp:
+
 /usr/include/armadillo_bits/fn_interp1.hpp:
 
-/usr/include/python3.12/moduleobject.h:
+/usr/include/mlpack/methods/kmeans/pelleg_moore_kmeans_statistic.hpp:
+
+/usr/include/c++/13/chrono:
 
 /usr/include/armadillo_bits/arma_cmath.hpp:
 
@@ -5785,8 +5231,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/fn_log_normpdf.hpp:
 
-/usr/include/python3.12/pyport.h:
-
 /usr/include/armadillo_bits/fn_logmat.hpp:
 
 /usr/include/armadillo_bits/fn_hess.hpp:
@@ -5798,6 +5242,10 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
 /usr/include/armadillo_bits/SpBase_meat.hpp:
+
+/usr/include/armadillo_bits/fn_median.hpp:
+
+/usr/include/armadillo_bits/fn_vecnorm.hpp:
 
 /usr/include/armadillo_bits/op_roots_meat.hpp:
 
@@ -5833,8 +5281,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/ensmallen_bits/fw/update_linesearch.hpp:
 
-/usr/include/python3.12/pymem.h:
-
 /usr/include/mlpack/core/kernels/spherical_kernel.hpp:
 
 /usr/include/mlpack/core/arma_extend/serialize_armadillo.hpp:
@@ -5852,14 +5298,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/c++/13/tr1/modified_bessel_func.tcc:
 
 /usr/include/ensmallen_bits/problems/sparse_test_function.hpp:
-
-/usr/include/mlpack/methods/ann/layer/hard_tanh.hpp:
-
-/usr/include/ensmallen_bits/cmaes/active_cmaes_impl.hpp:
-
-/usr/include/armadillo_bits/fn_princomp.hpp:
-
-/usr/include/armadillo_bits/spglue_minus_bones.hpp:
 
 /usr/include/armadillo_bits/unwrap_cube.hpp:
 
@@ -5915,15 +5353,37 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/c++/13/cfloat:
 
-/usr/include/mlpack/methods/kernel_pca/kernel_pca_impl.hpp:
-
-/usr/include/ensmallen_bits/function/add_separable_evaluate_with_gradient.hpp:
-
-/usr/include/ctype.h:
-
 /usr/include/armadillo_bits/field_meat.hpp:
 
 /usr/include/armadillo_bits/fn_stddev.hpp:
+
+/usr/include/armadillo_bits/glue_hist_meat.hpp:
+
+/usr/include/mlpack/methods/sparse_coding/data_dependent_random_initializer.hpp:
+
+/usr/include/mlpack/methods/local_coordinate_coding/local_coordinate_coding.hpp:
+
+/usr/include/mlpack/core/math/multiply_slices_impl.hpp:
+
+/usr/include/armadillo_bits/eGlue_bones.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
+
+/usr/include/armadillo_bits/glue_max_bones.hpp:
+
+/usr/include/c++/13/bits/stl_bvector.h:
+
+/usr/include/c++/13/bits/parse_numbers.h:
+
+/usr/include/armadillo_bits/fn_sort.hpp:
+
+/usr/include/c++/13/bits/unique_lock.h:
+
+/usr/include/armadillo_bits/glue_conv_meat.hpp:
+
+/usr/include/mlpack/methods/cf/neighbor_search_policies/cosine_search.hpp:
+
+/usr/include/ensmallen_bits/nsga2/nsga2_impl.hpp:
 
 /usr/include/mlpack/methods/kde/kde.hpp:
 
@@ -5933,43 +5393,55 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/op_symmat_bones.hpp:
 
-/usr/include/python3.12/cpython/longintrepr.h:
-
 /usr/include/armadillo_bits/fn_approx_equal.hpp:
 
 /usr/include/armadillo_bits/injector_meat.hpp:
 
-/usr/include/armadillo_bits/operator_schur.hpp:
+/usr/include/mlpack/core/data/image_info.hpp:
 
-/usr/include/armadillo_bits/op_norm_bones.hpp:
+/usr/include/mlpack/core/cv/metrics/r2_score.hpp:
 
-/usr/include/armadillo_bits/spop_norm_meat.hpp:
+/usr/include/c++/13/bits/locale_facets.h:
 
-/usr/include/armadillo_bits/fn_speye.hpp:
+/usr/include/c++/13/tr1/hypergeometric.tcc:
 
-/usr/include/cereal/access.hpp:
+/usr/include/armadillo_bits/fn_inv.hpp:
 
-/usr/include/ensmallen_bits/aug_lagrangian/aug_lagrangian.hpp:
+/usr/include/armadillo_bits/fn_svds.hpp:
 
-/usr/include/armadillo_bits/podarray_bones.hpp:
+/usr/include/armadillo_bits/op_find_unique_bones.hpp:
 
-/usr/include/armadillo_bits/fn_reverse.hpp:
+/usr/include/armadillo_bits/fn_sylvester.hpp:
 
-/usr/include/armadillo_bits/podarray_meat.hpp:
+/usr/include/armadillo_bits/fn_trig.hpp:
 
-/usr/include/armadillo_bits/spdiagview_meat.hpp:
+/usr/include/armadillo_bits/fn_all.hpp:
 
-/usr/include/mlpack/methods/ann/layer/linear.hpp:
+/usr/include/c++/13/bits/cpp_type_traits.h:
 
-/usr/include/armadillo_bits/promote_type.hpp:
+/usr/include/cereal/archives/portable_binary.hpp:
 
-/usr/include/c++/13/bits/memoryfwd.h:
+/usr/include/armadillo_bits/fn_trimat.hpp:
 
-/usr/include/ensmallen_bits/callbacks/timer_stop.hpp:
+/usr/include/armadillo_bits/op_shuffle_meat.hpp:
 
-/usr/include/mlpack/methods/kmeans/pelleg_moore_kmeans_statistic.hpp:
+/usr/include/armadillo_bits/gmm_misc_bones.hpp:
 
-/usr/include/c++/13/chrono:
+/usr/include/mlpack/methods/kernel_pca/kernel_pca_impl.hpp:
+
+/usr/include/ctype.h:
+
+/usr/include/ensmallen_bits/function/add_separable_evaluate_with_gradient.hpp:
+
+/usr/include/armadillo_bits/glue_times_misc_bones.hpp:
+
+/usr/include/mlpack/methods/decision_tree/mad_gain.hpp:
+
+/usr/include/armadillo_bits/SpToDOp_meat.hpp:
+
+/usr/include/mlpack/methods/ann/ffn.hpp:
+
+/usr/include/ensmallen_bits/problems/beale_function.hpp:
 
 /usr/include/mlpack/methods/reinforcement_learning/worker/n_step_q_learning_worker.hpp:
 
@@ -5985,45 +5457,17 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/ensmallen_bits/iqn/iqn_impl.hpp:
 
-/usr/include/mlpack/methods/ann/dists/normal_distribution_impl.hpp:
+/usr/include/mlpack/core/tree/ballbound_impl.hpp:
 
-/usr/include/mlpack/core/tree/cover_tree/single_tree_traverser.hpp:
+/usr/include/c++/13/bits/std_function.h:
 
-/usr/include/armadillo_bits/running_stat_vec_meat.hpp:
+/usr/include/ensmallen_bits/aug_lagrangian/aug_lagrangian_function_impl.hpp:
 
-/usr/include/armadillo_bits/sp_auxlib_meat.hpp:
+/usr/include/armadillo_bits/glue_cor_bones.hpp:
 
-/usr/include/armadillo_bits/span.hpp:
+/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
-/usr/include/mlpack/methods/ann/loss_functions/margin_ranking_loss_impl.hpp:
-
-/usr/include/mlpack/methods/ann/augmented/tasks/sort_impl.hpp:
-
-/usr/include/mlpack/core/tree/binary_space_tree/vantage_point_split.hpp:
-
-/usr/include/ensmallen_bits/eve/eve.hpp:
-
-/usr/include/armadillo_bits/spglue_join_bones.hpp:
-
-/usr/include/c++/13/bits/fstream.tcc:
-
-/usr/include/armadillo_bits/spglue_kron_meat.hpp:
-
-/usr/include/mlpack/methods/ann/layer/elu.hpp:
-
-/usr/include/armadillo_bits/spglue_merge_meat.hpp:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h:
-
-/usr/include/ensmallen_bits/problems/fw_test_function.hpp:
-
-/usr/include/armadillo_bits/spglue_min_bones.hpp:
-
-/usr/include/armadillo_bits/spglue_min_meat.hpp:
-
-/usr/include/ensmallen_bits/smorms3/smorms3_update.hpp:
-
-/usr/include/armadillo_bits/spglue_relational_bones.hpp:
+/usr/include/armadillo_bits/glue_cor_meat.hpp:
 
 /usr/include/mlpack/core/data/extension.hpp:
 
@@ -6063,8 +5507,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/ensmallen_bits/adam/adam_impl.hpp:
 
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/typing.h:
-
 /usr/include/armadillo_bits/spop_min_meat.hpp:
 
 /usr/include/mlpack/methods/reinforcement_learning/reinforcement_learning.hpp:
@@ -6072,8 +5514,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/mlpack/methods/ann/layer/log_softmax_impl.hpp:
 
 /usr/include/armadillo_bits/spop_misc_bones.hpp:
-
-/usr/include/python3.12/patchlevel.h:
 
 /usr/include/c++/13/stack:
 
@@ -6104,6 +5544,12 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/mlpack/core/data/string_algorithms.hpp:
 
 /usr/include/armadillo_bits/spop_sum_bones.hpp:
+
+/usr/include/armadillo_bits/fn_accu.hpp:
+
+/usr/include/armadillo_bits/fn_trans.hpp:
+
+/usr/include/ensmallen_bits/sgd/decay_policies/no_decay.hpp:
 
 /usr/include/ensmallen_bits/fw/line_search/line_search_impl.hpp:
 
@@ -6185,6 +5631,8 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/ensmallen_bits/cmaes/not_empty_transformation.hpp:
 
+/usr/include/ensmallen_bits/sgdr/snapshot_sgdr_impl.hpp:
+
 /usr/include/mlpack/methods/ann/layer/noisylinear.hpp:
 
 /usr/include/armadillo_bits/SpSubview_iterators_meat.hpp:
@@ -6207,11 +5655,17 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/c++/13/ext/type_traits.h:
 
+/usr/include/armadillo_bits/sym_helper.hpp:
+
 /usr/include/mlpack/methods/lsh.hpp:
 
 /usr/include/mlpack/methods/cf/neighbor_search_policies/lmetric_search.hpp:
 
 /usr/include/armadillo_bits/translate_arpack.hpp:
+
+/usr/include/armadillo_bits/podarray_bones.hpp:
+
+/usr/include/ensmallen_bits/aug_lagrangian/aug_lagrangian.hpp:
 
 /usr/include/armadillo_bits/translate_lapack.hpp:
 
@@ -6226,8 +5680,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/armadillo_bits/typedef_elem_check.hpp:
 
 /usr/include/armadillo_bits/typedef_mat.hpp:
-
-/usr/include/python3.12/sliceobject.h:
 
 /usr/include/armadillo_bits/typedef_mat_fixed.hpp:
 
@@ -6269,10 +5721,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/armadillo_bits/xvec_htrans_meat.hpp:
 
-/usr/include/armadillo_bits/op_sp_plus_meat.hpp:
-
-/usr/include/asm-generic/bitsperlong.h:
-
 /usr/include/mlpack/core/kernels/example_kernel.hpp:
 
 /usr/include/armadillo_bits/op_dotext_bones.hpp:
@@ -6283,11 +5731,11 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/ensmallen_bits/problems/holder_table_function.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
-
-/usr/include/c++/13/tr1/legendre_function.tcc:
-
 /usr/include/assert.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
+
+/usr/include/ensmallen_bits/sdp/sdp.hpp:
 
 /usr/include/c++/13/algorithm:
 
@@ -6296,8 +5744,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/mlpack/methods/ann/loss_functions/mean_absolute_percentage_error_impl.hpp:
 
 /usr/include/ensmallen_bits/padam/padam_update.hpp:
-
-/usr/include/python3.12/bytesobject.h:
 
 /usr/include/c++/13/any:
 
@@ -6308,6 +5754,10 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/armadillo_bits/spop_normalise_meat.hpp:
 
 /usr/include/c++/13/bits/align.h:
+
+/usr/include/ensmallen_bits/problems/generalized_rosenbrock_function.hpp:
+
+/usr/include/c++/13/bits/allocated_ptr.h:
 
 /usr/include/mlpack/methods/amf/update_rules/nmf_als.hpp:
 
@@ -6320,8 +5770,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/c++/13/bits/char_traits.h:
 
 /usr/include/c++/13/bits/charconv.h:
-
-/usr/include/x86_64-linux-gnu/bits/stat.h:
 
 /usr/include/c++/13/limits:
 
@@ -6413,8 +5861,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/c++/13/pstl/glue_memory_defs.h:
 
-/usr/include/python3.12/cpython/pythread.h:
-
 /usr/include/armadillo_bits/operator_plus.hpp:
 
 /usr/include/c++/13/bits/move.h:
@@ -6422,8 +5868,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/armadillo_bits/glue_polyfit_bones.hpp:
 
 /usr/include/c++/13/bits/nested_exception.h:
-
-/usr/include/asm-generic/types.h:
 
 /usr/include/cereal/external/rapidxml/rapidxml.hpp:
 
@@ -6473,6 +5917,8 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/c++/13/bits/shared_ptr_base.h:
 
+/usr/include/ensmallen_bits/sgd/update_policies/gradient_clipping.hpp:
+
 /usr/include/mlpack/methods/kmeans/naive_kmeans.hpp:
 
 /usr/include/c++/13/bits/exception_ptr.h:
@@ -6516,6 +5962,12 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/c++/13/bits/stl_multimap.h:
 
 /usr/include/c++/13/bits/stl_multiset.h:
+
+/usr/include/mlpack/methods/ann/activation_functions/elish_function.hpp:
+
+/usr/include/armadillo_bits/glue_powext_meat.hpp:
+
+/usr/include/ensmallen_bits/sgd/update_policies/nesterov_momentum_update.hpp:
 
 /usr/include/c++/13/bits/stl_pair.h:
 
@@ -6585,8 +6037,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/c++/13/bits/utility.h:
 
-/usr/include/python3.12/cpython/floatobject.h:
-
 /usr/include/mlpack/methods/approx_kfn/drusilla_select_impl.hpp:
 
 /usr/include/c++/13/cassert:
@@ -6611,9 +6061,9 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
 
-/usr/include/armadillo_bits/translate_fftw3.hpp:
-
 /usr/include/armadillo_bits/SpCol_bones.hpp:
+
+/usr/include/armadillo_bits/translate_fftw3.hpp:
 
 /usr/include/c++/13/complex:
 
@@ -6687,10 +6137,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/c++/13/ios:
 
-/usr/include/ensmallen_bits/sdp/lrsdp.hpp:
-
-/usr/include/c++/13/iosfwd:
-
 /usr/include/mlpack/methods/ann/loss_functions/triplet_margin_loss.hpp:
 
 /usr/include/ensmallen_bits/ada_belief/ada_belief.hpp:
@@ -6726,8 +6172,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/armadillo_bits/fn_roots.hpp:
 
 /usr/include/c++/13/new:
-
-/usr/include/c++/13/optional:
 
 /usr/include/mlpack/methods/cf/normalization/combined_normalization.hpp:
 
@@ -6769,6 +6213,12 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/c++/13/thread:
 
+/usr/include/mlpack/core/tree/tree.hpp:
+
+/usr/include/armadillo_bits/fn_toeplitz.hpp:
+
+/usr/include/c++/13/tr1/bessel_function.tcc:
+
 /usr/include/mlpack/core/tree/rectangle_tree/hilbert_r_tree_split_impl.hpp:
 
 /usr/include/c++/13/tr1/beta_function.tcc:
@@ -6795,15 +6245,11 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/c++/13/tr1/gamma.tcc:
 
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/include/c++/13/tr1/legendre_function.tcc:
+
 /usr/include/c++/13/tr1/poly_laguerre.tcc:
-
-/usr/include/mlpack/methods/neighbor_search.hpp:
-
-/usr/include/ensmallen_bits/sgdr/snapshot_ensembles.hpp:
-
-/usr/include/armadillo_bits/subview_each_bones.hpp:
-
-/usr/include/c++/13/tr1/special_function_util.h:
 
 /usr/include/ensmallen_bits/problems/goldstein_price_function_impl.hpp:
 
@@ -6827,23 +6273,13 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/c++/13/vector:
 
-/usr/include/mlpack/methods/pca.hpp:
-
-/usr/include/c++/13/version:
-
 /usr/include/rapidjson/prettywriter.h:
 
 /usr/include/cereal/archives/binary.hpp:
 
-/usr/include/mlpack/methods/ann/init_rules/const_init.hpp:
-
-/usr/include/ensmallen_bits/sarah/sarah_impl.hpp:
-
-/usr/include/cereal/cereal.hpp:
+/usr/include/armadillo_bits/spdiagview_bones.hpp:
 
 /usr/include/armadillo_bits/op_norm_meat.hpp:
-
-/usr/include/armadillo_bits/spdiagview_bones.hpp:
 
 /usr/include/cereal/details/polymorphic_impl_fwd.hpp:
 
@@ -6858,6 +6294,10 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/cereal/specialize.hpp:
 
 /usr/include/cereal/types/memory.hpp:
+
+/usr/include/armadillo_bits/Gen_meat.hpp:
+
+/usr/include/ensmallen_bits/sarah/sarah_plus_update.hpp:
 
 /usr/include/rapidjson/istreamwrapper.h:
 
@@ -6874,6 +6314,12 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/ensmallen_bits/fw/proximal/proximal.hpp:
 
 /usr/include/endian.h:
+
+/usr/include/rapidjson/internal/diyfp.h:
+
+/usr/include/mlpack/methods/reinforcement_learning/q_networks/dueling_dqn.hpp:
+
+/usr/include/ensmallen.hpp:
 
 /usr/include/ensmallen_bits/ada_bound/ada_bound_impl.hpp:
 
@@ -6897,15 +6343,13 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/ensmallen_bits/ada_grad/ada_grad_update.hpp:
 
-/usr/include/python3.12/cpython/complexobject.h:
-
 /usr/include/mlpack/methods/reinforcement_learning/policy/aggregated_policy.hpp:
 
 /usr/include/ensmallen_bits/function/add_separable_evaluate.hpp:
 
-/usr/include/armadillo_bits/include_hdf5.hpp:
-
 /usr/include/armadillo_bits/fn_polyfit.hpp:
+
+/usr/include/armadillo_bits/include_hdf5.hpp:
 
 /usr/include/ensmallen_bits/ada_sqrt/ada_sqrt_update.hpp:
 
@@ -7033,8 +6477,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/ensmallen_bits/function/sfinae_utility.hpp:
 
-/usr/include/python3.12/pymath.h:
-
 /usr/include/mlpack/core/cv/metrics/metrics.hpp:
 
 /usr/include/ensmallen_bits/function/static_checks.hpp:
@@ -7051,11 +6493,7 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/ensmallen_bits/fw/constr_lpball.hpp:
 
-/usr/include/python3.12/frameobject.h:
-
 /usr/include/ensmallen_bits/fw/func_sq.hpp:
-
-/usr/include/python3.12/pylifecycle.h:
 
 /usr/include/mlpack/methods/local_coordinate_coding/lcc_impl.hpp:
 
@@ -7065,9 +6503,9 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/mlpack/methods/ann/regularizer/regularizer.hpp:
 
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/typeid.h:
-
 /usr/include/ensmallen_bits/fw/proximal/proximal_impl.hpp:
+
+/usr/include/ensmallen_bits/sgd/update_policies/vanilla_update.hpp:
 
 /usr/include/linux/close_range.h:
 
@@ -7082,8 +6520,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/armadillo_bits/MapMat_bones.hpp:
 
 /usr/include/ensmallen_bits/gradient_descent/gradient_descent.hpp:
-
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/pybind11_namespace_macros.h:
 
 /usr/include/ensmallen_bits/gradient_descent/gradient_descent_impl.hpp:
 
@@ -7163,7 +6599,17 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/ensmallen_bits/problems/fonseca_fleming_function.hpp:
 
+/usr/include/mlpack/methods/ann/init_rules/const_init.hpp:
+
+/usr/include/cereal/cereal.hpp:
+
+/usr/include/ensmallen_bits/sarah/sarah_impl.hpp:
+
 /usr/include/ensmallen_bits/problems/generalized_rosenbrock_function_impl.hpp:
+
+/usr/include/c++/13/iosfwd:
+
+/usr/include/ensmallen_bits/sdp/lrsdp.hpp:
 
 /usr/include/mlpack/methods/naive_bayes.hpp:
 
@@ -7174,12 +6620,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 /usr/include/ensmallen_bits/problems/rosenbrock_function_impl.hpp:
 
 /usr/include/ensmallen_bits/problems/gradient_descent_test_function_impl.hpp:
-
-/usr/include/ensmallen_bits/sgd/update_policies/quasi_hyperbolic_update.hpp:
-
-/usr/include/ensmallen_bits/adam/nadam_update.hpp:
-
-/usr/include/ensmallen_bits/problems/himmelblau_function_impl.hpp:
 
 /usr/include/ensmallen_bits/function/add_evaluate.hpp:
 
@@ -7201,8 +6641,6 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/ensmallen_bits/problems/problems.hpp:
 
-/usr/include/python3.12/pystrcmp.h:
-
 /usr/include/armadillo_bits/op_row_as_mat_meat.hpp:
 
 /usr/include/ensmallen_bits/problems/sgd_test_function.hpp:
@@ -7213,13 +6651,15 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/ensmallen_bits/problems/softmax_regression_function.hpp:
 
+/usr/include/mlpack/core/math/log_add.hpp:
+
+/usr/include/ensmallen_bits/problems/softmax_regression_function_impl.hpp:
+
 /usr/include/mlpack/methods/ann/loss_functions/poisson_nll_loss_impl.hpp:
 
 /usr/include/ensmallen_bits/problems/sparse_test_function_impl.hpp:
 
 /usr/include/mlpack/core/data/load_image.hpp:
-
-/usr/include/asm-generic/int-ll64.h:
 
 /usr/include/ensmallen_bits/problems/sphere_function_impl.hpp:
 
@@ -7243,8 +6683,70 @@ CMakeFiles/ml.dir/objects/PRICE.cpp.o: /home/atlas/code/Projects/SERAX_Forex_alg
 
 /usr/include/mlpack/methods/cf/normalization/user_mean_normalization.hpp:
 
-/home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/using_smart_holder.h:
-
 /usr/include/ensmallen_bits/rmsprop/rmsprop.hpp:
 
 /usr/include/ensmallen_bits/rmsprop/rmsprop_update.hpp:
+
+/usr/include/mlpack/core/cv/cv_base.hpp:
+
+/usr/include/ensmallen_bits/sdp/lin_alg.hpp:
+
+/usr/include/ensmallen_bits/sdp/lrsdp_function.hpp:
+
+/usr/include/ensmallen_bits/sdp/lrsdp_function_impl.hpp:
+
+/usr/include/ensmallen_bits/sgd/update_policies/momentum_update.hpp:
+
+/usr/include/ensmallen_bits/adam/nadam_update.hpp:
+
+/usr/include/ensmallen_bits/problems/himmelblau_function_impl.hpp:
+
+/usr/include/ensmallen_bits/sgd/update_policies/quasi_hyperbolic_update.hpp:
+
+/usr/include/armadillo_bits/glue_max_meat.hpp:
+
+/usr/include/ensmallen_bits/sgdr/cyclical_decay.hpp:
+
+/usr/include/armadillo_bits/MapMat_meat.hpp:
+
+/usr/include/cereal/types/array.hpp:
+
+/usr/include/ensmallen_bits/sgdr/sgdr_impl.hpp:
+
+/usr/include/mlpack/methods/neighbor_search.hpp:
+
+/usr/include/armadillo_bits/subview_each_bones.hpp:
+
+/usr/include/c++/13/tr1/special_function_util.h:
+
+/usr/include/ensmallen_bits/sgdr/snapshot_ensembles.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
+
+/usr/include/mlpack/methods/sparse_autoencoder/sparse_autoencoder.hpp:
+
+/usr/include/armadillo_bits/mtOp_bones.hpp:
+
+/usr/include/ensmallen_bits/smorms3/smorms3.hpp:
+
+/usr/include/ensmallen_bits/smorms3/smorms3_impl.hpp:
+
+/usr/include/armadillo_bits/spglue_relational_bones.hpp:
+
+/usr/include/ensmallen_bits/smorms3/smorms3_update.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
+
+/usr/include/mlpack/core/tree/rectangle_tree.hpp:
+
+/usr/include/mlpack/core/cereal/array_wrapper.hpp:
+
+/usr/include/ensmallen_bits/spalera_sgd/spalera_sgd_impl.hpp:
+
+/usr/include/armadillo_bits/distr_param.hpp:
+
+/usr/include/ensmallen_bits/spsa/spsa_impl.hpp:
+
+/usr/include/armadillo_bits/fn_trimat_ind.hpp:
+
+/usr/include/ensmallen_bits/svrg/barzilai_borwein_decay.hpp:
