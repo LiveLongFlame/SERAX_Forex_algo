@@ -20,5 +20,7 @@ echo "Installing Python dependencies..."
 pip install pandas pybind11 ib_insync numpy matplotlib
 
 echo "Installation complete!"
-echo "To activate the Python environment, run: source venv/bin/activate"
-
+
+source venv/bin/activate
+echo "Virtual environment activated. You can now run your Python scripts with the installed dependencies."
+
