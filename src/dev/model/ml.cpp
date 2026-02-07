@@ -8,6 +8,9 @@
 #include <cmath> 
 #include <vector>
 #include "objects/PRICE.h"
+#include <pybind11/pybind11.h>
+
+namespace py = pybind11;
 
 // function calulates the Rate-of-change(ROC) and returns its value
 arma::vec roc(const arma::vec& cPrice){

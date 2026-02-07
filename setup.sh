@@ -9,6 +9,8 @@ sudo apt update
 echo "Installing system dependencies..."
 sudo apt install -y python3 python3-pip python3-venv git wget
 
+sudo apt install -y build-essential cmake
+
 echo "Setting up Python virtual environment..."
 python3 -m venv venv
 source venv/bin/activate
@@ -21,6 +23,5 @@ pip install pandas pybind11 ib_insync numpy matplotlib
 
 echo "Installation complete!"
 
-source venv/bin/activate
-echo "Virtual environment activated. You can now run your Python scripts with the installed dependencies."
+echo "To activate the virtual environment, run: source venv/bin/activate"
 
