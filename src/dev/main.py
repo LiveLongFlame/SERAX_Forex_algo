@@ -16,6 +16,8 @@ ml.train_model(CSV_DATA, MODEL_PATH)
 
 pairs = ['EURUSD', 'USDJPY' , 'GDPUSD', 'USDCHF', 'USDCAD', 'AUDUSD', 'NZDUSD']
 
+ib = IB()
+
 def ml_model(ccy_pair, ib, model):
     contract = Forex(ccy_pair)
     ib.qualifyContracts(contract)
@@ -72,6 +74,13 @@ def menu():
         #FOR TESTING PURPOSES ONLY
         print("Initial value: ", initial)
         print(ml.__doc__)
+        print("ibkr live traiding")
+        contract = Forex('EURUSD')
+        ib.qualifyContracts(contract)
+        ticker = ib.reqMktData(contract)
+        ib.sleep(2)
+        print("ASK: ", ticker.ask)
+        print("BID: ", ticker.bid)
         #------------------------------------
         #todo: add code to use ML model to make predictions here
     elif choice == 3:
@@ -84,7 +93,6 @@ def menu():
 def main():
     print("Starting application...")
     print("Initializing IB connection...")
-    ib = IB()
     #change port denpending on your IB Gateway or TWS settings
     ib.connect('127.0.0', 4002, clientId=1)
     print("IB connection established...")
