@@ -12,41 +12,6 @@
 //------------------ comment out when running Makefile in order to test model
 #include <pybind11/pybind11.h>
 namespace py = pybind11;
-//---------------------------------------------------------------------------
-
-// function calulates the Rate-of-change(ROC) and returns its value
-arma::vec roc(const arma::vec& cPrice){
-	// amra better implementaiton 
-	return arma::diff(cPrice) / cPrice.head(cPrice.n_elem - 1 );
-}
-
-// function calualtes the Volaitilty (standard devation of returns) 
-double sdor(const arma::vec& roc){
-	// uses armadillo built in lib for standard devation
-	return arma::stddev(roc);
-}
-
-// function that finds the probabilty allowing the ML to decide a function
-double actionProbabilty(double roc, double sdor, double roc_weight, double sdor_weight, double bias = 0.0){
-	// logistic regression with 2 features 
-	double z = roc_weight * roc - sdor_weight * sdor + bias;
-	return 1.0 / (1.0+ std::exp(-z));
-}
-// enum in order to do three classification
-enum Action{
-	SELL = 0,
-	HOLD = 1,
-	BUY = 2
-};
-
-// decides the different thersholds where the ML whill decide 
-// NOTE: There values are subject to chagne over time 
-Action decideAction(double prob, double buyThreshold = 0.6, double sellThreshold = 0.4){
-	if(prob >= buyThreshold) return BUY;
-	if(prob <= sellThreshold) return SELL;
-	return HOLD;
-
-}
 
 // wrapper function that moves loigc from main 
 void train_model(const std::string& csvPath,
@@ -102,6 +67,42 @@ PYBIND11_MODULE(ml, m) {
           py::arg("output_model_path"),
           py::arg("window") = 30);
 }
+//---------------------------------------------------------------------------
+
+// function calulates the Rate-of-change(ROC) and returns its value
+arma::vec roc(const arma::vec& cPrice){
+	// amra better implementaiton 
+	return arma::diff(cPrice) / cPrice.head(cPrice.n_elem - 1 );
+}
+
+// function calualtes the Volaitilty (standard devation of returns) 
+double sdor(const arma::vec& roc){
+	// uses armadillo built in lib for standard devation
+	return arma::stddev(roc);
+}
+
+// function that finds the probabilty allowing the ML to decide a function
+double actionProbabilty(double roc, double sdor, double roc_weight, double sdor_weight, double bias = 0.0){
+	// logistic regression with 2 features 
+	double z = roc_weight * roc - sdor_weight * sdor + bias;
+	return 1.0 / (1.0+ std::exp(-z));
+}
+// enum in order to do three classification
+enum Action{
+	SELL = 0,
+	HOLD = 1,
+	BUY = 2
+};
+
+// decides the different thersholds where the ML whill decide 
+// NOTE: There values are subject to chagne over time 
+Action decideAction(double prob, double buyThreshold = 0.6, double sellThreshold = 0.4){
+	if(prob >= buyThreshold) return BUY;
+	if(prob <= sellThreshold) return SELL;
+	return HOLD;
+
+}
+
 
 // Uncomment main when testing the model
 // int main(){

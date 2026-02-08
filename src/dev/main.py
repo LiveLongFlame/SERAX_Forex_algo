@@ -71,6 +71,7 @@ def menu():
         initial = float(input("Enter initial value $ "))
         #FOR TESTING PURPOSES ONLY
         print("Initial value: ", initial)
+        print(ml.__doc__)
         #------------------------------------
         #todo: add code to use ML model to make predictions here
     elif choice == 3:
