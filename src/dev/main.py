@@ -89,14 +89,18 @@ def menu():
         bias = 0.1
         # todo: need to add trained model
         print(model(sdor_val, roc_val, roc_weight, sdor_weight, bias))
+        
 
+        '''
+        todo: 
+        1. Load pretrained ml model 
+        2. feed live data into train_model to calulate roc and sdor then feed those values into the model
+        3. pass new data to c++ functuion that updates model in memory 
+        4. make prediction and execute trade based on prediction and current market conditions
 
-        #idea: we get the last 2 hours of market data and calculate the sdor and roc 
-        #then feed that to ml and get a prediction 
-        # once a prediction is made feed to another functin that executes the trade based on the predicted values 
-        # print out the trade and with what currency pair 
-        # then when the program stops when the person hits ctrl+c print out a summary of the trading performance for the session
+        '''
 
+        
     elif choice == 3:
         print("Exiting application...")
         sys.exit()
