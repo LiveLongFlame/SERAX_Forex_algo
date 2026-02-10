@@ -31,5 +31,5 @@ You will need to install and setup your own IBKR trading account and install IBK
 ## NOTES: 
 * Make sure to have your IBKR Gateway running and connected to your account before running the main program.
 * The program will start training the model and then will start making predictions based on the trained model
-* If build fails, try rebuilding the model by running `rm -rf src/dev/model/build && mkdir src/dev/model/build && cd src/dev/model/build && cmake .. -DPython_EXECUTABLE=../venv/bin/python && cmake --build .` and then try running the main program again.
-
+* if build fails try running `./src/dev/re-build.sh` to rebuild the project and then run `python3 main.py` again.
+* if you want to compile from strach run `rm -rf src/dev/model/build && mkdir src/dev/model/build && cd src/dev/model/build && cmake .. -DPython_EXECUTABLE=../venv/bin/python && cmake --build .` and then run `python3 main.py` again.
