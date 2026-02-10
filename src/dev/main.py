@@ -66,6 +66,7 @@ def menu():
     print("3. Exit")
     choice = int(input("\n> "))
     print("\n")
+    #todo: get rid of this since it is out of scope of project
     if choice == 1:
         print("Training ML model...")
         #todo: add functionality to either train model with existing data or with new data from the last hour
@@ -76,7 +77,7 @@ def menu():
 
         #todo: add code to train ML model here
     elif choice == 2:
-        initial = float(input("Enter initial value $ "))
+        initial = float(input("Enter initial bid:  "))
         
         # prints out live data
         # print(get_live_data(pairs[0]))
