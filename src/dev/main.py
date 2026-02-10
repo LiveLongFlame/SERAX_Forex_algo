@@ -15,9 +15,10 @@ pairs = ['EURUSD', 'USDJPY' , 'GDPUSD', 'USDCHF', 'USDCAD', 'AUDUSD', 'NZDUSD']
 ib = IB()
 
 #todo: this function should take the sdor and roc values and feed them to the ML model to get a prediction for the next price movement
-def model(sdor, roc):
-    ml_model = ml.load_model(MODEL_PATH)
-    return 0
+def model(sdor, roc, roc_weight, sdor_weight, bias):
+    prob = ml.predict_action(roc, sdor, roc_weight, sdor_weight, bias)
+    action_str = {0: "Sell", 1: "Hold", 2: "Buy"}[prob]
+    return action_str
 
 def calcuate_sdor_and_roc(pair):
     contract = Forex(pair, exchange='IDEALPRO')
@@ -77,7 +78,18 @@ def menu():
     elif choice == 2:
         initial = float(input("Enter initial value $ "))
         
-        print(get_live_data(pairs[0]))
+        # prints out live data
+        # print(get_live_data(pairs[0]))
+        
+        # fake but reasonable values
+        roc_val = 0.0002
+        sdor_val = 0.0008
+        roc_weight = 0.5
+        sdor_weight = 0.5
+        bias = 0.1
+        # todo: need to add trained model
+        print(model(sdor_val, roc_val, roc_weight, sdor_weight, bias))
+
 
         #idea: we get the last 2 hours of market data and calculate the sdor and roc 
         #then feed that to ml and get a prediction 

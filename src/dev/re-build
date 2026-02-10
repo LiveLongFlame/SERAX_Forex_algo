@@ -1,0 +1,11 @@
+#!/bin/bash 
+
+rm ml.cpython-312-x86_64-linux-gnu.so
+
+cd model/build 
+
+cmake --build .
+mv ml.cpython-312-x86_64-linux-gnu.so ../../
+
+cd ../..
+

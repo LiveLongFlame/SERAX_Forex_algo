@@ -8,67 +8,6 @@
 #include <cmath> 
 #include <vector>
 #include "objects/PRICE.h"
-
-//------------------ comment out when running Makefile in order to test model
-#include <pybind11/pybind11.h>
-namespace py = pybind11;
-
-// wrapper function that moves loigc from main 
-void train_model(const std::string& csvPath,
-                 const std::string& outModelPath,
-                 size_t window = 30)
-{
-    arma::mat raw;
-    mlpack::data::Load(csvPath, raw, true);
-
-    raw = raw.t();
-    arma::vec closePrices = raw.col(3);
-
-    std::vector<double> featuresROC;
-    std::vector<double> featureVOL;
-    std::vector<size_t> labels;
-
-    for (size_t i = window; i + 1 < closePrices.n_elem; i++) {
-        arma::vec windowPrices = closePrices.subvec(i - window, i);
-
-        arma::vec r = roc(windowPrices);
-        double vol = sdor(r);
-        double lastRoc = r.tail(1)(0);
-
-        featuresROC.push_back(lastRoc);
-        featureVOL.push_back(vol);
-
-        double futureReturn =
-            (closePrices(i + 1) - closePrices(i)) / closePrices(i);
-
-        labels.push_back(futureReturn > 0 ? 1 : 0);
-    }
-
-    size_t N = labels.size();
-    arma::mat X(2, N);
-    arma::Row<size_t> y(N);
-
-    for (size_t i = 0; i < N; ++i) {
-        X(0, i) = featuresROC[i];
-        X(1, i) = featureVOL[i];
-        y(i) = labels[i];
-    }
-
-    mlpack::regression::LogisticRegression<> model(X, y);
-    mlpack::data::Save(outModelPath, "model", model, true);
-}
-// Comment out when running Makefile in order to test model
-PYBIND11_MODULE(ml, m) {
-    m.doc() = "SERAX ML training module";
-
-    m.def("train_model",
-          &train_model,
-          py::arg("csv_path"),
-          py::arg("output_model_path"),
-          py::arg("window") = 30);
-}
-//---------------------------------------------------------------------------
-
 // function calulates the Rate-of-change(ROC) and returns its value
 arma::vec roc(const arma::vec& cPrice){
 	// amra better implementaiton 
@@ -103,6 +42,27 @@ Action decideAction(double prob, double buyThreshold = 0.6, double sellThreshold
 
 }
 
+
+
+
+//------------------ comment out when running Makefile in order to test model
+#include <pybind11/pybind11.h>
+namespace py = pybind11;
+
+// Predict function based on action the ml takes 
+// todo: need to add saved ml and add its weight for final outcome
+int predict_action(double roc, double sdor, double roc_weight = 1.0, double sdor_weight = 1.0, double bias = 0.0){
+    double prob = actionProbabilty(roc, sdor, roc_weight, sdor_weight, bias);
+    Action act = decideAction(prob);
+    return static_cast<int>(act);
+}
+
+// Comment out when running Makefile in order to test model
+PYBIND11_MODULE(ml, m) {
+    m.doc() = "SERAX ML training module";
+    m.def("predict_action",&predict_action,py::arg("roc"), py::arg("sdor"), py::arg("roc_weight") = 1.0, py::arg("sdor_weight") = 1.0, py::arg("bias") = 0.0);
+}
+//---------------------------------------------------------------------------
 
 // Uncomment main when testing the model
 // int main(){
