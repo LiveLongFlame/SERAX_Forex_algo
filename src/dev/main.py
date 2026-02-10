@@ -10,35 +10,40 @@ import ml
 MODEL_PATH= "model/trading_model.xml"
 CSV_DATA = "data/ohlc.csv"
 
-ml.train_model(CSV_DATA, MODEL_PATH)
-#todo: print out users current balance, open positions, and any other relevant information to the console for each live trade
-#todo: users should be alowwed to hit ctrl+c to exit the application at any time and the program should print out a summary of the users trading performance for the session before exiting
-
 pairs = ['EURUSD', 'USDJPY' , 'GDPUSD', 'USDCHF', 'USDCAD', 'AUDUSD', 'NZDUSD']
 
 ib = IB()
 
-def ml_model(ccy_pair, ib, model):
-    contract = Forex(ccy_pair)
+#todo: this function should take the sdor and roc values and feed them to the ML model to get a prediction for the next price movement
+def model(sdor, roc):
+    ml_model = ml.load_model(MODEL_PATH)
+    return 0
+
+def calcuate_sdor_and_roc(pair):
+    contract = Forex(pair, exchange='IDEALPRO')
     ib.qualifyContracts(contract)
     bars = ib.reqHistoricalData(
-            contract,
-            endDateTime='',
-            durationStr='2 H',
-            barSizeSetting='1 min',
-            whatToShow='MIDPOINT',
-            useRTH=False,
-            formatDate=1
-            )
+        contract,
+        endDateTime='',
+        durationStr='2 H',
+        barSizeSetting='1 min',
+        whatToShow='MIDPOINT',
+        useRTH=True,
+        formatDate=1
+    )
     df = util.df(bars)
-    df.set_index('date', inplace=True)
+    close_prices = df['close'].values
+    returns = roc(close_prices)
+    sdor_value = sdor(returns)
+    roc_value = roc(close_prices)[-1]  # Get the most recent ROC value
+    return sdor_value, roc_value
 
-    if not bars:
-        print("No data received for the specified currency pair.")
-        return 1 
-    
-    #todo: implement model with pybind 11
-    return 0
+def get_live_data(pair):
+    contract = Forex(pair, exchange='IDEALPRO')
+    ib.qualifyContracts(contract)
+    ticker = ib.reqMktData(contract)
+    ib.sleep(2)
+    return ticker
 
 #todo: this function should execute a trade based on the predicted values from the ML model and the current market conditions
 def trade():
@@ -71,18 +76,15 @@ def menu():
         #todo: add code to train ML model here
     elif choice == 2:
         initial = float(input("Enter initial value $ "))
-        #FOR TESTING PURPOSES ONLY
-        print("Initial value: ", initial)
-        print(ml.__doc__)
-        print("ibkr live traiding")
-        contract = Forex('EURUSD')
-        ib.qualifyContracts(contract)
-        ticker = ib.reqMktData(contract)
-        ib.sleep(2)
-        print("ASK: ", ticker.ask)
-        print("BID: ", ticker.bid)
-        #------------------------------------
-        #todo: add code to use ML model to make predictions here
+        
+        print(get_live_data(pairs[0]))
+
+        #idea: we get the last 2 hours of market data and calculate the sdor and roc 
+        #then feed that to ml and get a prediction 
+        # once a prediction is made feed to another functin that executes the trade based on the predicted values 
+        # print out the trade and with what currency pair 
+        # then when the program stops when the person hits ctrl+c print out a summary of the trading performance for the session
+
     elif choice == 3:
         print("Exiting application...")
         sys.exit()
