@@ -41,6 +41,7 @@ def fetch_live_window(pair, duration='120 S'):
         print(f"'close' column not found in data for {pair}")
         return np.array([])
     
+    print(df['close'])
     return df['close'].values
 
 
@@ -79,7 +80,8 @@ def menu():
     if choice == 1:
         # print(get_live_data(pairs[0]))
         # pair = input("Input currency pair: ")
-        close_prices = fetch_live_window(pairs[0], duration= '120 S')  
+        # duration is for 2 hours 
+        close_prices = fetch_live_window(pairs[5], duration= '7200 S')  
         if len(close_prices) == 0:
             print("No data, skipping prediction")
         else:
