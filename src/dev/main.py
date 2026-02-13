@@ -14,45 +14,40 @@ pairs = ['EURUSD', 'USDJPY' , 'GDPUSD', 'USDCHF', 'USDCAD', 'AUDUSD', 'NZDUSD']
 
 ib = IB()
 
-#todo: this function should take the sdor and roc values and feed them to the ML model to get a prediction for the next price movement
-def model(sdor, roc, roc_weight, sdor_weight, bias):
-    prob = ml.predict_action(roc, sdor, roc_weight, sdor_weight, bias)
-    action_str = {0: "Sell", 1: "Hold", 2: "Buy"}[prob]
-    return action_str
+def ml_prediction(close_prices, roc_weight=0.5, sdor_weight=0.5, bias=0.0):
+    sdor_val, roc_val = calcuate_sdor_and_roc(close_prices)
+    action_str = ml.predict_action(roc_val, sdor_val, roc_weight, sdor_weight, bias)
+    return {0: "Sell", 1: "Hold", 2: "Buy"}[action_str]
 
-def fetch_live_window(pair, minutes=120):
+
+def fetch_live_window(pair, duration='120 S'):
     contract = Forex(pair, exchange='IDEALPRO')
     ib.qualifyContracts(contract)
     bars = ib.reqHistoricalData(
         contract,
         endDateTime='',
-        durationStr=f'{minutes} M',
+        durationStr=duration,   
         barSizeSetting='1 min',
         whatToShow='MIDPOINT',
         useRTH=True,
         formatDate=1
     )
+    if not bars:
+        print(f"No historical data returned for {pair} with duration {duration}")
+        return np.array([])
+    
     df = util.df(bars)
-    return df['close'].values  
+    if 'close' not in df:
+        print(f"'close' column not found in data for {pair}")
+        return np.array([])
+    
+    return df['close'].values
 
 
-def calcuate_sdor_and_roc(pair):
-    contract = Forex(pair, exchange='IDEALPRO')
-    ib.qualifyContracts(contract)
-    bars = ib.reqHistoricalData(
-        contract,
-        endDateTime='',
-        durationStr='2 H',
-        barSizeSetting='1 min',
-        whatToShow='MIDPOINT',
-        useRTH=True,
-        formatDate=1
-    )
-    df = util.df(bars)
-    close_prices = df['close'].values
-    returns = roc(close_prices)
-    sdor_value = sdor(returns)
-    roc_value = roc(close_prices)[-1]  # Get the most recent ROC value
+def calcuate_sdor_and_roc(close_prices):
+    returns = np.diff(close_prices) / close_prices[:-1]
+    sdor_value = np.sqrt(np.mean(returns[returns < 0]**2)) if len(returns[returns < 0]) > 0 else 0.0
+    roc_value = returns[-1] if len(returns) > 0 else 0.0
     return sdor_value, roc_value
 
 def get_live_data(pair):
@@ -82,25 +77,26 @@ def menu():
     choice = int(input("\n> "))
     print("\n")
     if choice == 1:
+        # print(get_live_data(pairs[0]))
+        # pair = input("Input currency pair: ")
+        close_prices = fetch_live_window(pairs[0], duration= '120 S')  
+        if len(close_prices) == 0:
+            print("No data, skipping prediction")
+        else:
+            prediction = ml_prediction(close_prices)
 
-        initial = float(input("Enter initial bid:  "))
+        print(f"Predicted action: {prediction}")
+        prediction = ml_prediction(close_prices)
+        # initial = float(input("Enter initial bid:  "))
         
         # prints out live data
         # print(get_live_data(pairs[0]))
         
-        # fake but reasonable values
-        roc_val = 0.0002
-        sdor_val = 0.0008
-        roc_weight = 0.5
-        sdor_weight = 0.5
-        bias = 0.1
-        print(model(sdor_val, roc_val, roc_weight, sdor_weight, bias))
         
 
         '''
         todo: 
         1. Load pretrained ml model 
-        2. feed live data into train_model to calulate roc and sdor then feed those values into the model
         3. pass new data to c++ functuion that updates model in memory 
         4. make prediction and execute trade based on prediction and current market conditions
 
