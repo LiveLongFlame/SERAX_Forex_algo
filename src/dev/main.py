@@ -20,6 +20,22 @@ def model(sdor, roc, roc_weight, sdor_weight, bias):
     action_str = {0: "Sell", 1: "Hold", 2: "Buy"}[prob]
     return action_str
 
+def fetch_live_window(pair, minutes=120):
+    contract = Forex(pair, exchange='IDEALPRO')
+    ib.qualifyContracts(contract)
+    bars = ib.reqHistoricalData(
+        contract,
+        endDateTime='',
+        durationStr=f'{minutes} M',
+        barSizeSetting='1 min',
+        whatToShow='MIDPOINT',
+        useRTH=True,
+        formatDate=1
+    )
+    df = util.df(bars)
+    return df['close'].values  
+
+
 def calcuate_sdor_and_roc(pair):
     contract = Forex(pair, exchange='IDEALPRO')
     ib.qualifyContracts(contract)
@@ -65,7 +81,6 @@ def menu():
     print("2. Exit")
     choice = int(input("\n> "))
     print("\n")
-    #todo: get rid of this since it is out of scope of project
     if choice == 1:
 
         initial = float(input("Enter initial bid:  "))
@@ -79,7 +94,6 @@ def menu():
         roc_weight = 0.5
         sdor_weight = 0.5
         bias = 0.1
-        # todo: need to add trained model
         print(model(sdor_val, roc_val, roc_weight, sdor_weight, bias))
         
 
@@ -102,15 +116,12 @@ def menu():
 def main():
     print("Starting application...")
     print("Initializing IB connection...")
-    #change port denpending on your IB Gateway or TWS settings
+    #change port depending on your IB Gateway or TWS (check settings to let you know what port you are pointing to)
     ib.connect('127.0.0', 4002, clientId=1)
     print("IB connection established...")
 
-    #todo: get live paper trail data 
-    #todo: add ml model 
     print("\n\n Hello and welcome to SEARX (Saurman's Eye Risk Analysis FX) \n\n")
     menu()
-
 
 if __name__ == "__main__":
     main()
