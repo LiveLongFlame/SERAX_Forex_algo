@@ -6,6 +6,8 @@ from ib_insync import *
 import pandas as pd 
 import numpy as np
 import ml
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 MODEL_PATH= "model/trading_model.xml"
 CSV_DATA = "data/ohlc.csv"
@@ -13,6 +15,45 @@ CSV_DATA = "data/ohlc.csv"
 pairs = ['EURUSD', 'USDJPY' , 'GDPUSD', 'USDCHF', 'USDCAD', 'AUDUSD', 'NZDUSD']
 
 ib = IB()
+
+
+
+def is_market_open(pair):
+    contract = Forex(pair, exchange='IDEALPRO')
+    ib.qualifyContracts(contract)
+
+    details = ib.reqContractDetails(contract)
+    if not details:
+        return False
+
+    liquid_hours = details[0].liquidHours
+    now = datetime.now(ZoneInfo("US/Eastern"))
+
+    sessions = liquid_hours.split(';')
+
+    for session in sessions:
+        if not session or "CLOSED" in session:
+            continue
+
+        try:
+            start_str, end_str = session.split('-')
+
+            start_dt = datetime.strptime(
+                start_str, "%Y%m%d:%H%M"
+            ).replace(tzinfo=ZoneInfo("US/Eastern"))
+
+            end_dt = datetime.strptime(
+                end_str, "%Y%m%d:%H%M"
+            ).replace(tzinfo=ZoneInfo("US/Eastern"))
+
+            if start_dt <= now <= end_dt:
+                return True
+
+        except ValueError:
+            # In case IBKR changes formatting slightly
+            continue
+
+    return False
 
 def ml_prediction(close_prices, roc_weight=0.5, sdor_weight=0.5, bias=0.0):
     sdor_val, roc_val = calcuate_sdor_and_roc(close_prices)
@@ -79,7 +120,13 @@ def menu():
     print("\n")
     if choice == 1:
         # print(get_live_data(pairs[0]))
-        # pair = input("Input currency pair: ")
+        pair = input("Input currency pair: ")
+        
+        if not is_market_open(pair):
+            print(f"{pair} market is currently CLOSED.")
+            return
+        else:
+            print(f"{pair} market is OPEN.")
         # duration is for 2 hours 
         close_prices = fetch_live_window(pairs[5], duration= '7200 S')  
         if len(close_prices) == 0:
