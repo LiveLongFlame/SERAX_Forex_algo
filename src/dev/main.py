@@ -61,22 +61,13 @@ def roc(close_prices: np.ndarray):
 
 def menu():
     print("Menu:")
-    print("1. Train ML model")
-    print("2. Use ML model to make predictions")
-    print("3. Exit")
+    print("1. Trade with Model")
+    print("2. Exit")
     choice = int(input("\n> "))
     print("\n")
     #todo: get rid of this since it is out of scope of project
     if choice == 1:
-        print("Training ML model...")
-        #todo: add functionality to either train model with existing data or with new data from the last hour
-        print ("+" + "-" * 78 + "+")
-        print("| Note: If you want to train ML with your own data.csv, add it to gather_data |")
-        print("| and then run the script train.sh                                            |")
-        print ("+" + "-" * 78 + "+")
 
-        #todo: add code to train ML model here
-    elif choice == 2:
         initial = float(input("Enter initial bid:  "))
         
         # prints out live data
@@ -101,8 +92,7 @@ def menu():
 
         '''
 
-        
-    elif choice == 3:
+    elif choice == 2:
         print("Exiting application...")
         sys.exit()
     else:
