@@ -2415,6 +2415,7 @@ CMakeFiles/ml.dir/ml.cpp.o: \
  /usr/include/mlpack/methods/svdplusplus/svdplusplus.hpp \
  /usr/include/mlpack/namespace_compat.hpp \
  /usr/include/mlpack/core/util/version.hpp \
+ /usr/include/mlpack/methods/logistic_regression/logistic_regression.hpp \
  /home/atlas/code/Projects/SERAX_Forex_algo/src/dev/model/objects/PRICE.h \
  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/pybind11.h \
  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/detail/class.h \

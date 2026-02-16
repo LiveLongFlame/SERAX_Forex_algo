@@ -6,8 +6,14 @@
 #include <mlpack/core/util/version.hpp>
 #include <armadillo>
 #include <cmath> 
+#include <mlpack/methods/logistic_regression/logistic_regression.hpp>
 #include <vector>
 #include "objects/PRICE.h"
+
+// Global variable to store model in memory
+mlpack::regression::LogisticRegression<> model;
+
+
 // function calulates the Rate-of-change(ROC) and returns its value
 arma::vec roc(const arma::vec& cPrice){
 	// amra better implementaiton 
@@ -42,7 +48,23 @@ Action decideAction(double prob, double buyThreshold = 0.6, double sellThreshold
 
 }
 
+// Function that loads the model 
+void load_model(const std::string& path) {
+    mlpack::data::Load(path, "model", model, true); // true = fatal if fail
+}
 
+// Gets models features and makes prediction
+// Function to predict action using the loaded model
+arma::Row<double> predict_prob_loaded(double roc, double sdor)
+{
+	arma::mat input(2, 1);  // 2 features, 1 sample
+    input(0, 0) = roc;
+    input(1, 0) = sdor;
+
+    arma::mat probabilities;  // must be arma::mat, not Row<double>
+    model.Classify(input, probabilities);  // fills probabilities for each class
+    return probabilities;
+}
 
 
 //------------------ comment out when running Makefile in order to test model
@@ -61,6 +83,10 @@ int predict_action(double roc, double sdor, double roc_weight = 1.0, double sdor
 PYBIND11_MODULE(ml, m) {
     m.doc() = "SERAX ML training module";
     m.def("predict_action",&predict_action,py::arg("roc"), py::arg("sdor"), py::arg("roc_weight") = 1.0, py::arg("sdor_weight") = 1.0, py::arg("bias") = 0.0);
+
+	m.def("load_model", &load_model, py::arg("path"));
+	m.def("predict_prob_loaded", &predict_prob_loaded, py::arg("roc"), py::arg("sdor"));
+
 }
 //---------------------------------------------------------------------------
 

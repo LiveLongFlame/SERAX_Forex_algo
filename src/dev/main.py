@@ -12,6 +12,8 @@ from zoneinfo import ZoneInfo
 MODEL_PATH= "model/trading_model.xml"
 CSV_DATA = "data/ohlc.csv"
 
+ml.load_model(MODEL_PATH)
+
 pairs = ['EURUSD', 'USDJPY' , 'GDPUSD', 'USDCHF', 'USDCAD', 'AUDUSD', 'NZDUSD']
 
 ib = IB()
@@ -120,7 +122,9 @@ def menu():
     print("\n")
     if choice == 1:
         # print(get_live_data(pairs[0]))
-        pair = input("Input currency pair: ")
+        pair = input("Input currency pair: ").upper()
+        if len(pair) != 6:
+            raise ValueError("\nMust enter a vaild curreny pair")
         
         if not is_market_open(pair):
             print(f"{pair} market is currently CLOSED.")
@@ -134,10 +138,29 @@ def menu():
         else:
             prediction = ml_prediction(close_prices)
 
-        print(f"Predicted action: {prediction}")
+        print(f"Predicted based on action: {prediction}")
         prediction = ml_prediction(close_prices)
-        # initial = float(input("Enter initial bid:  "))
+
+        #Predicting with loaded ml
+        # Predicting with loaded ML
+        sdor_val, roc_val = calcuate_sdor_and_roc(close_prices)
         
+        # Call the C++ model
+        prob_matrix = ml.predict_prob_loaded(roc_val, sdor_val)
+        
+        # Flatten it to a simple 1D array
+        prob = prob_matrix.flatten()
+        
+        # Print probabilities for each action
+        print(f"Probabilities: SELL={prob[0]:.3f}, HOLD={prob[1]:.3f}, BUY={prob[2]:.3f}")
+        
+        # If you want to get the most likely action
+        action_index = int(np.argmax(prob))  # 0=SELL, 1=HOLD, 2=BUY
+        action_str = {0: "Sell", 1: "Hold", 2: "Buy"}[action_index]
+
+        print(f"Predicted action: {action_str}")
+
+        # initial = float(input("Enter initial bid:  "))
         # prints out live data
         # print(get_live_data(pairs[0]))
         
@@ -149,6 +172,14 @@ def menu():
         3. pass new data to c++ functuion that updates model in memory 
         4. make prediction and execute trade based on prediction and current market conditions
 
+        Idea: 
+        - So the user enters a bid in which gets spilt up evenly across the diffferent defined currancy pairs
+        - from here there will be a model for each currecny pair 
+        - the models will update with the current live data and store all in memory 
+        - from here you will see the different currecny pairs and see how it is going 
+        - Example: (if - color is red, else green)
+            PAIR (Initnal bid): + 100
+            AUDUSD (100): -34
         '''
 
     elif choice == 2:
