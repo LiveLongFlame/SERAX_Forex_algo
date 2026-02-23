@@ -19,7 +19,7 @@ echo "Upgrading pip..."
 pip install --upgrade pip
 
 echo "Installing Python dependencies..."
-pip install pandas pybind11 ib_insync numpy matplotlib tzdate
+pip install pandas pybind11 ib_insync numpy matplotlib tzdate colorama
 
 echo "Installation complete!"
 

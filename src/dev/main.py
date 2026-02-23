@@ -8,6 +8,9 @@ import numpy as np
 import ml
 from datetime import datetime
 from zoneinfo import ZoneInfo
+from colorama import init, Fore, Style
+# Initialize colorama
+init(autoreset=True)
 
 MODEL_PATH= "model/trading_model.xml"
 CSV_DATA = "data/ohlc.csv"
@@ -112,9 +115,84 @@ def calcuate_sdor_and_roc(close_prices):
 # ----------------------------------------------------------------------------------------------
 
 
-#todo: this function should execute a trade based on the predicted values from the ML model and the current market conditions
-def trade():
-    return 0
+# Based on model predictions this function will handle if a trade happens or not
+def trade(pair, trade_units=10000):
+    """
+    Execute trade based on ML prediction
+    pair: str, currency pair e.g. 'AUDUSD'
+    trade_units: int, number of base currency units to trade
+    """
+    # Ensure market is open
+    if not is_market_open(pair):
+        print(f"{pair} market is closed. Skipping trade.")
+        return
+
+    # Fetch live data for features (last 2 hours) 
+    close_prices = fetch_live_window(pair, duration='7200 S')
+    if len(close_prices) < 2:
+        print(f"Not enough data for {pair}. Skipping trade.")
+        return
+
+    # Calculate SDOR and ROC
+    sdor_val, roc_val = calcuate_sdor_and_roc(close_prices)
+
+    # Get ML prediction
+    prob_matrix = ml.predict_prob_loaded(roc_val, sdor_val)
+    action_index = int(np.argmax(prob_matrix))  # 0=SELL, 1=HOLD, 2=BUY
+    action_str = {0: "Sell", 1: "Hold", 2: "Buy"}[action_index]
+
+    print(f"Predicted action for {pair}: {action_str}")
+    print(f"Probabilities: {prob_matrix}")
+
+    if action_str == "Hold":
+        print(f"Holding position for {pair}. No trade executed.")
+        return
+
+    # Create IBKR contract
+    contract = Forex(pair, exchange='IDEALPRO')
+    ib.qualifyContracts(contract)
+
+    # Determine order type
+    if action_str == "Buy":
+        order = MarketOrder("BUY", trade_units)
+    else:
+        order = MarketOrder("SELL", trade_units)
+
+    # Place the order
+    trade = ib.placeOrder(contract, order)
+    ib.sleep(1)  # Give IB a moment to process
+
+    print(f"Order executed: {action_str} {trade_units} units of {pair}")
+
+# --------------- Testing trade to see what will happen ----------------
+# def trade(pair, trade_units=10000):
+#     if not is_market_open(pair):
+#         print(f"{pair} market is closed. Skipping trade.")
+#         return
+#
+#     contract = Forex(pair, exchange='IDEALPRO')
+#     ib.qualifyContracts(contract)
+#     order = MarketOrder("BUY", trade_units)
+#     trade = ib.placeOrder(contract, order)
+#
+#     ib.sleep(2)
+#
+#     status = trade.orderStatus.status
+#     if status == "Filled":
+#         print(Fore.GREEN + f"Order executed: BUY {trade_units} units of {pair}")
+#     else:
+#         print(Fore.RED + f"Order NOT executed. Status: {status}")
+#         # Print IBKR messages from log
+#         for entry in trade.log:
+#             if entry.message:
+#                 print(Fore.RED + f"Reason: {entry.message}")
+#
+#     # Show positions
+#     print("\nOpen Positions:")
+#     for pos in ib.positions():
+#         color = Fore.GREEN if pos.position >= 0 else Fore.RED
+#         print(f"{pos.contract.symbol}: {color}{pos.position} units at avg price {pos.avgCost}{Style.RESET_ALL}")
+# -----------------------------------------------------------------------------
 
 
 # checks the prediction of what a person should do manually 
@@ -136,39 +214,22 @@ def menu():
         pair = input("Input currency pair: ").upper()
         if len(pair) != 6:
             raise ValueError("\nMust enter a vaild curreny pair")
+        bid = input("Input intial bid amount: ")
+        trade(pair, bid)
+
+
+        # Fetch account summary after trade
+        account_summary = ib.accountSummary()
+        print("\n=== Account Summary ===")
+        for tag in ["TotalCashValue", "BuyingPower", "NetLiquidation"]:
+            if tag in account_summary:
+                print(f"{tag}: {account_summary[tag]}")
         
-        if not is_market_open(pair):
-            print(f"{pair} market is currently CLOSED.")
-            return
-        else:
-            print(f"{pair} market is OPEN.")
-        # duration is for 2 hours of live data
-        close_prices = fetch_live_window(pairs[5], duration= '7200 S')  
-        if len(close_prices) == 0:
-            print("No data, skipping prediction")
-        else:
-            prediction = ml_prediction(close_prices)
-            
-
-        print(f"Predicted action (calculated manually): {prediction}")
-        prediction = ml_prediction(close_prices)
-
-        # Predicting with loaded ML
-        sdor_val, roc_val = calcuate_sdor_and_roc(close_prices)
-        
-        # Call the C++ model
-        prob_matrix = ml.predict_prob_loaded(roc_val, sdor_val)
-        prob = np.array(prob_matrix)  # array of size 3
-        action_index = int(np.argmax(prob))  # 0=SELL, 1=HOLD, 2=BUY
-        action_str = {0: "Sell", 1: "Hold", 2: "Buy"}[action_index]
-        print(f"Probabilities: {prob}")
-        print(f"Predicted action (loaded model): {action_str}")
-
-
         '''
         todo: 
         3. pass new data to c++ functuion that updates model in memory 
         4. make prediction and execute trade based on prediction and current market conditions
+        5. need to restart cash account with --restart flag when starting program in order to make sure that everything works for trading
 
         Idea: 
         - So the user enters a bid in which gets spilt up evenly across the diffferent defined currancy pairs
