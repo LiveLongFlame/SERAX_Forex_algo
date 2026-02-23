@@ -147,14 +147,12 @@ def menu():
         
         # Call the C++ model
         prob_matrix = ml.predict_prob_loaded(roc_val, sdor_val)
-
-        prob = np.array(prob_matrix)
-        print(prob)
-        # If you want to get the most likely action
+        prob = np.array(prob_matrix)  # array of size 3
         action_index = int(np.argmax(prob))  # 0=SELL, 1=HOLD, 2=BUY
         action_str = {0: "Sell", 1: "Hold", 2: "Buy"}[action_index]
-
+        print(f"Probabilities: {prob}")
         print(f"Predicted action: {action_str}")
+
 
         # initial = float(input("Enter initial bid:  "))
         # prints out live data

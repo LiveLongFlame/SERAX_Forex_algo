@@ -6,11 +6,11 @@
 			<n_rows>1</n_rows>
 			<n_cols>3</n_cols>
 			<vec_state>2</vec_state>
-			<elem>-0.095563265480466592</elem>
-			<elem>-7.8560640247969573</elem>
-			<elem>88.937180632572151</elem>
+			<elem>7.5028077020415092</elem>
+			<elem>5.9515641137446385e-05</elem>
+			<elem>0.00077529457158188105</elem>
 		</parameters>
-		<lambda>0</lambda>
+		<lambda>3</lambda>
 	</model>
 </cereal>
 

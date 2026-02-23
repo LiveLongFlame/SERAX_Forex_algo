@@ -1,6 +1,6 @@
 /* End goal: test program over paper trailing in which you can test the performance over 2 years worth of data modelling
  * testing: testing will be done over span of a few weeks in order to dial in the ML training to its absolute best*/
-// todo; need to fix program since now looking at new ohlc.csv file.....
+//todo: would be nice to have if i could go head and create a flag such as -train or something to tell the progrma to use pybind or just train the model
 #include <armadillo>
 #include <mlpack.hpp>
 #include <mlpack/core/util/version.hpp>
@@ -48,6 +48,14 @@ Action decideAction(double prob, double buyThreshold = 0.6, double sellThreshold
 
 }
 
+
+
+//------------------ comment out when running Makefile in order to test model
+#include <pybind11/pybind11.h>
+#include <pybind11/stl.h>
+namespace py = pybind11;
+
+
 // Function that loads the model 
 void load_model(const std::string& path) {
     mlpack::data::Load(path, "model", model, true); // true = fatal if fail
@@ -71,13 +79,6 @@ std::vector<double> predict_prob_loaded(double roc, double sdor)
 
     return prob;
 }
-
-
-//------------------ comment out when running Makefile in order to test model
-#include <pybind11/pybind11.h>
-#include <pybind11/stl.h>
-namespace py = pybind11;
-
 // Predict function based on action the ml takes 
 // todo: need to add saved ml and add its weight for final outcome
 int predict_action(double roc, double sdor, double roc_weight = 1.0, double sdor_weight = 1.0, double bias = 0.0){
@@ -99,66 +100,68 @@ PYBIND11_MODULE(ml, m) {
 //---------------------------------------------------------------------------
 
 // Uncomment main when testing the model
-// int main(){
-// 	//CSV Structure: date, open, high,low,close,volume,average, barCount
-//
-// 	arma::mat raw;
-// 	mlpack::data::Load("../data/ohlc.csv", raw, true);
-//
-//
-//
-// 	std::cout.precision(15);
-// 	
-//
-// 	std::cout << raw.n_rows << " rows and " << raw.n_cols << " columns loaded.\n";
-//
-// 	size_t window = 30; // 30-minute window
-// 	// swap rows and columns to make processing easier
-// 	raw = raw.t();
-// 	arma::vec closePrices = raw.col(3);
-//
-// 	std::vector<double> featuresROC;
-// 	std::vector<double> featureVOL;
-// 	std::vector<size_t> labels;
-//
-// 	for (size_t i = window; i+1 < closePrices.n_elem; i++) {
-// 		arma::vec windowPrices = closePrices.subvec(i - window, i);
-//
-// 		arma::vec r = roc(windowPrices);
-// 		double vol = sdor(r);
-// 		double lastRoc = r.tail(1)(0);
-//
-// 		featuresROC.push_back(lastRoc);
-// 		featureVOL.push_back(vol);
-//
-// 		// we label 1 if the price has gone up next tick else 0
-// 		double futureReturn = (closePrices(i+1) - closePrices(i)) / closePrices(i);
-// 		labels.push_back(futureReturn > 0 ? 1 : 0);
-// 	}
-//
-// 	
-// 	size_t N = labels.size();
-// 	arma::mat X(2, N);
-// 	arma::Row<size_t> y(N);
-//
-// 	for (size_t i = 0; i < N; ++i) {
-// 		X(0, i) = featuresROC[i];
-// 		X(1, i) = featureVOL[i];
-// 		y(i) = labels[i];
-// 	}
-//
-// 	std::cout << "Training Model...\n";
-// 	// using mlpack logistic regression to train the model
-// 	mlpack::regression::LogisticRegression<> model(X, y);
-//
-// 	std::cout << "Model trained.\n";
-// 	model.Parameters().print();
-//
-// 	mlpack::data::Save("trading_model.xml", "model", model, true);
-// 	std::cout << "Model saved to trading_model.xml\n";
-// 	
-//
-// 	return 0;
-//
-// }
+/* int main(){
+	//CSV Structure: date, open, high,low,close,volume,average, barCount
+
+	arma::mat raw;
+	mlpack::data::Load("../data/ohlc.csv", raw, true);
+
+
+
+	std::cout.precision(15);
+	
+
+	std::cout << raw.n_rows << " rows and " << raw.n_cols << " columns loaded.\n";
+
+	size_t window = 30; // 30-minute window
+	// swap rows and columns to make processing easier
+	raw = raw.t();
+	arma::vec closePrices = raw.col(3);
+
+	std::vector<double> featuresROC;
+	std::vector<double> featureVOL;
+	std::vector<size_t> labels;
+
+	for (size_t i = window; i+1 < closePrices.n_elem; i++) {
+		arma::vec windowPrices = closePrices.subvec(i - window, i);
+
+		arma::vec r = roc(windowPrices);
+		double vol = sdor(r);
+		double lastRoc = r.tail(1)(0);
+
+		featuresROC.push_back(lastRoc);
+		featureVOL.push_back(vol);
+
+		// we label 1 if the price has gone up next tick else 0
+		double futureReturn = (closePrices(i+1) - closePrices(i)) / closePrices(i);
+		if (futureReturn > 0.001) labels.push_back(BUY);
+		else if (futureReturn < -0.001) labels.push_back(SELL);
+		else labels.push_back(HOLD);
+	}
+
+	
+	size_t N = labels.size();
+	arma::mat X(2, N);
+	arma::Row<size_t> y(N);
+
+	for (size_t i = 0; i < N; ++i) {
+		X(0, i) = featuresROC[i];
+		X(1, i) = featureVOL[i];
+		y(i) = labels[i];
+	}
+
+	std::cout << "Training Model...\n";
+	// using mlpack logistic regression to train the model
+	mlpack::regression::LogisticRegression<> model(X, y,3);
+
+	std::cout << "Model trained.\n";
+	model.Parameters().print();
+
+	mlpack::data::Save("trading_model.xml", "model", model, true);
+	std::cout << "Model saved to trading_model.xml\n";
+	
+
+	return 0;
+
+} */
 //
