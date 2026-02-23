@@ -31,6 +31,7 @@ CMakeFiles/ml.dir/ml.cpp.o
  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/options.h
  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/pybind11.h
  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/pytypes.h
+ /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/stl.h
  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/trampoline_self_life_support.h
  /home/atlas/code/Projects/SERAX_Forex_algo/venv/include/pybind11/typing.h
  /usr/include/alloca.h
@@ -700,9 +701,12 @@ CMakeFiles/ml.dir/ml.cpp.o
  /usr/include/c++/13/bits/fstream.tcc
  /usr/include/c++/13/bits/functexcept.h
  /usr/include/c++/13/bits/functional_hash.h
+ /usr/include/c++/13/bits/gslice.h
+ /usr/include/c++/13/bits/gslice_array.h
  /usr/include/c++/13/bits/hash_bytes.h
  /usr/include/c++/13/bits/hashtable.h
  /usr/include/c++/13/bits/hashtable_policy.h
+ /usr/include/c++/13/bits/indirect_array.h
  /usr/include/c++/13/bits/invoke.h
  /usr/include/c++/13/bits/ios_base.h
  /usr/include/c++/13/bits/istream.tcc
@@ -715,6 +719,7 @@ CMakeFiles/ml.dir/ml.cpp.o
  /usr/include/c++/13/bits/locale_facets_nonio.h
  /usr/include/c++/13/bits/locale_facets_nonio.tcc
  /usr/include/c++/13/bits/localefwd.h
+ /usr/include/c++/13/bits/mask_array.h
  /usr/include/c++/13/bits/memory_resource.h
  /usr/include/c++/13/bits/memoryfwd.h
  /usr/include/c++/13/bits/move.h
@@ -736,6 +741,7 @@ CMakeFiles/ml.dir/ml.cpp.o
  /usr/include/c++/13/bits/shared_ptr.h
  /usr/include/c++/13/bits/shared_ptr_atomic.h
  /usr/include/c++/13/bits/shared_ptr_base.h
+ /usr/include/c++/13/bits/slice_array.h
  /usr/include/c++/13/bits/specfun.h
  /usr/include/c++/13/bits/sstream.tcc
  /usr/include/c++/13/bits/std_abs.h
@@ -781,6 +787,10 @@ CMakeFiles/ml.dir/ml.cpp.o
  /usr/include/c++/13/bits/uses_allocator.h
  /usr/include/c++/13/bits/uses_allocator_args.h
  /usr/include/c++/13/bits/utility.h
+ /usr/include/c++/13/bits/valarray_after.h
+ /usr/include/c++/13/bits/valarray_array.h
+ /usr/include/c++/13/bits/valarray_array.tcc
+ /usr/include/c++/13/bits/valarray_before.h
  /usr/include/c++/13/bits/vector.tcc
  /usr/include/c++/13/cassert
  /usr/include/c++/13/cctype
@@ -870,6 +880,8 @@ CMakeFiles/ml.dir/ml.cpp.o
  /usr/include/c++/13/unordered_map
  /usr/include/c++/13/unordered_set
  /usr/include/c++/13/utility
+ /usr/include/c++/13/valarray
+ /usr/include/c++/13/variant
  /usr/include/c++/13/vector
  /usr/include/c++/13/version
  /usr/include/cereal/access.hpp

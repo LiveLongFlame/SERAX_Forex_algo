@@ -147,13 +147,9 @@ def menu():
         
         # Call the C++ model
         prob_matrix = ml.predict_prob_loaded(roc_val, sdor_val)
-        
-        # Flatten it to a simple 1D array
-        prob = prob_matrix.flatten()
-        
-        # Print probabilities for each action
-        print(f"Probabilities: SELL={prob[0]:.3f}, HOLD={prob[1]:.3f}, BUY={prob[2]:.3f}")
-        
+
+        prob = np.array(prob_matrix)
+        print(prob)
         # If you want to get the most likely action
         action_index = int(np.argmax(prob))  # 0=SELL, 1=HOLD, 2=BUY
         action_str = {0: "Sell", 1: "Hold", 2: "Buy"}[action_index]

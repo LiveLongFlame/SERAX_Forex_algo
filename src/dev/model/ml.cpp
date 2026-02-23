@@ -55,20 +55,27 @@ void load_model(const std::string& path) {
 
 // Gets models features and makes prediction
 // Function to predict action using the loaded model
-arma::Row<double> predict_prob_loaded(double roc, double sdor)
+std::vector<double> predict_prob_loaded(double roc, double sdor)
 {
-	arma::mat input(2, 1);  // 2 features, 1 sample
+    arma::mat input(2, 1);
     input(0, 0) = roc;
     input(1, 0) = sdor;
 
-    arma::mat probabilities;  // must be arma::mat, not Row<double>
+    arma::mat probabilities;
     model.Classify(input, probabilities);  // fills probabilities for each class
-    return probabilities;
+
+    // Convert arma::mat to std::vector
+    std::vector<double> prob(probabilities.n_elem);
+    for (size_t i = 0; i < probabilities.n_elem; ++i)
+        prob[i] = probabilities(i);
+
+    return prob;
 }
 
 
 //------------------ comment out when running Makefile in order to test model
 #include <pybind11/pybind11.h>
+#include <pybind11/stl.h>
 namespace py = pybind11;
 
 // Predict function based on action the ml takes 
@@ -82,12 +89,13 @@ int predict_action(double roc, double sdor, double roc_weight = 1.0, double sdor
 // Comment out when running Makefile in order to test model
 PYBIND11_MODULE(ml, m) {
     m.doc() = "SERAX ML training module";
-    m.def("predict_action",&predict_action,py::arg("roc"), py::arg("sdor"), py::arg("roc_weight") = 1.0, py::arg("sdor_weight") = 1.0, py::arg("bias") = 0.0);
+    m.def("predict_action",&predict_action,
+          py::arg("roc"), py::arg("sdor"), py::arg("roc_weight") = 1.0, py::arg("sdor_weight") = 1.0, py::arg("bias") = 0.0);
 
-	m.def("load_model", &load_model, py::arg("path"));
-	m.def("predict_prob_loaded", &predict_prob_loaded, py::arg("roc"), py::arg("sdor"));
-
+    m.def("load_model", &load_model, py::arg("path"));
+    m.def("predict_prob_loaded", &predict_prob_loaded, py::arg("roc"), py::arg("sdor"));
 }
+
 //---------------------------------------------------------------------------
 
 // Uncomment main when testing the model
