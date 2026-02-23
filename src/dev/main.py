@@ -11,15 +11,14 @@ from zoneinfo import ZoneInfo
 
 MODEL_PATH= "model/trading_model.xml"
 CSV_DATA = "data/ohlc.csv"
-
+# Loads the trained model
 ml.load_model(MODEL_PATH)
 
 pairs = ['EURUSD', 'USDJPY' , 'GDPUSD', 'USDCHF', 'USDCAD', 'AUDUSD', 'NZDUSD']
-
 ib = IB()
 
-
-
+# --------------------------------- Live Market data ----------------------------------
+# determines for the ccy pair if the market is open or closed
 def is_market_open(pair):
     contract = Forex(pair, exchange='IDEALPRO')
     ib.qualifyContracts(contract)
@@ -57,12 +56,8 @@ def is_market_open(pair):
 
     return False
 
-def ml_prediction(close_prices, roc_weight=0.5, sdor_weight=0.5, bias=0.0):
-    sdor_val, roc_val = calcuate_sdor_and_roc(close_prices)
-    action_str = ml.predict_action(roc_val, sdor_val, roc_weight, sdor_weight, bias)
-    return {0: "Sell", 1: "Hold", 2: "Buy"}[action_str]
 
-
+# For each ccy pair will gather live data of the close prices within a give window
 def fetch_live_window(pair, duration='120 S'):
     contract = Forex(pair, exchange='IDEALPRO')
     ib.qualifyContracts(contract)
@@ -87,24 +82,18 @@ def fetch_live_window(pair, duration='120 S'):
     print(df['close'])
     return df['close'].values
 
-
-def calcuate_sdor_and_roc(close_prices):
-    returns = np.diff(close_prices) / close_prices[:-1]
-    sdor_value = np.sqrt(np.mean(returns[returns < 0]**2)) if len(returns[returns < 0]) > 0 else 0.0
-    roc_value = returns[-1] if len(returns) > 0 else 0.0
-    return sdor_value, roc_value
-
+# gets live market data per tick
 def get_live_data(pair):
     contract = Forex(pair, exchange='IDEALPRO')
     ib.qualifyContracts(contract)
     ticker = ib.reqMktData(contract)
     ib.sleep(2)
     return ticker
+# -------------------------------------------------------------------------------------
 
-#todo: this function should execute a trade based on the predicted values from the ML model and the current market conditions
-def trade():
-    return 0
 
+
+# -----------------------------------  SDOR and ROC ---------------------------------------------
 def sdor(returns: np.ndarray):
     downside = returns[returns < 0]
     if len(downside) == 0:
@@ -113,6 +102,28 @@ def sdor(returns: np.ndarray):
 
 def roc(close_prices: np.ndarray):
     return np.diff(close_prices) / close_prices[:-1]
+
+# calcualtes the stadarad deviation and the rate of change
+def calcuate_sdor_and_roc(close_prices):
+    returns = np.diff(close_prices) / close_prices[:-1]
+    sdor_value = np.sqrt(np.mean(returns[returns < 0]**2)) if len(returns[returns < 0]) > 0 else 0.0
+    roc_value = returns[-1] if len(returns) > 0 else 0.0
+    return sdor_value, roc_value
+# ----------------------------------------------------------------------------------------------
+
+
+#todo: this function should execute a trade based on the predicted values from the ML model and the current market conditions
+def trade():
+    return 0
+
+
+# checks the prediction of what a person should do manually 
+# note: this function is for testing only and is useless otherwise for the moment
+#todo: re-look at this function to see if it is nesscarry
+def ml_prediction(close_prices, roc_weight=0.5, sdor_weight=0.5, bias=0.0):
+    sdor_val, roc_val = calcuate_sdor_and_roc(close_prices)
+    action_str = ml.predict_action(roc_val, sdor_val, roc_weight, sdor_weight, bias)
+    return {0: "Sell", 1: "Hold", 2: "Buy"}[action_str]
 
 def menu():
     print("Menu:")
@@ -131,17 +142,17 @@ def menu():
             return
         else:
             print(f"{pair} market is OPEN.")
-        # duration is for 2 hours 
+        # duration is for 2 hours of live data
         close_prices = fetch_live_window(pairs[5], duration= '7200 S')  
         if len(close_prices) == 0:
             print("No data, skipping prediction")
         else:
             prediction = ml_prediction(close_prices)
+            
 
-        print(f"Predicted based on action: {prediction}")
+        print(f"Predicted action (calculated manually): {prediction}")
         prediction = ml_prediction(close_prices)
 
-        #Predicting with loaded ml
         # Predicting with loaded ML
         sdor_val, roc_val = calcuate_sdor_and_roc(close_prices)
         
@@ -151,18 +162,11 @@ def menu():
         action_index = int(np.argmax(prob))  # 0=SELL, 1=HOLD, 2=BUY
         action_str = {0: "Sell", 1: "Hold", 2: "Buy"}[action_index]
         print(f"Probabilities: {prob}")
-        print(f"Predicted action: {action_str}")
+        print(f"Predicted action (loaded model): {action_str}")
 
-
-        # initial = float(input("Enter initial bid:  "))
-        # prints out live data
-        # print(get_live_data(pairs[0]))
-        
-        
 
         '''
         todo: 
-        1. Load pretrained ml model 
         3. pass new data to c++ functuion that updates model in memory 
         4. make prediction and execute trade based on prediction and current market conditions
 
