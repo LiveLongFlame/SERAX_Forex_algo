@@ -12,7 +12,6 @@
 #include "objects/PRICE.h"
 
 // Global variable to store model in memory
-// mlpack::regression::LogisticRegression<> model;
 mlpack::regression::SoftmaxRegression model;
 
 
@@ -22,7 +21,6 @@ arma::vec roc(const arma::vec& cPrice){
 	return arma::diff(cPrice) / cPrice.head(cPrice.n_elem - 1 );
 }
 
-// function calualtes the Volaitilty (standard devation of returns) 
 double sdor(const arma::vec& roc){
 	// uses armadillo built in lib for standard devation
 	return arma::stddev(roc);
@@ -61,71 +59,74 @@ Action decideAction(double roc, double sdor)
 
 
 //------------------ comment out when running Makefile in order to test model
-// #include <pybind11/pybind11.h>
-// #include <pybind11/stl.h>
-// namespace py = pybind11;
-//
-//
-// // Function that loads the model 
-// void load_model(const std::string& path) {
-//     mlpack::data::Load(path, "model", model, true); // true = fatal if fail
-// }
-//
-// // Gets models features and makes prediction
-// // Function to predict action using the loaded model
-// std::vector<double> predict_prob_loaded(double roc, double sdor)
-// {
-//     arma::mat input(2, 1);
-//     input(0, 0) = roc;
-//     input(1, 0) = sdor;
-//
-//     arma::mat probabilities;
-//     model.Classify(input, probabilities);  // fills probabilities for each class
-//
-//     // Convert arma::mat to std::vector
-//     std::vector<double> prob(probabilities.n_elem);
-//     for (size_t i = 0; i < probabilities.n_elem; ++i)
-//         prob[i] = probabilities(i);
-//
-//     return prob;
-// }
-// // Predict function based on action the ml takes 
-// // todo: need to add saved ml and add its weight for final outcome
-// int predict_action(double roc, double sdor, double roc_weight = 1.0, double sdor_weight = 1.0, double bias = 0.0){
-//     double prob = actionProbabilty(roc, sdor, roc_weight, sdor_weight, bias);
-//     Action act = decideAction(prob);
-//     return static_cast<int>(act);
-// }
-//
-// // Comment out when running Makefile in order to test model
-// PYBIND11_MODULE(ml, m) {
-//     m.doc() = "SERAX ML training module";
-//     m.def("predict_action",&predict_action,
-//           py::arg("roc"), py::arg("sdor"), py::arg("roc_weight") = 1.0, py::arg("sdor_weight") = 1.0, py::arg("bias") = 0.0);
-//
-//     m.def("load_model", &load_model, py::arg("path"));
-//     m.def("predict_prob_loaded", &predict_prob_loaded, py::arg("roc"), py::arg("sdor"));
-// }
-//
+#include <pybind11/pybind11.h>
+#include <pybind11/stl.h>
+namespace py = pybind11;
+
+
+// Function that loads the model 
+void load_model(const std::string& path) {
+    mlpack::data::Load(path, "model", model, true); // true = fatal if fail
+}
+
+// Gets models features and makes prediction
+// Function to predict action using the loaded model
+std::vector<double> predict_prob_loaded(double roc, double sdor)
+{
+    arma::mat input(2, 1);
+    input(0, 0) = roc;
+    input(1, 0) = sdor;
+
+    arma::mat probabilities;
+    model.Classify(input, probabilities);  // fills probabilities for each class
+
+    // Convert arma::mat to std::vector
+    std::vector<double> prob(probabilities.n_elem);
+    for (size_t i = 0; i < probabilities.n_elem; ++i)
+        prob[i] = probabilities(i);
+
+    return prob;
+}
+// Predict function based on action the ml takes 
+// todo: need to add saved ml and add its weight for final outcome
+int predict_action(double roc, double sdor, double roc_weight = 1.0, double sdor_weight = 1.0, double bias = 0.0){
+    Action act = decideAction(roc,sdor);
+    return static_cast<int>(act);
+}
+
+// Comment out when running Makefile in order to test model
+PYBIND11_MODULE(ml, m) {
+    m.doc() = "SERAX ML training module";
+    m.def("predict_action",&predict_action,
+          py::arg("roc"), py::arg("sdor"), py::arg("roc_weight") = 1.0, py::arg("sdor_weight") = 1.0, py::arg("bias") = 0.0);
+
+    m.def("load_model", &load_model, py::arg("path"));
+    m.def("predict_prob_loaded", &predict_prob_loaded, py::arg("roc"), py::arg("sdor"));
+}
+
 //---------------------------------------------------------------------------
 
 // Uncomment main when testing the model
-int main(){
+/* int main(){
 	//CSV Structure: date, open, high,low,close,volume,average, barCount
 
 	arma::mat raw;
 	mlpack::data::Load("../data/ohlc.csv", raw, true);
-
-
-
 	std::cout.precision(15);
-	
 
+	// printing out rows and cols in the data set
 	std::cout << raw.n_rows << " rows and " << raw.n_cols << " columns loaded.\n";
 
-	size_t window = 30; // 30-minute window
-	// swap rows and columns to make processing easier
+	// the time in which how much data should we look at to calcuatlte the sdor and roc.. in this case it is 30min 
+	// Note: since csv data is in 1 minture intervals it calcuatels every 30 entries.... 
+	// This value can be changed and inputed for more a fine tune answer
+	std::cout << "Enter window (how many entries of data to calcualte sdor and roc): ";
+	size_t window; std::cin >> window; 
+
+	// swap rows and columns in order for arma to read the data 
 	raw = raw.t();
+	
+	//extracting only the close prices 
 	arma::vec closePrices = raw.col(3);
 
 	std::vector<double> featuresROC;
@@ -142,7 +143,7 @@ int main(){
 		featuresROC.push_back(lastRoc);
 		featureVOL.push_back(vol);
 
-		// we label 1 if the price has gone up next tick else 0
+		// we calculate the futurereutrn and use multi-class to predict these values
 		double futureReturn = (closePrices(i+1) - closePrices(i)) / closePrices(i);
 		if (futureReturn > 0.001) labels.push_back(BUY);
 		else if (futureReturn < -0.001) labels.push_back(SELL);
@@ -161,8 +162,6 @@ int main(){
 	}
 
 	std::cout << "Training Model...\n";
-	// using mlpack logistic regression to train the model
-	// mlpack::regression::LogisticRegression<> model(X, y,3);
 	mlpack::regression::SoftmaxRegression model(X,y,3);
 
 	std::cout << "Model trained.\n";
@@ -174,5 +173,4 @@ int main(){
 
 	return 0;
 
-}
-//
+} */
