@@ -17,7 +17,7 @@ CSV_DATA = "data/ohlc.csv"
 # Loads the trained model
 ml.load_model(MODEL_PATH)
 
-pairs = ['EURUSD', 'USDJPY' , 'GBPUSD', 'USDCHF', 'USDCAD', 'AUDUSD', 'NZDUSD']
+pairs = ['EURUSD', 'USDJPY' , 'GBPUSD', 'USDCHF', 'USDCAD', 'AUDUSD', 'NZDUSD', 'AUDNZD', 'EURGBP', 'EURJPY']
 ib = IB()
 
 # --------------------------------- Live Market data ----------------------------------
@@ -167,9 +167,9 @@ def trade(pair, trade_units=10000):
 
 # --------------- Testing trade to see what will happen (force to execute a trade [igonres ml prediction]) ----------------
 def trade_test(pair, trade_units=10000):
-    # if not is_market_open(pair):
-    #     print(f"{pair} market is closed. Skipping trade.")
-    #     return
+    if not is_market_open(pair):
+        print(f"{pair} market is closed. Skipping trade.")
+        return
 
     contract = Forex(pair, exchange='IDEALPRO')
     ib.qualifyContracts(contract)
@@ -195,16 +195,11 @@ def trade_test(pair, trade_units=10000):
         print(f"{pos.contract.symbol}: {color}{pos.position} units at avg price {pos.avgCost}{Style.RESET_ALL}")
     # Fetch account summary after trade account_summary = ib.accountSummary()
     #todo: need to printing the current position in the market and need to show the profit and easy to read data for understanding
-    print("\Porfoloio:")
-    for p in ib.portfolio():
-        print("Symbol:", p.contract.symbol)
-        print("Position:", p.position)
-        print("Avg Cost:", p.averageCost)
-        print("Market Price:", p.marketPrice)
-        print("Market Value:", p.marketValue)
-        print("Unrealized PnL:", p.unrealizedPNL)
-        print("Realized PnL:", p.realizedPNL)
-        print()
+    summary = ib.accountSummary()
+    for s in summary:
+        if s.tag == "NetLiquidation":
+            print("Account Value:", s.value, s.currency)
+
 
 
 # -----------------------------------------------------------------------------
@@ -226,6 +221,13 @@ def menu():
     print("\n")
     if choice == 1:
         # print(get_live_data(pairs[0]))
+        print("Welcome to trading with SEARX! (Saurman's Eye Risk Analysis FX) \n\n")
+        print("Your current cash in account is: ")
+        summary = ib.accountSummary()
+        for s in summary:
+            if s.tag == "NetLiquidation":
+                print("Account Value:", s.value, s.currency)
+
         pair = input("Input currency pair: ").upper()
         if len(pair) != 6:
             raise ValueError("\nMust enter a vaild curreny pair")
