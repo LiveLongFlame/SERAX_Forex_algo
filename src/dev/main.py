@@ -17,11 +17,12 @@ CSV_DATA = "data/ohlc.csv"
 # Loads the trained model
 ml.load_model(MODEL_PATH)
 
-pairs = ['EURUSD', 'USDJPY' , 'GDPUSD', 'USDCHF', 'USDCAD', 'AUDUSD', 'NZDUSD']
+pairs = ['EURUSD', 'USDJPY' , 'GBPUSD', 'USDCHF', 'USDCAD', 'AUDUSD', 'NZDUSD']
 ib = IB()
 
 # --------------------------------- Live Market data ----------------------------------
 # determines for the ccy pair if the market is open or closed
+# todo: need to fix this function as it says market is closed however it is open... need to look into this
 def is_market_open(pair):
     contract = Forex(pair, exchange='IDEALPRO')
     ib.qualifyContracts(contract)
@@ -164,34 +165,48 @@ def trade(pair, trade_units=10000):
 
     print(f"Order executed: {action_str} {trade_units} units of {pair}")
 
-# --------------- Testing trade to see what will happen ----------------
-# def trade(pair, trade_units=10000):
-#     if not is_market_open(pair):
-#         print(f"{pair} market is closed. Skipping trade.")
-#         return
-#
-#     contract = Forex(pair, exchange='IDEALPRO')
-#     ib.qualifyContracts(contract)
-#     order = MarketOrder("BUY", trade_units)
-#     trade = ib.placeOrder(contract, order)
-#
-#     ib.sleep(2)
-#
-#     status = trade.orderStatus.status
-#     if status == "Filled":
-#         print(Fore.GREEN + f"Order executed: BUY {trade_units} units of {pair}")
-#     else:
-#         print(Fore.RED + f"Order NOT executed. Status: {status}")
-#         # Print IBKR messages from log
-#         for entry in trade.log:
-#             if entry.message:
-#                 print(Fore.RED + f"Reason: {entry.message}")
-#
-#     # Show positions
-#     print("\nOpen Positions:")
-#     for pos in ib.positions():
-#         color = Fore.GREEN if pos.position >= 0 else Fore.RED
-#         print(f"{pos.contract.symbol}: {color}{pos.position} units at avg price {pos.avgCost}{Style.RESET_ALL}")
+# --------------- Testing trade to see what will happen (force to execute a trade [igonres ml prediction]) ----------------
+def trade_test(pair, trade_units=10000):
+    # if not is_market_open(pair):
+    #     print(f"{pair} market is closed. Skipping trade.")
+    #     return
+
+    contract = Forex(pair, exchange='IDEALPRO')
+    ib.qualifyContracts(contract)
+    order = MarketOrder("BUY", trade_units)
+    trade = ib.placeOrder(contract, order)
+
+    ib.sleep(2)
+
+    status = trade.orderStatus.status
+    if status == "Filled":
+        print(Fore.GREEN + f"Order executed: BUY {trade_units} units of {pair}")
+    else:
+        print(Fore.RED + f"Order NOT executed. Status: {status}")
+        # Print IBKR messages from log
+        for entry in trade.log:
+            if entry.message:
+                print(Fore.RED + f"Reason: {entry.message}")
+
+    # Show positions
+    print("\nOpen Positions:")
+    for pos in ib.positions():
+        color = Fore.GREEN if pos.position >= 0 else Fore.RED
+        print(f"{pos.contract.symbol}: {color}{pos.position} units at avg price {pos.avgCost}{Style.RESET_ALL}")
+    # Fetch account summary after trade account_summary = ib.accountSummary()
+    #todo: need to printing the current position in the market and need to show the profit and easy to read data for understanding
+    print("\Porfoloio:")
+    for p in ib.portfolio():
+        print("Symbol:", p.contract.symbol)
+        print("Position:", p.position)
+        print("Avg Cost:", p.averageCost)
+        print("Market Price:", p.marketPrice)
+        print("Market Value:", p.marketValue)
+        print("Unrealized PnL:", p.unrealizedPNL)
+        print("Realized PnL:", p.realizedPNL)
+        print()
+
+
 # -----------------------------------------------------------------------------
 
 
@@ -215,15 +230,9 @@ def menu():
         if len(pair) != 6:
             raise ValueError("\nMust enter a vaild curreny pair")
         bid = input("Input intial bid amount: ")
-        trade(pair, bid)
+        trade_test(pair, bid)
 
 
-        # Fetch account summary after trade
-        account_summary = ib.accountSummary()
-        print("\n=== Account Summary ===")
-        for tag in ["TotalCashValue", "BuyingPower", "NetLiquidation"]:
-            if tag in account_summary:
-                print(f"{tag}: {account_summary[tag]}")
         
         '''
         todo: 
