@@ -62,6 +62,9 @@ Action decideAction(double roc, double sdor)
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 namespace py = pybind11;
+bool initialized = false;
+arma::mat X_train;        // features
+arma::Row<size_t> y_train; // labels
 
 
 // Function that loads the model 
@@ -94,14 +97,49 @@ int predict_action(double roc, double sdor, double roc_weight = 1.0, double sdor
     return static_cast<int>(act);
 }
 
+
+// Function that updates and re-train th ml model with new data 
+void update_model(double roc, double sdor, int label){
+	arma::vec new_point(2);
+	new_point(0) = roc;
+	new_point(1) = sdor;
+
+	if (!initialized)
+	{
+		X_train = new_point;
+		y_train = arma::Row<size_t>(1);
+		y_train(0) = label;
+		initialized = true;
+	}
+	else
+	{
+		X_train.insert_cols(X_train.n_cols, new_point);
+		y_train.insert_cols(y_train.n_cols, arma::Row<size_t>({(size_t)label}));
+	}
+
+	model = mlpack::regression::SoftmaxRegression(X_train, y_train, 3);
+}
+// function that saves the model
+void save_model(const std::string& path)
+{
+    mlpack::data::Save(path, "model", model, true);
+}
+
 // Comment out when running Makefile in order to test model
 PYBIND11_MODULE(ml, m) {
     m.doc() = "SERAX ML training module";
-    m.def("predict_action",&predict_action,
-          py::arg("roc"), py::arg("sdor"), py::arg("roc_weight") = 1.0, py::arg("sdor_weight") = 1.0, py::arg("bias") = 0.0);
+	m.def("predict_action",&predict_action,
+			py::arg("roc"), py::arg("sdor"), py::arg("roc_weight") = 1.0, py::arg("sdor_weight") = 1.0, py::arg("bias") = 0.0);
 
-    m.def("load_model", &load_model, py::arg("path"));
-    m.def("predict_prob_loaded", &predict_prob_loaded, py::arg("roc"), py::arg("sdor"));
+	m.def("load_model", &load_model, py::arg("path"));
+	m.def("predict_prob_loaded", &predict_prob_loaded, py::arg("roc"), py::arg("sdor"));
+
+	m.def("predict_action",&predict_action);
+	m.def("predict_prob_loaded",&predict_prob_loaded);
+
+	m.def("load_model",&load_model);
+	m.def("update_model",&update_model);
+	m.def("save_model",&save_model);
 }
 
 //---------------------------------------------------------------------------

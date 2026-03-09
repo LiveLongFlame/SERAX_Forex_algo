@@ -6,12 +6,12 @@
 			<n_rows>3</n_rows>
 			<n_cols>2</n_cols>
 			<vec_state>0</vec_state>
-			<elem>-0.00053573706430065258</elem>
-			<elem>0.00085143748647773562</elem>
-			<elem>-0.00031570041205083158</elem>
-			<elem>-0.39137473508848991</elem>
-			<elem>0.78300756609786548</elem>
-			<elem>-0.39163283101732704</elem>
+			<elem>-0.11648051211776939</elem>
+			<elem>0.23296102431386101</elem>
+			<elem>-0.11648051194482625</elem>
+			<elem>-0.73989396155929255</elem>
+			<elem>1.479787922757605</elem>
+			<elem>-0.73989396150096187</elem>
 		</parameters>
 		<numClasses>3</numClasses>
 		<lambda>0.0001</lambda>
