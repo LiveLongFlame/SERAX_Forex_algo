@@ -183,8 +183,8 @@ PYBIND11_MODULE(ml, m) {
 
 		// we calculate the futurereutrn and use multi-class to predict these values
 		double futureReturn = (closePrices(i+1) - closePrices(i)) / closePrices(i);
-		if (futureReturn > 0.001) labels.push_back(BUY);
-		else if (futureReturn < -0.001) labels.push_back(SELL);
+		if (futureReturn > 0.0001) labels.push_back(BUY);
+		else if (futureReturn < -0.0001) labels.push_back(SELL);
 		else labels.push_back(HOLD);
 	}
 
