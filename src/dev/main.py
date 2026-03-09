@@ -109,7 +109,7 @@ def roc(close_prices: np.ndarray):
 
 # calcualtes the stadarad deviation and the rate of change
 def calcuate_sdor_and_roc(close_prices):
-    returns = np.diff(close_prices) / close_prices[-5:]
+    returns = np.diff(close_prices) / close_prices[:-1]
     sdor_value = np.sqrt(np.mean(returns[returns < 0]**2)) if len(returns[returns < 0]) > 0 else 0.0
     roc_value = returns[-1] if len(returns) > 0 else 0.0
     return sdor_value, roc_value
@@ -136,6 +136,9 @@ def trade(pair, trade_units=10000):
 
     # Calculate SDOR and ROC
     sdor_val, roc_val = calcuate_sdor_and_roc(close_prices)
+
+    roc_val *= 1000
+    sdor_val *= 1000
 
     # Get ML prediction
     prob_matrix = ml.predict_prob_loaded(roc_val, sdor_val)
@@ -172,53 +175,71 @@ def trade(pair, trade_units=10000):
 # Trade function will loop over and over again  
 def trading_loop(pair, capital):
     print(f"\n Starting SEARX trading loop for {pair} with capital ${capital} \n")
-    while True:
+    try:
+        while True:
 
-        if not is_market_open(pair):
-            printange "Market is closed. Waiting for market to open...")
-            ib.sleep(60)  
-            continue
+            if not is_market_open(pair):
+                print("Market is closed. Waiting for market to open...")
+                ib.sleep(60)  
+                continue
 
-        close_prices = fetch_live_window(pair, duration='7200 S')
-        if len(close_prices) < 2:
-            print("Not enough data to make prediction. Waiting for more data...")
-            ib.sleep(60)  
-            continue
+            close_prices = fetch_live_window(pair, duration='7200 S')
+            if len(close_prices) < 2:
+                print("Not enough data to make prediction. Waiting for more data...")
+                ib.sleep(60)  
+                continue
 
-        sdor_val, roc_val = calcuate_sdor_and_roc(close_prices)
-        prob_matrix = ml.predict_prob_loaded(roc_val, sdor_val)
-        action_index = int(np.argmax(prob_matrix))  
-        action_str = {0: "Sell", 1: "Hold", 2: "Buy"}[action_index]
+            sdor_val, roc_val = calcuate_sdor_and_roc(close_prices)
+            prob_matrix = ml.predict_prob_loaded(roc_val, sdor_val)
+            action_index = int(np.argmax(prob_matrix))  
+            action_str = {0: "Sell", 1: "Hold", 2: "Buy"}[action_index]
 
-        confidence = max(prob_matrix)
-        
-        print(f"\n{pair}")
-        print(f"ROC: {roc_val:.6f}")
-        print(f"SDOR: {sdor_val:.6f}")
-        print(f"Prediction: {action_str}")
-        print(f"Confidence: {confidence:.3f}")
+            confidence = max(prob_matrix)
+            
+            print(f"\n{pair}")
+            print(f"ROC: {roc_val:.6f}")
+            print(f"SDOR: {sdor_val:.6f}")
+            print(f"Prediction: {action_str}")
+            print(f"Confidence: {confidence:.12f}")
 
-         # Only trade if confident
-        if confidence > 0.45 and action_str != "Hold":
+             # Only trade if confident
+            if confidence > 0.333347 and action_str != "Hold":
 
-            contract = Forex(pair, exchange='IDEALPRO')
-            ib.qualifyContracts(contract)
+                contract = Forex(pair, exchange='IDEALPRO')
+                ib.qualifyContracts(contract)
 
-            order = MarketOrder("BUY" if action_str == "Buy" else "SELL",capital)
-            trade = ib.placeOrder(contract, order)
-            ib.sleep(2)
-            print(Fore.GREEN + f"Trade executed: {action_str} {capital} units")
+                order = MarketOrder("BUY" if action_str == "Buy" else "SELL",capital)
+                trade = ib.placeOrder(contract, order)
+                ib.sleep(2)
+                print(Fore.GREEN + f"Trade executed: {action_str} {capital} units")
+            else:
+                print(Fore.YELLOW + "No strong signal. Waiting...")
+
+            # online learning
+            ml.update_model(roc_val, sdor_val, action_index)
+
+            # save model periodically
+            ml.save_model(MODEL_PATH)
+
+            # wait for next candle
+            ib.sleep(60)
+
+    except KeyboardInterrupt:
+        print("\nExiting trading loop...")
+        positions = ib.positions()
+        if positions:
+            for pos in positions:
+                color = Fore.GREEN if pos.position >= 0 else Fore.RED
+                print(f"{pos.contract.symbol}: {color}{pos.position} units at avg price {pos.avgCost}{Style.RESET_ALL}")
         else:
-            print(Fore.YELLOW + "No strong signal. Waiting...")
+            print("No open positions.")
 
-        # online learning
-        ml.update_model(roc_val, sdor_val, action_index)
-
-        # save model periodically
-        ml.save_model(MODEL_PATH)
-
-        # wait for next candle
-        ib.sleep(60)
+        # Account value
+        summary = ib.accountSummary()
+        for s in summary:
+            if s.tag == "NetLiquidation":
+                print(f"Current account value: ${s.value} {s.currency}")
+        print("\nGoodbye!")
 
 # --------------- Testing trade to see what will happen (force to execute a trade [igonres ml prediction]) ----------------
 def trade_test(pair, trade_units=10000):
