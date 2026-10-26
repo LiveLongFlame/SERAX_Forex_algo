@@ -43,13 +43,9 @@ def is_market_open(pair):
         try:
             start_str, end_str = session.split('-')
 
-            start_dt = datetime.strptime(
-                start_str, "%Y%m%d:%H%M"
-            ).replace(tzinfo=ZoneInfo("US/Eastern"))
+            start_dt = datetime.strptime(start_str, "%Y%m%d:%H%M").replace(tzinfo=ZoneInfo("US/Eastern"))
 
-            end_dt = datetime.strptime(
-                end_str, "%Y%m%d:%H%M"
-            ).replace(tzinfo=ZoneInfo("US/Eastern"))
+            end_dt = datetime.strptime(end_str, "%Y%m%d:%H%M").replace(tzinfo=ZoneInfo("US/Eastern"))
 
             if start_dt <= now <= end_dt:
                 return True
