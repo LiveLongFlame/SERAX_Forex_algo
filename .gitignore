@@ -1,4 +1,6 @@
 .venv/
 venv/
+src/dev/data/gathered_data
+
 
 # *.csv

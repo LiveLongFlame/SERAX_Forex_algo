@@ -59,6 +59,7 @@ Action decideAction(double roc, double sdor)
 
 
 //------------------ comment out when running Makefile in order to test model
+/*
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 namespace py = pybind11;
@@ -140,12 +141,12 @@ PYBIND11_MODULE(ml, m) {
 	m.def("load_model",&load_model);
 	m.def("update_model",&update_model);
 	m.def("save_model",&save_model);
-}
+}*/
 
 //---------------------------------------------------------------------------
 
 // Uncomment main when testing the model
-/* int main(){
+ int main(){
 	//CSV Structure: date, open, high,low,close,volume,average, barCount
 
 	arma::mat raw;
@@ -211,4 +212,4 @@ PYBIND11_MODULE(ml, m) {
 
 	return 0;
 
-} */
+} 

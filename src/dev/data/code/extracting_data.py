@@ -1,6 +1,9 @@
 # Program will go throuhg each currency pair and request a chunk of the data each time and store it as a csv file in a specified folder.
 # The reason we do this is because IBKR does not allow big certain amount of request data. Therefore, we will break the data into different chuncks then run another program which will allow us to combine the chunk data.
+import asyncio
 from datetime import *
+# Create an event loop for the main thread
+asyncio.set_event_loop(asyncio.new_event_loop())
 from ib_insync import *
 import pandas as pd
 import os
@@ -30,12 +33,12 @@ LOCATION_DIR = os.path.abspath(os.path.join(BASE_DIR, ".."))
 
 #Differnt currency pairs
 pairs = [
+        ('AUD','USD'),
         ('EUR','USD'),
         ('USD','JPY'),
         ('GBP','USD'),
         ('USD','CHF'),
         ('USD','CAD'),
-        ('AUD','USD'),
         ('NZD','USD'),
         ]
 
