@@ -1,6 +1,15 @@
 # ⚠️**Caution**
 This project is still in development and is not expected to be used in the real market. This is just for learning and better understanding with ML's and forex market. 
 
+## ***NOTE***
+This project is currently having a change in direction... the ml model will instead hace price predictors and probability for the overall trend of the price of the currency.. instead of making the ml to hold, sell, buy the user will inteeract with that the model will just go head and have a probility for the user 
+
+# ⚠️**TODO**
+- finish testing and finding best model for price predictions in notebook 
+- develop the chosen correct model in cpp for speed (and general learning) 
+- add ml to the main.py and add predictions 
+- fix project repo such that it is easier to use and up to date with understanding
+
 # SERAX_Forex_algo
 SERAX (Saurman's Eye Risk Analysis FX) is a project to create a Trading Machine learning Algorithm, in order predict when to Sell, But or Hold in the FX market. The model will look at different currency pairs and predict what prices will give the best outcome.  
 
@@ -33,3 +42,6 @@ You will need to install and setup your own IBKR trading account and install IBK
 * The program will start training the model and then will start making predictions based on the trained model
 * if build fails try running `./src/dev/re-build.sh` to rebuild the project and then run `python3 main.py` again.
 * if you want to compile from strach run `rm -rf src/dev/model/build && mkdir src/dev/model/build && cd src/dev/model/build && cmake .. -DPython_EXECUTABLE=../venv/bin/python && cmake --build .` and then run `python3 main.py` again.
+
+
+
