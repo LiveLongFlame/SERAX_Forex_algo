@@ -1,31 +1,78 @@
-# Implementation
-## V.1 
-For version 1 we want to create a simple Algorithm where we get the Rate of Change (ROC) and the Volatility using Standard Deviation and create probability to see when the machine should Sell, Buy or Hold
-### Price Momentum: ROC (Rate of Change)
-We will calculate the change of which the currencies fluxurates over a period of time. Given $n$ is time, $$\text{|ROC|} = \frac{Price_t - Price_{t-n}}{Price_{t-n}} \times 100,\text{where } n \text{ is time.}$$
-#### Example
-***
-If the AUD/USD = 0.60/1.00, and yesterday was 1/1, then in $n = 1$ day $$\text{|ROC|} = \frac{0.60 - 1}{1} \times 100 = 40$$ meaning there was a 40% price change
-***
+# Forecast and feature definitions
 
-### Volatility (Standard Deviation of returns) [Risk]
-Throughout forex prices fluxuatie constanly. One way we can help predict the overall trend of the current currency pair. We first look at the $r_t =$ Price/time, which we can use $$r_t = \frac{P_t - P_{t-1}}{P_{t-1}}$$
-From here we can compute the mean such that, $$\bar{r} = \frac{1}{N}\sum^N_{t=1}r_t$$where $N = time$
-Once he mean is calculated we can use the standard deviation formula $$\sigma = \sqrt{\frac{1}{N-1}\sum^N_{i=1}(r_t - \bar{r})^2}$$ where higher $\sigma \to$ Prices Flucurate More $\to$ Higher risk and lower $\sigma \to$ Price are stable $\to$ lower risk. 
+This page describes the three-class, 15-minute-ahead model currently used by the
+development runner. One bar is one minute, so a 15-bar horizon is approximately
+15 minutes when the feed has no missing bars.
 
-### Probability
-Now that have the risk and ROC we can go ahead ande the margin with $$p(up) = \frac{1}{1+e^{-(\alpha \cdot ROC-\beta \cdot \sigma)}}$$where $\alpha =$ weight of ROC, $\beta =$ weight of risk. 
+## Forecast target
 
-Since we have calculated the probability of risk we can finalise our choices by $$Choice = $$ 
-## V2
-In version1 although we have calculated the ROC and risk, we can better calculated better risk with more common methods such as GRACH (Generalised Autoregressive Conditional Heteroskedasticity).Further, adding a logistic regression and plat scaling for improved probability calculations. 
-### GRACH Model
-GRACH increases accuracy as instead of assuming constant variance, GRACH assumes that periods of high volatility tend to follow high volatility, and calm periods follow calm periods. 
-We write a basic return model shown as,  $$r_t = \mu + \sigma_t \cdot z_t$$ where $\mu$ is the mean return, $\sigma_i$ is time-varying volatility, and $z_t$ is a standardised shock (often assumed to be normal). 
-The main part of GRACH model is written as, $$\sigma^2_t = \omega + \alpha \cdot e^2_{t-1}+ \beta \cdot \sigma^2_{t-1}$$ where $e_{t-1} = r_{t-1} - \mu$. $\alpha$, makes the volatility respond to large market moves while $\beta$ controls how persistent volatility is over time and $\omega$, is constant, as the volatility floor.  
-Further we can gather a Long-run mean allowing us estimate the "natural" volatility level of the assess when the markets are calm. This is defined as,  $$\sigma^2 = \frac{\omega}{1-\alpha - \beta}$$
-### Logistic Regression 
-Logistic regression is a statistical model used to predict between 0 and 1 based on input features. This can be defined as, 
-$$p = \frac{1}{1+ e^{-(\beta_0 + \beta_1 x_1 + \ldots)}}$$
-### Plat Scaling 
-Now Play Scaling is a calibration method in which takes in the models raw score and converts it into a more accurate, better calibrated probability. This can be written as $$P(y=1 |f) = \frac{1}{1 + exp(Af + B)}$$ where $f$ = model's raw Score. A,B are learned on a validation set. 
+For the close price at bar \(t\), the forward return is:
+
+\[
+R_{t,15} = \frac{C_{t+15} - C_t}{C_t}
+\]
+
+The notebook uses a neutral threshold of one basis point:
+
+\[
+\epsilon = \frac{1}{10{,}000} = 0.0001 = 0.01\%
+\]
+
+The target class is:
+
+\[
+y_t =
+\begin{cases}
+-1 & R_{t,15} < -\epsilon \quad \text{(decrease)}\\
+0 & -\epsilon \le R_{t,15} \le \epsilon \quad \text{(neutral)}\\
+1 & R_{t,15} > \epsilon \quad \text{(increase)}
+\end{cases}
+\]
+
+The model returns one estimated probability per class. These probabilities are
+not guaranteed to be calibrated and should not be interpreted as certainty.
+
+## Input features
+
+Features use observed OHLC prices and returns:
+
+- **Returns:** close-to-close percentage returns over 1, 5, 15, and 30 bars.
+- **Log returns:** logarithmic close-to-close return.
+- **Candle shape:** candle body, full high-low range, and upper/lower wick sizes.
+- **Rolling volatility:** standard deviation of log returns over 15 and 60 bars.
+- **Moving-average ratios:** current close relative to its 20-bar simple and
+  50-bar exponential moving averages.
+- **Lagged returns:** additional 5- and 15-bar log-return history.
+
+Before fitting, the notebook shifts model input features by one bar within each
+currency pair. The live inference path uses the same convention. This ensures
+the feature vector for a prediction only contains information from prior bars;
+the target remains the subsequent 15-bar return.
+
+The rolling statistics and percentage changes are row-based. They represent
+minutes only when the input data contains consecutive one-minute bars.
+
+## Training and evaluation
+
+The notebook splits each pair chronologically: the first 80% of usable
+observations are used for training and the last 20% for the holdout evaluation.
+It compares:
+
+1. **Logistic regression**, with median imputation, standardization, and
+   class-balanced fitting.
+2. **Histogram gradient boosting**, with median imputation and
+   class-balanced fitting.
+
+The saved model is the candidate with the lower holdout log loss. The live
+retraining task fits the selected model type on rows with known 15-bar outcomes;
+it does not retrain on an unfinished future label.
+
+These metrics measure performance on the available historical sample only.
+They do not establish profitability, account for transaction costs or slippage,
+or guarantee future performance.
+
+## Earlier concepts
+
+The repository previously explored a one-output ROC/volatility probability and
+buy/sell/hold actions. Those equations are historical design notes, not the
+current three-class model's implementation.

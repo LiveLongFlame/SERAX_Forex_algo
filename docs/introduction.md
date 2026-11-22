@@ -1,13 +1,37 @@
-# Welcome
-This is the documentation for the SEARX Project and everthing you need to know. 
-# What is SEARX?
-SEARX is a free and open-source machine learning algorithm that is designed to be fast and efficient when trading FX. The main concept behind SEARX is to use a combination of technical indicators and machine learning techniques to predict the future price movements of currency pairs. The algorithm is designed to be flexible and can be customized to suit the needs of different traders.
-# Implementation
-SEARX is implemented in Python and C++. The ML is created in C++ in order to allow fast execution and low latency, while Python is used for connecting to IBKR (Interactive Brokers) and for data processing. 
+# SERAX introduction
 
-The program takes in input of the current currency pair, you want to trade, and the amount you want to invest. The algorithm then uses a combination of technical indicators and machine learning techniques to predict the future price movements of the currency pair. Based on the predictions, the algorithm will make a decision on whether to buy,sell or hold the currency pair. Then the algorithm will be re-trained with new informaiton and the process will repeat itself. Once you stop the program you will see your current open positions and your profit/loss as well as your current balance.
-## Algorithm 
-For more understanding about the algorith, please check the [Maths](maths.md) page.
+SERAX is an educational project for exploring machine-learning forecasts on
+foreign-exchange price data. Its current development version connects to
+Interactive Brokers (IBKR) and monitors EUR/USD and AUD/USD.
 
-## Future Plans
-Right now the program is desinged only for 1 currency pair, at a time and the ml is very much in (v1) however in the future I plan to add multiple currency pairs and also to improve the machine learning algorithm by adding more features and using more advanced techniques. 
+## Current program
+
+[`../src/dev/main.py`](../src/dev/main.py) subscribes to one-minute IBKR midpoint
+bars. When a bar is complete, the program computes features from prior bars and
+displays the model's estimated probabilities for a decrease, neutral move, or
+increase over the next 15 one-minute bars.
+
+The program is a probability monitor: it does not submit orders, manage
+positions, or calculate account profit and loss. A displayed probability is a
+model estimate, not a guarantee or investment recommendation. The current
+classifier's probability calibration and trading usefulness have not been
+established.
+
+The model lifecycle is:
+
+1. Train and compare models using [`../src/dev/model_testing.ipynb`](../src/dev/model_testing.ipynb).
+2. Load the selected per-currency model artifact in
+   [`../src/dev/live_model.py`](../src/dev/live_model.py).
+3. Generate a new prediction after each completed one-minute bar.
+4. Retrain at startup and then daily, using historical data and saved live bars
+   only when their 15-minute forward labels have matured.
+
+For installation and run instructions, see the
+[repository README](../README.md). For target and feature definitions, see
+[Maths](maths.md).
+
+## Earlier design ideas
+
+Some project history refers to a C++ classifier, buy/sell/hold actions, order
+execution, or account-level profit and loss. Those describe earlier or planned
+ideas, not the current Python probability-monitor implementation.
