@@ -4,6 +4,8 @@ SERAX is an educational forex time-series modeling project. The current developm
 program connects to Interactive Brokers (IBKR), monitors EUR/USD and AUD/USD
 one-minute midpoint bars, and displays model-estimated probabilities that the
 price will increase, decrease, or remain neutral over the following 15 bars.
+It also prints rolling candlestick charts of the latest 15 completed one-minute
+bars for EUR/USD and AUD/USD.
 
 > **Caution:** This project is for learning and experimentation, not live trading.
 > Its predictions are not trading advice, are not guaranteed to be calibrated, and
@@ -74,9 +76,9 @@ python src/dev/main.py
 ```
 
 The runner requests recent one-minute midpoint history, then subscribes to
-continuously updated bars. It displays probabilities only after a bar completes.
-Press `Ctrl+C` to stop. If stdout is not an interactive terminal, color output is
-disabled.
+continuously updated bars. It displays probabilities and refreshes the terminal
+candlestick charts after a bar completes. Press `Ctrl+C` to stop. If stdout is not
+an interactive terminal, color output is disabled.
 
 The program saves incoming completed bars under `src/dev/data/live/`. It attempts
 to retrain both pair models at startup and then every 24 hours, using historical

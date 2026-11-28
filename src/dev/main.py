@@ -45,6 +45,7 @@ class TerminalDashboard:
     def __init__(self) -> None:
         self._use_color = sys.stdout.isatty()
         self._predictions = {}
+        self._candles = {}
         self._status = "Connecting to IBKR..."
         self._details = []
 
@@ -56,11 +57,28 @@ class TerminalDashboard:
         self._details = list(details)
         self.render()
 
-    def update(self, pair: str, prediction: dict, price: float) -> None:
+    def update(
+        self,
+        pair: str,
+        prediction: dict,
+        price: float,
+        completed_bars,
+    ) -> None:
         self._predictions[pair] = {
             **prediction,
             "price": price,
         }
+        recent_bars = completed_bars.iloc[-15:]
+        self._candles[pair] = [
+            (
+                bar["date"],
+                float(bar["open"]),
+                float(bar["high"]),
+                float(bar["low"]),
+                float(bar["close"]),
+            )
+            for _, bar in recent_bars.iterrows()
+        ]
         self.render()
 
     def _color(self, name: str) -> str:
@@ -73,6 +91,68 @@ class TerminalDashboard:
             f"{self._color(color)}{label:<8} {bar} {value * 100:5.1f}%"
             f"{self._color('reset')}"
         )
+
+    def _render_candles(self, pair: str) -> list[str]:
+        candles = self._candles.get(pair, [])
+        if not candles:
+            return [f"  {pair.replace('_', '/')}  Waiting for completed bars..."]
+
+        height = 12
+        minimum = min(candle[3] for candle in candles)
+        maximum = max(candle[2] for candle in candles)
+        if maximum == minimum:
+            padding = max(abs(maximum) * 0.000001, 0.00001)
+            minimum -= padding
+            maximum += padding
+
+        def price_row(price: float) -> int:
+            return round((maximum - price) / (maximum - minimum) * (height - 1))
+
+        chart = [[" " for _ in range(len(candles) * 2)] for _ in range(height)]
+        directions = []
+        for column, (_, open_price, high, low, close) in enumerate(candles):
+            if close > open_price:
+                directions.append("green")
+            elif close < open_price:
+                directions.append("red")
+            else:
+                directions.append("yellow")
+
+            candle_columns = (column * 2, column * 2 + 1)
+            high_row = price_row(high)
+            low_row = price_row(low)
+            for row in range(high_row, low_row + 1):
+                for candle_column in candle_columns:
+                    chart[row][candle_column] = "│"
+
+            open_row = price_row(open_price)
+            close_row = price_row(close)
+            for row in range(min(open_row, close_row), max(open_row, close_row) + 1):
+                for candle_column in candle_columns:
+                    chart[row][candle_column] = "█"
+
+        rows = [
+            f"  {pair.replace('_', '/')}  "
+            f"{self._color('green')}█ bullish{self._color('reset')}  "
+            f"{self._color('red')}█ bearish{self._color('reset')}  "
+            f"{self._color('yellow')}█ doji{self._color('reset')}  "
+            f"{self._color('white')}│ wick{self._color('reset')}"
+        ]
+        for row, cells in enumerate(chart):
+            price = maximum - (maximum - minimum) * row / (height - 1)
+            plotted_cells = []
+            for column, cell in enumerate(cells):
+                if not self._use_color or cell == " ":
+                    plotted_cells.append(cell)
+                    continue
+                color = directions[column // 2] if cell == "█" else "white"
+                plotted_cells.append(f"{self._color(color)}{cell}{self._color('reset')}")
+            rows.append(f"  {price:>10.6f}  {''.join(plotted_cells)}")
+
+        start_time = str(candles[0][0]).replace("T", " ")[11:16]
+        end_time = str(candles[-1][0]).replace("T", " ")[11:16]
+        rows.append(f"  {start_time} -> {end_time} UTC  (1-minute candles)")
+        return rows
 
     def render(self) -> None:
         reset = self._color("reset")
@@ -130,6 +210,10 @@ class TerminalDashboard:
                     f"  {'-' * (width - 2)}",
                 ]
             )
+
+        rows.extend([f"{'=' * width}", f"{bold}  LAST 15 COMPLETED 1-MIN CANDLES{reset}"])
+        for pair in PAIRS:
+            rows.extend(self._render_candles(pair))
 
         if self._details:
             rows.extend([f"{'=' * width}", *[f"  {line}" for line in self._details]])
@@ -247,7 +331,7 @@ def show_prediction(
 ) -> None:
     prediction = models.predict(pair, completed_bars)
     price = float(completed_bars.iloc[-1]["close"])
-    dashboard.update(pair, prediction, price)
+    dashboard.update(pair, prediction, price, completed_bars)
 
 
 if __name__ == "__main__":
